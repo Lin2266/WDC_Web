@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import course.model.BeerExpert;
-import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 //@WebServlet(name = "BeerSelect", urlPatterns = {"/BeerSelect.do"})
 public class BeerSelect extends HttpServlet {
