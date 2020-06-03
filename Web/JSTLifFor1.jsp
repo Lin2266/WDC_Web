@@ -10,24 +10,52 @@
 	<form action='JSTLifFor1.jsp'>
 		<table>
 		<tr><td>選擇程式語言</td>
-			<td><select name='languages' size='6' multipl>
+			<td><select name='languages' size='6' multiple>
 				<option value='Ada'>Ada</option>
 				<option value='C'>C</option>
 				<option value='C++'>C++</option>
 				<option value='Cobol'>Cobol</option>
 				<option value='Objective-C'>Objective-C</option>
 				<option value='Java'>Java</option>
-			</select>
-			</td>
+			</select></td>
 		</tr>
 		</table>
 		<p><input type='submit' value='Finish Survey'></p>
 	</form>
+
+<!-- 		c:if -->
+<!-- 		屬性		描述				是否必要	預設 -->
+<!-- 		test	條件				是		無 -->
+<!-- 		var		用於存儲條件結果的變量	否		無 -->
+<!-- 		scope	var屬性的作用域		否		page -->
+
 	<font color="red">
-		<c:if test="${not empty paramValues.languages}" var="langSelected" scope="session"/>		
-		Selected languages were:<br><br>
-		<c:forEach var="lang" items="${paramValues.languages}" varStatus="status"/>
 		
+		<c:if test="${not empty paramValues.languages}" var="langSelected" scope="session">	
+<!-- 		c:out在jstlIfFor2.jsp頁面印不出langSelected的值 -->
+		<p>langSelected存的是:<c:out value="${langSelected}"></c:out></p>	
+		
+<!-- 		forEach -->
+<!-- 		屬性			描述								是否必要	預設 -->
+<!-- 		items		要被循環的信息						否	無 -->
+<!-- 		begin		開始的元素（0=第一個元素，1=第二個元素)	否	0 -->
+<!-- 		end			最後一個元素（0=第一個元素，1=第二個元素）	否	Last element -->
+<!-- 		step		每一次迭代的步長						否	1 -->
+<!-- 		var			代表當前條目的變量名稱					否	無 -->
+<!-- 		varStatus	代表循環狀態的變量名稱					否	無 -->
+		varStatus可以取索引(index)跟跑的次數(count)<br>
+		forEach -> Selected languages :<br><br>
+		<c:forEach var="lang" items="${paramValues.languages}" varStatus="status">
+		${status.index}. ${status.count}. ${lang}
+		</c:forEach>
+		<br><br><br>
+		</c:if>
+		迴圈從0~10，2為間隔數<br>
+		<c:forEach begin="0" end="10" step="2" varStatus="status">
+			${status.index},&nbsp;&nbsp;${status.count}	<br>
+		</c:forEach>
 	</font>
+	<br>
+	<P>Go to <a href="jstlIfFor2.jsp">jstlIfFor2.jsp</a></P>
 </body>
 </html>
