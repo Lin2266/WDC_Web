@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array</title>
+<script>
+	alert("提示寫在head");
+	var days = ['Mon','Tues','Wed','Thurs','Fri','Sat','Sum'];
+	for(i in days){
+		document.write(days[i]);		
+	}
+	document.writeln("陣列長度:"+days.length);//陣列長度
+	
+</script>
+</head>
+<body>
+
+	把內容寫在body的,script要宣告在body
+<p id='cars'></p>
+<script>
+	//取ID的時候要注意HTML標籤生成時才取的到
+	var cars = ["Saab", "Volvo", "Bmw"];
+	cars.push("Benz","Toyota","Audi");//可在最後面插入多個元素
+	document.getElementById("cars").innerHTML = "push後面新增3個元素:"+cars+"<br>";
+
+	cars.unshift("Skoda","Mazda");//在最前面插入多個元素
+	document.write("unshift前面新增2個元素:"+cars + "<br><br>");
+
+	cars.pop("Benz","Toyota");//移除多個元素
+	document.write("POP移除2個元素:"+cars+ "<br><br>");
+
+	cars.pop();//移除元素
+	document.write("pop會先移除最後一個:" +cars+ "<br><br>");
+
+	cars.shift();//會先刪掉第1個
+	document.write("會先刪掉第1個元素:" +cars);
+	
+
+</script>
+
+</body>
+</html>
