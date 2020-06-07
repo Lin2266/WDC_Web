@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array</title>
+<script>
+	var questions = [
+ ['How many moons does Earth have?', 1],
+ ['How many moons does Saturn have?',31],
+ ['How many moons does Venus have?', 0]
+];
+	
+	function array(questions){//questions[0]進來這就變一維陣列的[0],[1]
+		document.write(questions[0] +'<br>');
+		document.write(questions[1] +'<br>');
+
+	}
+	for(var i =0;i<questions.length;i++){
+		array(questions[i]);
+	}
+
+</script>
+</head>
+
+<body>
+	<script>
+		for(var a=0;a<questions.length;a++){
+			document.write(questions[a] + '<br>');
+		}
+		document.write('=============================<br>');
+		
+			document.write(questions[0][1] + '<br>');
+			document.write(questions[1][1] + '<br>');
+			document.write(questions[2][1] + '<br>');
+		
+		
+	</script>
+	
+</body>
+
+</html>

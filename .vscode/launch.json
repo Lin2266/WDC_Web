@@ -4,20 +4,58 @@
 {
   "version": "0.2.0",
   "configurations": [
-
     {
       "name": "Launch readyHide.html",
       "type": "chrome",
       "request": "launch",
       "port": 9287,
       "webRoot": "${workspaceFolder}"
-    }  
-,{
-  "name": "Launch Chrome localhost",
-  "type": "chrome",
-  "request": "launch",
-  "port": 9237,
-  "webRoot": "${workspaceFolder}",
-  "url": "http://localhost:900/WDC_Web/JavaScript/jQuery/readyHide.html"
-}]
+    },
+    {
+      "name": "Launch Chrome localhost",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9237,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:900/WDC_Web/JavaScript/jQuery/readyHide.html"
+    },
+    {
+      "name": "Launch Chrome localhost (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9203,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:900/WDC_Web/JavaScript%26jQuery/js3e/chapter03/conditional.html"
+    },
+    {
+      "name": "Launch conditional.html",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9282,
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch quiz.html",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9257,
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch Chrome localhost (2)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9279,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:900/WDC_Web/JavaScript%26jQuery/js3e/chapter03/complete_quiz.html"
+    },
+    {
+      "name": "Launch Chrome localhost (3)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9218,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:900/WDC_Web/JavaScript%26jQuery/js3e/chapter03/quiz.html"
+    }
+  ]
 }

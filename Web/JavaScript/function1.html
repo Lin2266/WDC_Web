@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Using Functions</title>
+<script>
+	//改變標籤的函式
+	function print(message,tag){
+		document.write("<"+tag+">"+message+"<"+tag+">");
+	}
+
+	var TAX = 0.08;
+	function calculateTotal(quantity,price){
+		var total = quantity * price *(1 + TAX);
+		var formattedTotal = total.toFixed(2);//toFixed 小數3位
+		return formattedTotal;
+	}
+
+	var message = 'Outside the function';//Global,outside
+	function warning(message){
+		var message = 'Inside the function1';//一樣的變數裡面的var會變區域變數
+		alert(message);//inside
+	}
+		warning();
+		warning('Inside the function2');
+		alert(message);
+	
+</script>
+</head>
+
+<body>
+	<script>
+		print('function','h1');	
+
+		var saleTotal=calculateTotal(2,50.5);
+		document.write("Total cost is: $" + saleTotal+"<br>");
+		document.write("Total cost is: $" + calculateTotal(2,50.5));
+	</script>
+</body>
+
+</html>
