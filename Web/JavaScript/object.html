@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>object</title>
+<script type="text/javascript">
+	var obj = {color:'blue',height:101};//'color'屬性名稱的引號「''」可省略
+	obj['color']='red';//重設值
+	obj.color='green';
+	var me = {
+		firstName:'jim',
+		lastName:'Tzeng',
+		age:40,
+		fullName: function(){
+			return this.firstName + '' + this.lastName;
+		}
+	}
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+	document.write(obj.color + '<br>');
+	document.write(obj['color'] + '<br>');
+
+	var name = me.fullName();
+	document.write(name+ '<br>');
+	document.write(me.age+ '<br>');
+	</script>
+</body>
+</html>
