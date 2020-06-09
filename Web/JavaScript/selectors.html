@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/jquery-ui.js"></script>
+<title>selectors</title>
+<script>
+
+	$('#navBar a')//後裔
+	$('body > p').html("body裡的p子標籤"); //子選擇器
+	$('h2 + div')// 相鄰
+	
+	$('img[alt]')//屬性(屬性選擇器分很多種)
+	$('a[href')
+	$('input[type="text"')
+	$(attribute^="value")
+	$('a[href^="http://"]')
+	
+	
+	
+</script>
+</head>
+
+<body>
+		
+	<p id="slideshow"></p>
+	<div id="container">
+		<div id="errors">
+			<h2>Errors.</h2>
+			<p>There are four errors in this form</p>
+		</div>
+	</div>
+	<script>
+	$('#slideshow').width(200).height(200).text('HI!').fadeIn(1000).css('background-color','cornflowerblue');
+	$('#errors').append('<p>There are four errors in this form1</p>');
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browser Object Model</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			function loadScreen(){
+			var iw = document.getElementById('innerWidth');
+			iw.innerHTML = window.innerWidth;
+
+			var ih = document.getElementById('innerHeight');
+			ih.innerHTML = window.innerHeight;
+
+			var sw = document.getElementById('screenWidth');
+			sw.innerHTML = window.screen.width;
+
+			var sh = document.getElementById('screenHeight');
+			sh.innerHTML = window.screen.height;
+			}
+			//jquery版
+			
+		</script>
+</head>
+
+<body onload="loadScreen()">
+	<div>
+		<div>innerWidth:<span id='innerWidth'></span></div>
+		<div>innerHeight:<span id='innerHeight'></span></div>
+		<div>screenWidth:<span id='screenWidth'></span></div>
+		<div>screenHeight:<span id='screenHeight'></span></div>
+	</div>
+</body>
+
+</html>
