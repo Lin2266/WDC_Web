@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>windowsChange</title>
+		<meta charset="UTF-8">
+		<script>
+			var win = window.open('https://tw.news.yahoo.com/','yahoo-window',
+			'width=400,height=400');
+			 //win.moveTo(100,500);//指定位置
+			//win.moveBy(200,200);//相對於開啟位置
+			//win.resizeTo(800,400);//改變視窗的大小，預設有設定就會依預設的
+			setTimeout(function(){
+				win.close();
+			},5000);
+		</script>
+</head>
+
+<body>
+	It works!
+</body>
+
+</html>

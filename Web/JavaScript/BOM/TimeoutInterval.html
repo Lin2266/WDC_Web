@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<title>setTimeout & setInterval</title>
+<script>
+	/*
+		  參數1:myfunc(時間到時自動執行的函式)
+		  參數2:表示要延連多久的時間，單位毫秒
+		  參數3，參數4...:指定傳入myfunc函式的參數
+	*/
+	//時間到執行一次
+	var timeoutID = setTimeout(myfunc,5000,"some message...");
+	function myfunc(msg){
+		alert(msg);
+	}
+	clearTimeout(timeoutID);//取消setTimeout
+
+	//週期執行
+	var intervalID = setInterval(function(){
+		alert('message again!');
+	},5000);
+	clearInterval(intervalID);//取消setInterval
+
+	var clockStart = setInterval(setTime,1000);
+	function setTime(){
+		// var clock = document.getElementById("clock");
+		// clock.innerHTML = new Date();
+		$('#clock').html(new Date());
+	}
+
+	function startClock(){
+		if(clockStart === undefined)
+		colorStart = setInterval(setTime,1000);
+	}
+
+	function stopClock(){
+		window.clearInterval(clockStart);
+		clockStart = undefined;
+	}
+</script>
+</head>
+<body>
+	<div id='clock'></div>
+	<input type="button" value="start" onclick="startClock()">
+	<input type="button" value="stop" onclick="stopClock()">
+
+</body>
+</html>

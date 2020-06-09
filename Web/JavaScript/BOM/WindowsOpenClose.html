@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>windowsOpenClose</title>
+		<meta charset="UTF-8">
+		<script>
+			/*
+				參數1:要開啟的url
+				參數2:新視窗的名稱
+				參數3:設定視窗的屬性
+				(width,height,left,top,scrollbars捲軸,boolbar工具列,
+				status狀態列,titlebar標題列,menubar主選單,resizable可否改變視窗大小,
+				location網址列是否出現,fullscreen是否全螢幕模式)
+			*/
+			//var win1 = window.open('http://tw.news.yahoo.com/');
+			var win2 = window.open(
+				'https://tw.news.yahoo.com/',
+				'yahoo-window',
+				'width=800,height=600,resizable=yes,scrollbars=yes,location=yes'
+			);
+			setTimeout(function(){
+				win2.close();
+			},6000);
+		</script>
+</head>
+
+<body>
+	
+</body>
+
+</html>
