@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>css</title>
+</head>
+<body>
+<p id="mp" style="background-color: red;">test</p>
+<p id="mp2">test2</p>
+<button id="bt">click me</button>
+	<script>
+		//var $jim = jQuery.noConflict();//$jim取代$
+	//$()參數可單數或複數	
+	$('#bt').click(function(){//指定id點擊以後觸發的方法
+		$('#mp').css('background-color','blue');
+		$('#mp2').css('color','blue').css('background-color','red');
+	});
+			 
+</script>
+</body>
+</html>

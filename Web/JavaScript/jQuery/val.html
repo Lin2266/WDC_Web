@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>val</title>
+</head>
+<body>
+	<form id="myform">
+		<select id="country" name="country">
+			<option value="Taiwan">Taiwan</option>
+			<option value="Taipei">Taipei</option>
+		</select>
+		<br>
+		<p>
+		女生: <input type="radio" name="gender" value="female"/>
+		男生: <input type="radio" name="gender" value="male"/>
+		</p>
+		<p>
+		複選單:<input type="checkbox" value="drink">喝<input type="checkbox" value="eat">吃
+		</p>
+		<p id="comment">test</p>
+	</form>
+	<button id="myButton1">click me1</button>
+	<button id="myButton2">click me2</button>
+	<script>
+		$('#myButton1').click(function(){
+			//取得下拉選單 select box 值
+			var a = $('#country').val();
+			//var s=$("select[name='country']").val();
+			//取得 radio 欄位的選取值
+			var b = $('input:radio[name=gender]:checked').val();
+			//取得checkbox 欄位的(複) 選取值
+			var c = '';
+			$('input:checkbox:checked').each(function(){
+				c += $(this).val() + ',';
+			});
+			alert(a + "," + b + "," +c);
+		});	
+		$('#myButton2').click(function(){
+			alert($('#comment').val());
+			$('#comment').val('new comments...');
+			alert($('#comment').val());
+		});
+	</script>
+</body>
+
+</html>

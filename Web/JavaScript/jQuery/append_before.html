@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>插入元素</title>
+<style>
+	p{
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<p id="p1">This is paragraph1</p>
+	<p id="p2">This is paragraph2</p>
+	<p id="p3">This is paragraph3</p>
+	<p id="p4">This is paragraph4</p>
+	<br>
+	<font>沒有段落</font>
+	<font>沒有段落</font>
+	<br>
+	<button id="myButton">click me</button>
+	<script>
+		$('#myButton').click(function(){
+			$('#p1').append('<font color="red">1內部最後方:append<font/>');
+			$('#p2').prepend('<font color="red">2內部最前方:prepend<fort/>');
+			$('#p3').before('<font color="red">3外部前方:before<font/>');
+			$('#p4').after('<font color="red">4外部後方:after<font/>');
+		});
+	</script>
+</body>
+
+</html>

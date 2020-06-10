@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>getElementBy...</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		
+</head>
+
+<body>
+	<p id='myText'>Some text...</p>
+	<p class='test'>class1</p>
+	<p class='test'>class2</p>
+
+	<form name='myform'>
+		Cats: <input type="checkbox" name="animal" value="Cats">
+		Dogs: <input type="checkbox" name="animal" value="Dogs">
+	</form>
+	<p>
+		<input type="button" value="Try it" onclick="ByName()">
+	</p>
+	<script>
+		var byId = document.getElementById('myText');
+		console.log(byId);
+
+		//用from的name指定type去改變checked
+		var byName = document.getElementsByName("myform");
+		console.log(byName[0].tagName);//form
+		function ByName(){
+			var byName1 = document.getElementsByName("animal");
+			for(var i=0;i<byName1.length;i++){
+				if(byName1[i].type = "checkbox")
+				byName1[i].checked = true;
+			}
+		}
+
+		//取得頁面上所有的<p>元素
+		var p = document.getElementsByTagName('p');
+			//alert("有幾組p標籤: " +p.length);
+		for(var i=0;i<p.length;i++){
+			p[i].style.color='red';
+		}
+
+		var test = document.getElementsByClassName('test');
+		for(var i=0;i<test.length;i++){
+			test[i].style.backgroundColor='blue';
+		}
+
+	</script>
+</body>
+
+</html>

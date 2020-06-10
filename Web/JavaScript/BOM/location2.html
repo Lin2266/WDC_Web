@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>location</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			function reset(){
+				location.reload();
+			}
+			function time(){
+				$('#timeid').html(new Date());	
+			}
+		</script>
+</head>
+
+<body>
+	<input type="button" value="重新整理" onclick="reset()">
+	<p>
+		<input type="button" value="time" onclick="time()">
+		<div id='timeid'></div>
+	</p>
+	<p>
+	<input type="button" value="回上一頁" onclick="history.back()">
+	<input type="button" value="回下一頁" onclick="history.forward()">
+	</p>
+</body>
+
+</html>

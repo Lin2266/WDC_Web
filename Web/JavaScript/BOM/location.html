@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>location</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			alert('href:' + location.href);//取得當前網頁的網址
+			location.href='location2.html?name=jim';//切換URL
+			alert('hostname:' + location.hostname);//取得location(127.0.0.1)
+			alert('pathname:' + location.pathname);//專案目錄以下路徑(/WDC_Web/..)
+			alert('search:' + location.search);//取得當前url上的參數
+
+		</script>
+</head>
+
+<body>
+	<p>something...</p>
+	
+</body>
+
+</html>

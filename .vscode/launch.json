@@ -18,6 +18,78 @@
       "port": 9264,
       "webRoot": "${workspaceFolder}",
       "url": "http://localhost:900/WDC_Web/JavaScript/object.html"
+    },
+    {
+      "name": "Launch Chrome localhost (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9242,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://localhost:900/WDC_Web/JavaScript/DOM/getElementById.html"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9291,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/DOM/getElementBy.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (1)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9259,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/DOM/querySelector.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (2)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9254,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/DOM/inner.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (3)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9295,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/DOM/attributes.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (4)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9281,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/jQuery/selector.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (5)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9211,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/jQuery/jQuery2.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (6)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9206,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/jQuery/val.html?_cmAuth\u003dewzdnllvcq"
+    },
+    {
+      "name": "Launch Chrome 127.0.0.1 (7)",
+      "type": "chrome",
+      "request": "launch",
+      "port": 9291,
+      "webRoot": "${workspaceFolder}",
+      "url": "http://127.0.0.1:55886/p/WDC_Web/Web/JavaScript/jQuery/append_before1.html?_cmAuth\u003dewzdnllvcq"
     }
   ]
 }

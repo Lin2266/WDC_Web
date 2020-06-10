@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>css</title>
+</head>
+<body>
+	<p id="p1" style="background-color: red; color: blue; font-size: 51px;">paragraph1</p>
+	<p id="p2" style="background-color: red; color: blue; font-size: 52px;">paragraph2</p>
+	<button id="bt">click me</button>
+	<script>
+		$('#bt').click(function(){
+			alert($('p').css('font-size'));//取值51
+			$('#p1').css('background-color','black');//設為黑色
+			$('p').css('opacity','0.5');//背景透明度設為半透明
+			$('p').css({
+				color:'green',
+				'font-size':'100px'//font-size要注意用單引號圈起來
+			});
+		});
+	</script>
+</body>
+
+</html>

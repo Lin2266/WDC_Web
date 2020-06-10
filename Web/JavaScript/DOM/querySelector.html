@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>querySelector</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>		
+</head>
+
+<body>
+	<a href="https://www.w3schools.com">w3schools.com</a>
+	<a href="http://www.disney.com" target="_blank">disney.com</a>
+	<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+	<p>content1</p>
+	<p>content2</p>
+	<p class='test'>content3</p>
+	<p class='test'>content4</p>
+	<p class='test1'>content5</p>
+	<p class='test1'>content6</p>
+	<div>
+		<p class='test'>content7</p>
+		<p class='test'>content8</p>
+	</div>
+
+	<h2>A h2 element</h2>
+	<h3>A h3 element</h3>
+	
+	<div>		
+		<form>
+			username: <input class="main" name="username"/><br>
+			password: <input class="main" name="password"/>
+		</form>
+	</div>
+
+	<script>
+		//找出指定的元素或屬性名，且只找第一個
+		document.querySelector('p').style.backgroundColor = "black";
+		document.querySelector('.test').style.backgroundColor="red";
+		document.querySelector("p.test1").style.backgroundColor = "green";//p的class
+		document.querySelector("div > p").style.backgroundColor = "blue";//div裡的p
+		document.querySelector("h2,h3").style.backgroundColor = "yellow";//以h2優先
+		document.querySelector('a[target]').style.border="1px solid red";//a的屬性
+		document.querySelector('div > form > input[name=username]').value='1234';
+	</script>
+</body>
+
+</html>

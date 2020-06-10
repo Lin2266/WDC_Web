@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script>
+			//要到body載入
 			function loadScreen(){
 			var iw = document.getElementById('innerWidth');
 			iw.innerHTML = window.innerWidth;
@@ -18,9 +19,14 @@
 
 			var sh = document.getElementById('screenHeight');
 			sh.innerHTML = window.screen.height;
-			}
+
 			//jquery版
-			
+			$('#jinnerWidth').html(window.innerWidth);
+			$('#jinnerHeight').html(window.innerHeight);
+			$('#jscreenWidth').html(window.screen.width);
+			$('#jscreenHeight').html(window.screen.height);
+			}
+						
 		</script>
 </head>
 
@@ -30,6 +36,11 @@
 		<div>innerHeight:<span id='innerHeight'></span></div>
 		<div>screenWidth:<span id='screenWidth'></span></div>
 		<div>screenHeight:<span id='screenHeight'></span></div>
+		<hr>
+		<div>jinnerWidth:<span id='jinnerWidth'></span></div>
+		<div>jinnerHeight:<span id='jinnerHeight'></span></div>
+		<div>jscreenWidth:<span id='jscreenWidth'></span></div>
+		<div>jscreenHeight:<span id='jscreenHeight'></span></div>
 	</div>
 </body>
 

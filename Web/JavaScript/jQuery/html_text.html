@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>html_text</title>
+</head>
+<body>
+	<div id="div1"><p></p></div>
+	<div id="div2"><p></p></div>
+	<br>
+	<button id="myButton">click me1</button>
+	<button id="myButton2">click me2</button>
+	<script>
+		//html():效果類似dom的innerHTML，無參數是getter，有參數是setter
+	$('#myButton').click(function(){
+		alert($('#div1').html());//getter
+		$('#div1').html('<b>Hello World</b>');//setter，html格式
+	});
+
+	$('#myButton2').click(function(){
+		alert($('#div2').text());
+		$('#div2').text('<b>Hello World2<b/>');//文字格式，會連標籤都印出來
+	});
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>attributes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		
+</head>
+<body>
+	<a id="1k" href="https://tw.yahoo.com/" target="_blank" test-attr>
+		tw.yahoo.com
+	</a><br>
+	<script>
+		var a = document.getElementById('1k');
+		document.write(a.attributes['href']+"<br>");//使用屬性
+		document.write(a.hasAttribute('href')+"<br>");//判斷有無此屬性
+		document.write(a.getAttribute('href'));//取得href的值
+		
+		//印出a標籤所有的屬性名稱跟值		
+		// for(var i=0;i<a.attributes.length;i++){
+		// 	var attr = a.attributes[i];
+		// 	console.log(attr.name + ':' + attr.value);
+		// }
+
+	</script>
+</body>
+
+</html>

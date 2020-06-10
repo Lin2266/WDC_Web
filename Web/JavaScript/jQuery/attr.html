@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>attr(),removeAttr()</title>
+</head>
+<body>
+	<textarea rows="10" cols="50" id="ta01" placeholder="textarea test"></textarea>
+	<br>
+	<button id="myButton">click me</button>
+	<script>
+		$('#myButton').click(function(){
+			alert("before..." + $('#ta01').attr('placeholder'));//取得屬性值
+		$('#ta01').attr('placeholder','over');//改值
+			alert("after..." + $('#ta01').attr('placeholder'));
+		$('#ta01').attr({//同時修改多組屬性
+			rows:"15",
+			clos:"70"
+		});
+		$('#ta01').removeAttr('placeholder');//刪除屬性		
+		});
+	</script>
+</body>
+
+</html>
