@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>empty(),remove()</title>
+<style>
+	p{
+		background-color: yellow;
+		border: solid;
+	}
+</style>
+</head>
+
+<body>
+	<div id="container">
+		p1:<p id="p1">This is <font id="f1" color="red">paragraph</font>1</p>
+		p2:<p id="p2">This is <font id="f2" color="red">paragraph</font>2</p>
+	</div>
+	<br>
+	<button id="myButton">click me</button>
+	<script>
+		$('#myButton').click(function(){
+			$('#p1').empty();//僅清空內容，保留自己節點
+			$('#p2').remove();//移除元素
+		});
+	</script>
+
+</body>
+
+</html>
