@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>event</title>
+</head>
+<body>
+	<p>MouseDown Position:
+		<span id="pageX">?</span>,
+		<span id="pageY">?</span>
+	</p>
+	<script>
+		$(document).click(function(){
+			//點螢幕會有螢幕的x,y座標
+			$('#pageX').text(event.pageX);
+			$('#pageY').text(event.pageY);
+			alert(event.pageX + "," + event.pageY);
+		});
+	</script>
+</body>
+
+</html>

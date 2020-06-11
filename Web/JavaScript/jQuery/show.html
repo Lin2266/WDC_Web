@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>show</title>
+</head>
+<body>
+	<!--show()參數1:型態可字串或數字，三種速度:slow,normal,fast, show('slow')
+		參數2:特效完成後的callback函式-->
+	<p id="demo1" class="demo" style="display:none">animation show(5000)</p>
+	<button onclick="$(this).remove();$('#demo1').show('5000')">5秒完成呈現</button>
+
+	<p class="demo3">animation toggle</p>
+	<p class="demo3" style="display:none">animation show(5000)</p>
+	<button onclick="$(this).remove();$('#demo1').hide('fast')">快速隱藏</button>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>trigger(eventType[,extraParameters])</title>
+</head>
+<body>
+	<p><div id="msga" style ="background-color: black;width: 200px;height: 100px;color: white;">A</div></p>  
+	<div id="msgb" style ="background-color: darkgray;width: 200px;height: 100px;color: white;">B</div>
+	<script>
+		//畫面上配置了兩個 <div> 標籤構成的區塊，點擊 A 會觸發 click 事件，然後顯示訊息，
+		//點擊第二個方塊 B，則會觸發 A 方塊的 click 事件並顯示相同的訊息
+		$('#msga').click(sayHello);
+			function sayHello(e) {          
+			alert('HELLO !' );        
+		}
+		//此 click 事件的回應函式 tg 調用 trigger() 觸發 msga 的 click 事件。
+		$('#msgb').bind('click', tg);
+			function tg() {
+		//針對 id="msg" 的物件觸發其註冊的 click 事件（如果有的話）。
+		//假設有一個 id="msga" 的<div>標籤，註冊 click 事件
+		$('#msga').trigger('click');
+		}
+	</script>
+
+</body>
+
+</html>

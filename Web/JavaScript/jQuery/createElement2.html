@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>createli</title>
+</head>
+<body>
+	<ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+	<button onclick="myFunction()">click me</button>
+	<button onclick="myReplace()">Replace</button>
+	<script>
+		function myFunction() {
+  		elmnt = document.createElement("li");
+ 		var textnode = document.createTextNode("Water");
+		  elmnt.appendChild(textnode);
+		  document.getElementById('myList').appendChild(elmnt);
+
+ 		
+}
+		function myReplace(){
+			var item = document.getElementById("myList");
+ 			item.replaceChild(elmnt, item.childNodes[1]);
+		}
+	</script>
+</body>
+
+</html>

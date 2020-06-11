@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>eventMax</title>
+<style>
+	div p{
+		background-color: yellow;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<p id="p1">p1</p>
+		<p id="p2">p2</p>
+		<p id="p3">p3</p>
+	</div>
+	<br>
+	<p><button id="myButton1">bind click to p3</button></p>
+	<p><button id="myButton2">unbind click from p3</button></p>
+	<p><button id="myButton3">bind jimEvent to p3</button></p>
+	<p><button id="myButton4">trigger jimEvent event on p3</button></p>
+	<p><button id="myButton5">one time trigger</button></p>
+
+	<script>
+		$('#p1').hover(function(){//沒加remove，一直點p1會一直增加
+			$(this).append($('<span>***</span>'));
+		},
+		function(){
+			$(this).find('span:last').remove();
+		});
+		//上下效果一樣
+		$('#p2').mouseenter(function(){
+			$(this).append($('<span>***</span>'));
+		}).mouseleave(function(){
+			$(this).find('span:last').remove();
+		});
+		//bind綁定事件, 按button3再按p3
+		$('#myButton1').click(function(){
+			$('#p3').bind('click',function(){
+				alert('#p3 was clicked');
+			});
+		});
+		//unbind移除事件
+		$('#myButton2').click(function(){
+			//$('#p3').unbind('click');//有參數，移除click事件
+			//$('#p3').unbind();//無參數，移除所有事件
+		});
+		//先點button3再點button4才會觸發
+		$('#myButton3').click(function(){
+			$('#p3').bind('jimEvent',function(){
+				alert('jimEvent occurred!!');
+			});
+		});
+		$('#myButton4').click(function(){
+			$('#p3').trigger('jimEvent');
+
+		});
+
+		$('#myButton5').one('click',function(){
+			alert('run only once!');
+		});
+
+	</script>
+</body>
+
+</html>

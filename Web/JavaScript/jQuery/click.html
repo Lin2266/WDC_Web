@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>click</title>
+</head>
+<body>
+	<div id="container">
+		<p id="p1">This is paragraph 1</p>
+		<p id="p2">This is paragraph 2</p>
+		<p id="p3">This is paragraph 3</p>
+	</div>
+	<br>
+	<button id="myButton">click me</button>
+	<script>
+		$('p').click(function(){
+			//事件處理函數中的this為被觸發的「dom元素」
+			$(this).css('background-color','red');//點一個變一個
+			//$('p').css('background-color','red');點一個會全部都變紅色
+		});
+		$('#myButton').click(function(){//帶參數目的為綁事件處理函式
+			$('#p2').click();//不帶參數目的為觸發事件
+		});
+	</script>
+</body>
+
+</html>

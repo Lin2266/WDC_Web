@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>bind(eventType,handler)</title>
+</head>
+<body>
+	<button id="btn">click me</button>
+	<script>
+		$('#btn').bind('click',function(){
+			alert('User clicked on btn.');
+		});
+		//兩個效果一樣
+		$('#btn').click(function(){
+			alert('User clicked on ten1.');
+		});
+	</script>
+</body>
+
+</html>

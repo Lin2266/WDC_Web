@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>createForm</title>
+</head>
+<body>
+	<script>
+		//隱藏表單帶值送後台
+		var form = document.createElement('form');
+		form.setAttribute('id','myForm');
+		form.setAttribute('method','post');
+		form.setAttribute('action','https://www.yahoo.com.tw');
+		
+		var hiddenInput = document.createElement('input');
+		hiddenInput.setAttribute('type','hidden');
+		hiddenInput.setAttribute('name','saveFile');
+		hiddenInput.setAttribute('value','saveFile');
+		form.appendChild(hiddenInput);
+
+		var hiddenSumbit = document.createElement('input');
+		hiddenSumbit.setAttribute('type','sumbit');
+		hiddenSumbit.setAttribute('style','display:none');
+		form.appendChild(hiddenSumbit);
+
+		document.body.appendChild(form);
+
+		setTimeout(function(){
+			form.submit();
+			$('#myForm').remove();
+			//alert("已刪除form元素");
+		},1000);
+
+	</script>
+</body>
+
+</html>

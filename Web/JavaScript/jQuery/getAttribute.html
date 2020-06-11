@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>getAttribute</title>
+</head>
+<body>
+	<div id="getDiv" class="getDivClass"></div>
+	<p id="getId" class="getPClass"></p>
+	<script>
+		var get = document.getElementById('getDiv').getAttribute('class');
+		document.getElementById('getDiv').innerHTML=get;
+		var get1 = document.getElementsByTagName('p')[0].getAttribute('class');
+		document.getElementsByTagName('p')[0].innerHTML=get1;
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>unbind(eventType)</title>
+</head>
+<body>
+	<button id="btn">click me</button>
+	<script>
+		//$('#btn').hide();
+		$('#btn').unbind();//移除btn元素上所有綁定的事件處理函式
+		$('#btn').unbind('click');//只移除綁定的click事件處理函式
+		var handler = function(){alert('hi');}
+		$('#btn').bind('click',handler);
+		$('#btn').unbind('click',handler);//alert無效
+	</script>
+</body>
+
+</html>
