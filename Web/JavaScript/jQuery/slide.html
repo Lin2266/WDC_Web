@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>滑動slideDown and Up</title>
+</head>
+<body>
+	<!-- 三種速度:slow,normal,fast -->
+	<p id="demo4" class="demo" style="display:none">slideDown(5000)</p><br>
+	<p id="demo5" class="demo">animation slideUp(3000) and callback</p>
+
+	<button onclick="$(this).remove();$('#demo4').slideDown(5000)">5秒完成下滑</button>
+	<button onclick="$(this).remove();$('#demo5').slideUp(3000)">5秒完成上捲</button>
+
+</body>
+
+</html>

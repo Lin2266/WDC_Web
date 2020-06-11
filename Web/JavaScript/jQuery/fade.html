@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>淡出fadeIn、Out、To</title>
+</head>
+<body>
+	<!-- 三種速度:slow,normal,fast,  fadeTo不透明度0至1間-->
+	<p id="demo6" class ="demo" style="display:none">animation fadeIn(5000)</p>
+	<p id="demo7" class ="demo">animation fadeOut(5000)</p>
+	<p id="demo8" class ="demo" style="display:none">animation fadeTo('slow',0.5)</p>
+	<button onclick="$(this).remove;$('#demo6').fadeIn(5000)">5秒完成淡入</button>
+	<button onclick="$(this).remove;$('#demo7').fadeOut(5000)">5秒完成淡出</button>
+	<p>
+	<button onclick="$(this).remove;$('#demo8').fadeTo('slow',0.5)">緩慢完成元素透明度調整，不透明度為0.5</button>
+	</p>
+</body>
+
+</html>

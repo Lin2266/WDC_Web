@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>animate自行定義複合特效</title>
+</head>
+<body>
+	<!-- animate動畫:參數(properties屬性,duration持續時間,easing緩和,complete完成) -->
+	<p id="demo9" class="demo" style="background-color: yellow;">animate demo</p>
+	<button onclick="$(this).remove();$('#demo9').animate({
+															width:'60%',
+															opacity:0.3,//不透明度
+															marginLeft:'0.9in',//移動長度
+															fonSize:'5em',
+															borderWidth:'10px'
+														},1500);">複合特效</button>
+
+
+
+
+</body>
+
+</html>
