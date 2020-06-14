@@ -15,7 +15,7 @@
 		<option value="dark"> dark </option>
 	</select>
 	<br><br>
-	<center>
+	<center><!--html5已不支援-->
 	<input type="submit">
 	</center>
 	</form>

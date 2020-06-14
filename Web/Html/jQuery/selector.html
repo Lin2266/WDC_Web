@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>selector</title>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){//selector選取器
+	//$('a');document.getElementsByTagName('a');
+	//$('#el');document.getElementById('el');
+	//$('.item');document.getElementsByClassName('item');
+	//$('h2 + div').css("color","red");// 相鄰,h2標籤的下一個標籤div	
+	
+	//$('a[href')
+
+	//$(attribute^="value")
+	//$('a[href^="http://"]')
+		
+	//$("*").hide();//全部tag都會被隱藏
+	//$(this).hide();//指button這個屬性	
+	//$('p.intro').hide();//P標籤的class屬性
+	//$("p:first").hide();//第一個p標籤
+	//$("ul li:first").hide();//第一個ul裡面的第一個li
+	//$("ul li:first-child").hide();//每個ul裡面的li的第1個
+	//$("[href]").hide();//所有href屬性
+	//$("a[target!='_blank']").hide();//或用否定句
+	//$('img')[0].setAttribute("src","../img/w3javascript.gif");//重設img的src屬性，或以下寫法
+	$('img').attr("src","../img/w3javascript.gif");
+	//$("[target=_blank]").hide();//指定target的_blank值
+	//$("[target]").hide();//或指定屬性target也可以
+	//$(":button").hide();//所有的屬於button的按鈕(Button,Input)
+
+	//var p4 = document.getElementById('p4');//DOM
+	//p4.style.display='none';可以以下寫法
+	//$("#p4").css("display","none");
+	//$('p').style.display='none';jquery非dom物件，無style屬性,所以無法使用
+	//若要操作被封裝的dom元素，可以使用get()搭配index取出
+	//$('#p4').get(0).style.display="none";//或以下寫法
+	//$('#p4')[0].style.display="none";
+
+	//$('#p').width(200).height(200).text('HI!').fadeIn(1000).css('background-color','cornflowerblue');
+	
+})
+	//document.write("<br>" +$('p').length);用document顯示長度，其它顯示的會被蓋掉
+	//$('#div2').html("<br>有多少個P標籤:" + $('p').length);
+	
+	//$('#p2 a').css("background-color","yellow");//後裔，取得id子標籤的a標籤
+	//$('div > p').css("background-color","blue");//div父元素下的p子元素	
+	//$('div > p')[0].style.display="none";	//以下也可以
+	//$('#div1 p').get(0).style.display="none";
+	
+	$("tr:even").css("background-color","yellow");//even偶數
+	$("tr:odd").css("background-color","lightskyblue");
+
+});
+
+</script>
+</head>
+<body>
+
+<h2 class="intro">This is a h2</h2>
+<div id="div">h2 + div</div>
+<p id="p" class="intro">This is a p1</p>
+<p>This is a p2</p>
+<p id="p1"><a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial</a></P>
+<p id="p2"><a href="https://www.w3schools.com/css/">CSS Tutorial-1</a>
+<a href="https://www.w3schools.com/css/">CSS Tutorial-2</a></p>
+<img src="" alt="alt圖片">
+
+<div id="div1">
+	<p id="p3">div > p</p>
+</div>
+<p id="p4">被消失的p4</p>
+<div id="div2"></div>
+<p>List 1:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Tea</li>
+</ul>
+
+<p>List 2:</p>
+<ul>
+  <li>Coffee</li>
+  <li>Milk</li>
+  <li>Tea</li>
+</ul>
+
+<button id="button1">Click me1</button>
+<button id="button2">Click me2</button>
+<input id="inbutton" type="button" value="click me3"/>
+<br><br>
+
+<table border="1">
+  <tr>
+    <th>Company</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbköp</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+</table>
+
+</body>
+
+</html>
