@@ -31,9 +31,10 @@ $(document).ready(function(){
 	//$("[target]").hide();//或指定屬性target也可以
 	//$(":button").hide();//所有的屬於button的按鈕(Button,Input)
 
-	//var p4 = document.getElementById('p4');//DOM
-	//p4.style.display='none';可以以下寫法
-	//$("#p4").css("display","none");
+	//var p4 = document.getElementById('p4');//javaScript的DOM寫法
+	//p4.style.display='none';//dom的style等於jquery的css
+	//$("#p4").css("display","none");//jquery的寫法
+
 	//$('p').style.display='none';jquery非dom物件，無style屬性,所以無法使用
 	//若要操作被封裝的dom元素，可以使用get()搭配index取出
 	//$('#p4').get(0).style.display="none";//或以下寫法
