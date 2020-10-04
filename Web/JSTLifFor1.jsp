@@ -31,7 +31,7 @@
 
 	<font color="red">
 		
-		<c:if test="${not empty paramValues.languages}" var="langSelected" scope="session">	
+		<c:if test="${empty paramValues.languages}" var="langSelected" scope="session">	
 <!-- 		c:out在jstlIfFor2.jsp頁面印不出langSelected的值 -->
 		<p>langSelected存的是:<c:out value="${langSelected}"></c:out></p>	
 		
@@ -51,9 +51,11 @@
 		<br><br><br>
 		</c:if>
 		迴圈從0~10，2為間隔數<br>
+		<c:if test="${not empty paramValues.languages}">
 		<c:forEach begin="0" end="10" step="2" varStatus="status">
 			${status.index},&nbsp;&nbsp;${status.count}	<br>
 		</c:forEach>
+		</c:if>
 	</font>
 	<br>
 	<P>Go to <a href="jstlIfFor2.jsp">jstlIfFor2.jsp</a></P>
