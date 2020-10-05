@@ -1,14 +1,33 @@
+<%@page import="course.model.CustomerBean"%>
 <%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-<jsp:useBean id="myBean" scope="request" class="course.model.CustomerBean"/>
+
 <head>
 <meta charset="UTF-8">
 <title>JSP標準標籤</title>
 </head>
 <body>
+	<jsp:useBean id="myBean" scope="request" class="course.model.CustomerBean"/>
+<!-- 	轉譯後為: -->
+	<%  CustomerBean mybean = (CustomerBean)request.getAttribute("mybean");
+		if(mybean == null){
+			mybean = new CustomerBean();
+			request.setAttribute("mybean",mybean);
+		}			
+	%>
 	<%  myBean.setName(request.getParameter("name"));
 		myBean.setEmail(request.getParameter("email"));
 		myBean.setPhone(request.getParameter("phone"));
+		
+// 		轉譯後為:
+		CustomerBean MyBean = (CustomerBean)request.getAttribute("MyBean");
+		if(MyBean == null){
+			MyBean = new CustomerBean();
+			MyBean.setName(request.getParameter("name"));
+			MyBean.setEmail(request.getParameter("email"));
+			myBean.setPhone(request.getParameter("phone"));
+			request.setAttribute("MyBean",MyBean);
+		}
 	%>
 	<p>jsp:useBean id="" scope=""(page | request | session | application)
 				class=""</p>
