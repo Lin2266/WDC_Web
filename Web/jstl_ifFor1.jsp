@@ -30,6 +30,8 @@
 <!-- 		scope	var屬性的作用域		否		page -->
 
 	<font color="red">
+	<p>表示式:${not empty paramValues.languages}為false</p>
+	<p>表示式:${empty paramValues.languages}為true</p>
 		
 		<c:if test="${empty paramValues.languages}" var="langSelected" scope="session">	
 <!-- 		c:out在jstlIfFor2.jsp頁面印不出langSelected的值 -->
