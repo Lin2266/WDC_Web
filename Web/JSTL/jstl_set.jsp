@@ -31,9 +31,9 @@
 	${pageTitle}
 	
 	<p>set也可更新javaBean欄位值或map的物件實例名稱</p>
-	1.target:javaBean或map的物件實例名稱
-	2.property:javaBean的欄位名稱或map物件的名稱
-	3.value:要設定的值
+	<p>1.target:javaBean或map的物件實例名稱</p>
+	<p>2.property:javaBean的欄位名稱或map物件的名稱</p>
+	<p>3.value:要設定的值</p>
 
 	<%--
     不設定scope時，則會以page、request、session、application的範圍尋找屬性名稱，如果在某個範圍找到屬性名稱，則在該範圍設定屬性。
@@ -42,7 +42,7 @@
     <c:set var="city" value="BeiJing" scope="session"></c:set>
     ${sessionScope.city}<br>
 
-    <%-- value值也可以是一個物件 --%>
+    <%-- value值也可以是一個物件，map --%>
     <c:set var="user" value="${users}" scope="session"></c:set>
     ${sessionScope.user}<br>
 
