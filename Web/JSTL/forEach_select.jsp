@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action='JSTLifFor1.jsp'>
+	<form action='${pageContext.request.contextPath}/JSTL/forEach_select.jsp'>
 		<table>
 		<tr><td>選擇程式語言</td>
 			<td><select name='languages' size='6' multiple>
@@ -33,7 +33,7 @@
 	<p>表示式:${not empty paramValues.languages}為false</p>
 	<p>表示式:${empty paramValues.languages}為true</p>
 		
-		<c:if test="${empty paramValues.languages}" var="langSelected" scope="session">	
+		<c:if test="${not empty paramValues.languages}" var="langSelected" scope="session">	
 <!-- 		c:out在jstlIfFor2.jsp頁面印不出langSelected的值 -->
 		<p>langSelected存的是:<c:out value="${langSelected}"></c:out></p>	
 		
@@ -60,6 +60,6 @@
 		</c:if>
 	</font>
 	<br>
-	<P>Go to <a href="jstlIfFor2.jsp">jstlIfFor2.jsp</a></P>
+	<P>Go to <a href="test_forEach_select.jsp">test_forEach_select.jsp</a></P>
 </body>
 </html>

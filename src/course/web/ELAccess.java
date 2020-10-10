@@ -1,27 +1,24 @@
 package course.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import course.model.Address;
 import course.model.Employee;
 
 
 @WebServlet("/ELAccess")
 public class ELAccess extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         //test variable
         request.setAttribute("myNum",0);
         request.setAttribute("myStr","empl");
@@ -56,7 +53,7 @@ public class ELAccess extends HttpServlet {
         myArray[1] = empl2;
         request.setAttribute("myArray",myArray);
         
-        RequestDispatcher dr = request.getRequestDispatcher("/elAccess.jsp");
+        RequestDispatcher dr = getServletContext().getRequestDispatcher("/EL/elAccess.jsp");
         dr.forward(request, response);
     }  
 

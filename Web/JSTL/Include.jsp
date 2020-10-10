@@ -9,6 +9,7 @@
 	<h3>param:在進行前途include 和 forward作業時傳遞參數</h3>
 	<h3>before...</h3>
 	<hr>
+	<p>在URL自己加user的值，http://localhost:8980/WDC_Web/JSTL/Include.jsp?user=jim</p>
 	<jsp:include page="/WEB-INF/view/banner.jsp">
 		<jsp:param value="${parm.user}" name="p1"/>
 	</jsp:include>

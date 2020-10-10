@@ -2,10 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>param1</title>
+<title>test_redirect</title>
 </head>
 <body>
-	<h3>Welcome,${param.user}</h3>
-	
+	<h3>歡迎~${param.id}</h3>
 </body>
 </html>

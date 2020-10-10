@@ -17,10 +17,10 @@ public class ELCookieSCParam extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.addCookie(new Cookie("UserCookie","Tomcat User"));
-		PrintWriter out = response.getWriter();
-		out.println("abcd");
-		RequestDispatcher rd = getServletContext().getNamedDispatcher("/elCookiesSCParam.jsp");
+		
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/EL/elCookiesSCParam.jsp");
 		rd.forward(request, response);
+		
 	}
 
 }

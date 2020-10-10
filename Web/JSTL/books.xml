@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+	<book>
+		<name>OCAJP</name><!--書名-->
+ 		<author>Jim</author><!--作者-->
+ 		<price>600</price><!--單價-->
+	</book>
+	<book>
+		<name>OCPJP</name>
+ 		<author>Jim</author>
+ 		<price>700</price>
+	</book>
+</books>

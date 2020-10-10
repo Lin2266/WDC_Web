@@ -16,13 +16,13 @@
 	2.${headerValues["cookie"][0]}<br>
 	3.${headerValues["cookie"][1]}<br><br>
 	
-	param:<br>取參數的name
+	param:取參數的name<br>
 	1.${param}<br>
 	2.${param.name}<br>
 	3.${param.languages}<br><br>
 	
 	
-	paramValues:<br>取多選的值
+	paramValues:取多選的值<br>
 	1.${paramValues}<br>
 	2.${paramValues.name}<br>
 	3.${paramValues.name["0"]}<br>

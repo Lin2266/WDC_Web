@@ -16,6 +16,7 @@
 	<p><a href='<c:url value="/hello.jsp"/>'>絕對路徑</a></p>	
 	<p>檢視原始碼:href='<c:url value="/WDC_Web/hello.jsp"/>'</p>
 	
+	<font color="red">hello.jsp放跟url.jsp同層才會是相對路徑，放在web底下就要用絕對路徑/hello.jsp</font>
 	<form action='<c:url value="hello.jsp"/>' method="GET">相對路徑
 	<p>檢視原始碼:form action='<c:url value="hello.jsp"/>' method="GET"</p>
 	<input type="submit">

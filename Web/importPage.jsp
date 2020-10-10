@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>param1</title>
+<title>importPage</title>
 </head>
 <body>
-	<h3>Welcome,${param.user}</h3>
+	<font color="red">Hello importPage</font><br> 
 	
 </body>
 </html>

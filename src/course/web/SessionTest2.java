@@ -18,7 +18,7 @@ public class SessionTest2 extends HttpServlet {
         HttpSession session = request.getSession();
         String msg1 = (String)session.getAttribute("msg1");
         session.setAttribute("msg2",msg1 + "this is msg2 saved in SessionTest2</br>");
-        RequestDispatcher rd = request.getRequestDispatcher("/course/sessionTestView.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/sessionTestView.jsp");
         rd.forward(request, response);
         
     }

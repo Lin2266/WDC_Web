@@ -41,7 +41,7 @@ public class ELScope extends HttpServlet {
         //test session
         HttpSession session = request.getSession();
         session.setAttribute("emp2",emp2);
-        RequestDispatcher rd = getServletContext().getRequestDispatcher("/elScope.jsp");
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/EL/elScope.jsp");
         rd.forward(request, response);
        
     }

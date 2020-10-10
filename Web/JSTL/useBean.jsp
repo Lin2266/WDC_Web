@@ -34,7 +34,7 @@
 	<p>1.標籤屬性id:bean元件名稱</p>
 	<p>2.標籤屬性scope:bean元件的儲存範圍</p>
 	<p>3.標籤屬性class:bean元件的類別元整名稱(含package)</p>
-	<form action="TestUseBen1.jsp">
+	<form action="useBean.jsp">
 	<p>name:<input type="text" id="name" name="name"></p>
 	<p>email:<input type="text" id="email" name="email"></p>
 	<p>phone:<input type="text" id="phone" name="phone"></p>

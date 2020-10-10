@@ -24,7 +24,7 @@ import javax.servlet.http.Part;
   	location:檔案儲存位置，可搭配Part的write()方法，Part p2 = request.getPart("data");p2.write(getFileName(p2));
   	maxFileSize:檔案大小上限
  */
-@WebServlet("/upload")
+@WebServlet("/UploadServlet")
 @MultipartConfig(location="F:/JAVA_C/uploaded",maxFileSize=1024*1024*200)
 public class UploadServlet extends HttpServlet {
 
