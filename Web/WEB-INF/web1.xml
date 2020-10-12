@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+
+	<display-name>jdcs</display-name>
+		<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<listener>
+		<listener-class>dcstools.servlet.DcsInit</listener-class>
+	</listener>
+
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>dcstools.servlet.SetCharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>DEFAULT_ENCODING</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>LogRequestFilter</filter-name>
+		<filter-class>dcstools.servlet.LogFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>PrivilegeFilter</filter-name>
+		<filter-class>dcstools.servlet.PrivilegeFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogRequestFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.ajax</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>PrivilegeFilter</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.ajax</url-pattern>
+		<url-pattern>*.jsp</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>schedulerInit</servlet-name>
+		<servlet-class>dcstools.servlet.SchedulerInit</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>servletInvoker</servlet-name>
+		<servlet-class>dcstools.servlet.LegacyServletInvoker</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>pingServlet</servlet-name>
+		<servlet-class>dcstools.servlet.Ping</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>servletInvoker</servlet-name>
+		<url-pattern>/servlet/*</url-pattern>
+		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.ajax</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>pingServlet</servlet-name>
+		<url-pattern>/ping</url-pattern>
+	</servlet-mapping>
+
+	<mime-mapping>
+		<extension>cml</extension>
+		<mime-type>application/TransReader</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>mdi</extension>
+		<mime-type>application/WINWORD</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>drs</extension>
+		<mime-type>application/XprintReader</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ars</extension>
+		<mime-type>application/XprintPrint</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>arb</extension>
+		<mime-type>application/ARBDecode</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>doc</extension>
+		<mime-type>application/msword</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>DOC</extension>
+		<mime-type>application/msword</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>docx</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>DOCX</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xls</extension>
+		<mime-type>application/vnd.ms-excel</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>XLS</extension>
+		<mime-type>application/vnd.ms-excel</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xlsx</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>XLSX</extension>
+		<mime-type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>csv</extension>
+		<mime-type>text/csv</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>pbc</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ars2</extension>
+		<mime-type>application/ars2</mime-type>
+	</mime-mapping>
+
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ErrPage.jsp</location>
+	</error-page>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/ErrPage.jsp</location>
+	</error-page>
+
+</web-app>

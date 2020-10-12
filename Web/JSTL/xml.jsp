@@ -9,7 +9,7 @@
 <body>
 <h3>x:out select(Xpath正則表示式)需要使用jstl.jar - standard.jar - xml-apis1.4.jar ,需要注意版本</h3>
 <h3>Books Info:</h3>
-<c:import var="bookInfo" url="http://localhost:8980/WDC_Web/JSTL/books.xml"/>
+<c:import var="bookInfo" url="http://localhost:900/WDC_Web/JSTL/books.xml"/>
 
 <x:parse xml="${bookInfo}" var="output"/>
 <b>The title of the first book is</b>: 
