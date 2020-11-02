@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>&lt;meta&gt; 標籤</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="30"> <!--每30秒刷新頁面一次 -->
+  <meta http-equiv="content-security-policy" content="default-src 'self'">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="default-style" content="the document's preferred stylesheet">
+  <meta name="author" content="John Doe">
+  <meta name="description" content="Free Web tutorials">
+  <meta name="generator" content="FrontPage 4.0">
+  <meta name="keywords" content="HTML, CSS, JavaScript">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+</head>
+<body>
+<pre>
+	HTML &lt;meta&gt; 標籤可以用來提供網頁內容的資訊給瀏覽器或是搜尋引擎，例如網頁內容的描述、網頁重要關鍵字、
+	網頁編碼等都是常用 &lt;meta&gt;來標示的網頁資訊，另外還有網頁作者、網頁發佈時間、所使用的編輯器等較不重要的資訊，
+	也可以透過 &lt;meta&gt;TAG 來標示，&lt;meta&gt; 的功能僅是用來註明這些網頁資訊，且提供給瀏覽器或是搜尋引擎，
+	並非是要給寫給瀏覽網頁的＂人＂看的內容。
+
+HTML meta 標籤寫在 head 範例
+<div style="border:1px black solid;background-color:rgb(232,232,232);">
+&lt;head&gt;
+&lt;meta name="description" content="這裡是網頁的簡短描述"&gt;
+&lt;meta name="keywords" content="關鍵字 1,關鍵字 2"&gt;
+&lt;/head&gt;
+</div>
+標準的 &lt;meta&gt; 標籤沒有結尾，直接將參數寫在 &lt;meta&gt; 內即可，一個網頁內可以有很多個不同的 &lt;meta&gt; 標籤，全部都要寫在 head 標籤內，範例中的 title 標籤是用來標示網頁標題用的，可以寫在 &lt;meta&gt; 標籤之前，也可以寫在 &lt;meta&gt; 標籤之後。
+
+傳統的 HTML meta 標籤的功能，共有兩個重要的部分，分別為 name 與 http-equiv，隨著 HTML 的版本更新，到現在最新的 HTML5 已經開始支援 charset 的語法，以下就這三個部分製作成表，提供給各位參考。
+
+HTML meta name 常用屬性
+<table style="border:3px #cccccc solid;background-color:rgb(232,232,232);" cellpadding="10" border='1'>
+<tr><td>語法</td><td>說明</td></tr>
+<tr><td>&lt;meta name="description" content="網頁簡短描述"&gt;</td><td>用來寫網頁的簡短描述。</td></tr>
+<tr><td>&lt;meta name="keywords" content="網頁關鍵字"&gt;</td><td>用來放置網頁關鍵字。</td></tr>
+<tr><td>&lt;meta name="author" content="作者姓名"&gt;</td><td>記錄網頁的作者名稱</td></tr>
+<tr><td>&lt;meta name="generator" content="編輯器名稱"&gt;</td><td>用來記錄網頁編輯器名稱</td></tr>
+<tr><td>&lt;meta name="copyright" content="網頁版權"&gt;</td><td>用來標示網頁的版權或著作權聲明</td></tr>	
+<tr><td>&lt;meta name="distribution" content="網頁發佈地區"&gt;</td><td>用來記錄網頁的發佈地區</td></tr>	
+</table>
+最常用到的 meta tag 其實僅有前面兩個，也就是 name=descript 以及 name=keywords，每個 meta 使用 name 的時候，都會搭配 content 來呈現資訊內容，簡單來說，name 代表資訊項目，content 代表資訊值。
+
+HTML meta http-equiv 常用屬性
+<table style="border:3px #cccccc solid;background-color:rgb(232,232,232);" cellpadding="10" border='1'>
+<tr><td>語法</td><td>說明</td></tr>
+<tr><td>&lt;meta http-equiv="Content-Type" content="text/html"; charset="uft-8″&gt;</td><td>網頁內容的種類以及編碼。</td></tr>
+<tr><td>&lt;meta http-equiv="Content-Language" content="zh-TW"&gt;</td><td>網頁所使用的語言種類。</td></tr>
+<tr><td>&lt;meta http-equiv="Refresh" content="time"&gt;</td><td>自動更新網頁的時間</td></tr>
+<tr><td>&lt;meta http-equiv="Pragma" content="no-cache"&gt;</td><td>禁止瀏覽器用快取開啟網頁</td></tr>
+<tr><td>&lt;meta http-equiv="windows-Target" content="_top"&gt;</td><td>強制在單一視窗中顯示網頁</td></tr>	
+</table>
+
+HTML 5 新增的 meta 功能
+<table style="border:3px #cccccc solid;background-color:rgb(232,232,232);" cellpadding="10" border='1'>
+<tr><td>語法</td><td>說明</td></tr>
+<tr><td>&lt;meta charset="UTF-8"&gt;</td><td>設定網頁編碼，UTF-8 是萬國碼。</td></tr>
+</table>
+</pre>
+</body>
+</html>
