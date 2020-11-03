@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<title>substring</title>
+
+</head>
+<body>
+	<div id=listView></div>
+	<div id=listView1></div>
+	
+	<script type="text/javascript">
+	var str = "hidden,60,left,rowid,rowid;" +
+	"text,40,center,number,編號;" +
+    "text,320,left,org_nm,一級單位;" +
+    "text,60,left,rstp,類別;" +
+    "text,80,left,word,字;" +
+    "text,100,left,sno,文號;" +
+    "text,80,left,indid,來文字;" +
+    "text,100,left,insno,來文號;" +
+    "text,50,left,secur,密等;" +
+    "hidden,70,left,secret,卷別;" +
+    "text,55,left,year,年度;" +
+    "text,70,left,cat,分類號;" +
+    "text,70,left,sid,案次號;" +
+    "text,50,left,grp,卷次;" +
+    "text,50,left,idxno,目次;" +
+    "text,70,left,jidxno,併目次;" +
+    "text,300,left,indp,來受文單位;" +
+    "text,70,left,intp,文別;" +
+    "text,80,left,flmyr,保存年限;" +
+    "text,80,left,exa_tp,存毀鑑定;" +
+    "text,600,left,enclo,附件;" +
+    "text,800,left,subj,事由;" +
+    "text,80,left,date,收發日;" +
+    "text,80,left,indt,來文日;" +
+    "text,200,left,memo,備註;" +
+    "text,80,left,fttp,案件狀態;" +
+    "text,70,left,epi_grp,縮影卷;" +
+    "text,70,left,epi_no,縮影號;" +
+    "text,300,left,fgname,案名;" +
+    "text,320,left,sdept,典藏單位;"+
+    "text,320,left,bldpid,調卷權責單位;"+
+    "hidden,10,left,class,class;" ;
+    
+    var uniqueStr = str.substring(0,str.indexOf(";"));//hidden,60,left,rowid,rowid
+    var lastIndexNum = eval(uniqueStr.lastIndexOf(","));//最後一個「,」在索引20
+    var firstIndexNum = eval(uniqueStr.lastIndexOf(",",lastIndexNum-1));//20-1，最後一個「,」變第1個，14最後
+   		uniqueStr = uniqueStr.substring(firstIndexNum+1, lastIndexNum);//rowid
+//     while ((i=str.indexOf(";"))!=-1) {
+// 		substr = str.substring(0,i+1);
+// 	}	
+   		i=str.indexOf(";");
+   		substr=str.substring(0,i+1);
+        str=str.substring(i+1,str.length);
+    document.getElementById("listView1").innerHTML = substr;
+    
+    if(i==0)alert(msg1); 
+    if(i==-1)alert(msg2);
+    b_hidden=substr.substring(0,i);//adar
+    substr=substr.substring(i+1,substr.length);
+    i=substr.indexOf(",");
+    if(i==0)alert(msg1); 
+    if(i==-1)alert(msg2);
+    
+    
+    var list = document.getElementById("listView");
+    list.innerHTML =uniqueStr + "<p>" + firstIndexNum + "," + lastIndexNum + "</p>";
+	$(function() {
+		$('#listView').css('color','red');
+	});
+</script>
+</body>
+</html>

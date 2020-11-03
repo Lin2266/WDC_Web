@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Real time Editor</title>
+        <script>
+            function refresh(){
+                var textContent = document.getElementById('editor-textarea').value; 
+//                iframe的屬性srcdoc，可以在iframe裡面顯示html內容
+                document.getElementById('viewer').srcdoc = textContent;
+            }
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: o;
+        }
+        .main{
+            background:#ecf0f1;
+            width: 100%;
+            height: 100%;
+            display: inline-flex;//顯示:並排，none取消，block區塊
+        }
+        #editor-textarea{
+            width: 100%;
+            height: 600px;
+            margin: 10px;
+            padding: 5px;
+        }
+        #viewer{
+            background: white;
+            border: none;
+            width: 100%;
+            height: 610px;
+            margin: 10px;
+            border: 1px solid #3498db;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <!--placeholder佔位符，提示字，onkeyup:鍵盤放開，keydown:鍵盤按住-->
+            <textarea id="editor-textarea" onkeyup = "refresh()" placeholder="Start coding here..."></textarea>
+            <iframe id="viewer"></iframe>
+        </div>
+    </body>
+</html>

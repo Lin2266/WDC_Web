@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>slice</title>
+</head>
+<body>
+<h2>JavaScript String Methods</h2>
+<p>The slice() method extract a part of a string</p>
+and returns the extracted parts in a new string:</p>
+<br>
+<P>slice() 提取字符串的一部分，並以新字符串返回提取的部分。</p>
+<P>該方法有兩個參數：開始位置和結束位置（不包括結束位置）。</p>
+<P>本示例從位置7到位置12（13-1）切掉一部分字符串：</P>
+<p id="demo"></p>
+
+<p>如果參數為負，則從字符串的末尾開始計算位置。</p>
+<p>此示例從位置-12到位置-6切出一部分字符串：</p>
+<p id="demo1"></p>
+
+<p>如果省略第二個參數，則該方法將切出字符串的其餘部分：</p>
+<p id="demo2"></p>
+
+<p>或者，從後面算：</p>
+<p id="demo3"></p>
+<script>
+//正數
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7,13);
+document.getElementById("demo").innerHTML = res; 
+
+//負數
+var res1 = str.slice(-12,-6);
+document.getElementById("demo1").innerHTML = res1;
+
+//只有1個參數,正數
+var res2 = str.slice(7);
+document.getElementById("demo2").innerHTML = res2;
+
+//只有1個參數,負數(最後一個為-1)
+var res3 = str.slice(-12) 
+document.getElementById("demo3").innerHTML = res3;
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>eval</title>
+</head>
+<body>
+<p>Click the button to evaluate/execute JavaScript code/expressions.</p>
+<p>eval(string)函數計算或執行一個參數。</p>
+<p>如果參數是一個表達式，則eval（）將對錶達式求值。如果參數是一個或多個JavaScript語句，則eval（）執行這些語句。</p>
+
+<button onclick="myFunction1()">Try it</button><br>
+<p id="demo1"></p>
+<button onclick="myFunction2()">Try it</button><br><br>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<button onclick="myFunction3()">Try it</button><br>
+
+<script>
+function myFunction1() {
+  var x = 10;
+  var y = 20;
+  var a = eval("x * y") + "<br>";
+  var b = eval("2 + 2") + "<br>";
+  var c = eval("x + 17") + "<br>";
+
+  var res = a + b + c;
+  document.getElementById("demo1").innerHTML = res;   
+}
+
+function myFunction2() {
+// eval("x=10;y=20;document.write(x*y)")
+// document.write(eval("2+2") + "<br>")
+// var x=10
+// document.write(eval(x+17))
+eval("x=10;y=20;document.getElementById('demo2').innerHTML=x*y")
+var x = 10;
+document.getElementById('demo3').innerHTML=(eval(x+17));
+}
+
+function myFunction3() {
+eval("2+3")	// 返回 5
+var myeval = eval;	// 可能会抛出 EvalError 异常
+myeval("2+3");	// 可能会抛出 EvalError 异常 
+try  {
+    alert("Result:  " + eval(prompt("Enter an expression:","")));
+    }
+
+catch(exception) {
+    alert(exception);
+    }
+}
+</script>
+</body>
+</html>

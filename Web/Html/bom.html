@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browser Object Model</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>
+            
+            //抓視窗不同的大小
+            function loadHandler() {
+                //var iw = document.getElementById("innerWidth");
+                //iw.innerHTML = "&lt;Inner&gt; Width: " + window.innerWidth;
+
+                //jquery寫法，$(jquery)簡化"# id"
+                //html，text取得()內容丟給id
+                //html一般<1>去掉，text文字<1>顯示(body的顯示字串就可以去掉)
+                $("#innerWidth").text("<Inner> Width: " + window.innerWidth);
+
+                //var ih = document.getElementById("innerHeight");
+                //ih.innerHTML = window.innerHeight;
+                $("#innerHeight").html(window.innerHeight);
+
+
+                //var sw = document.getElementById("screenWidth");
+                //sw.innerHTML = window.screen.width;
+                $("#screenWidth").html(window.screen.width);
+
+                //var sh = document.getElementById("screenHeight");
+                //sh.innerHTML = window.screen.height;
+                jQuery("#screenHeight").html(window.screen.height);
+            }
+            //時間每1秒更新
+            var clockThread = window.setInterval(setClock, 1000);
+            function setClock() {
+                //var clock = document.getElementById("clock");
+                //clock.innerHTML = new Date();
+                $("#clock").html(new Date());
+            }
+
+            function startClock() {
+                if (clockThread === undefined) {
+                    clockThread = window.setInterval(setClock, 1000);
+                }
+            }
+
+            function stopClock() {
+                window.clearInterval(clockThread);
+                clockThread = undefined;
+            }
+
+            var uuuWin;
+            function openHandler() {
+                uuuWin = window.open("http://www.uuu.com.tw");
+            }
+
+            function closeHandler() {
+                uuuWin.close();
+            }
+
+            function showAppVersion() {
+//                var appVersion = document.getElementById("appVersion");
+//                appVersion.innerHTML = navigator.appVersion + "," + navigator.appName;
+                $("#appVersion").html(navigator.appVersion + "," + navigator.appName);
+            }
+
+            function showLocation() {
+                var locInfo = location.protocol + ",\n " + location.host
+                        + ",\n " + location.pathname;    //location.href;
+                alert(locInfo);
+            }
+
+            function gotoGoogle() {
+                location.href = "http://www.google.com";
+            }
+
+            function gotoSample() {
+                alert(encodeURI("../htmlSample"));
+                location.href = encodeURI("../htmlSample");
+            }
+        </script>
+    </head>
+    <body onload="loadHandler()" onresize="loadHandler()">
+        <div>
+            <h2>window info:</h2>
+            <div><span id="innerWidth"></span></div>
+            <div>Inner Height:<span id="innerHeight"></span></div>
+            <div>Screen Width:<span id="screenWidth"></span></div>
+            <div>Screen Height:<span id="screenHeight"></span></div>    
+        </div>
+        <hr>
+        <input type="button" value="Open Window" onclick="openHandler()">
+        <input type="button" value="Close Window" onclick="closeHandler()">
+        <hr>
+        <h2>Clock</h2>
+        <input type="button" value="Start Clock" onclick="startClock()">
+        <input type="button" value="Stop Clock" onclick="stopClock()">
+        <div id="clock">&nbsp;</div>
+        <hr>
+        <h2>Navigator</h2>
+        <input type="button" value="Show App Version" onclick="showAppVersion()">
+        <div id="appVersion">&nbsp;</div>
+        <hr>
+        <h2>History</h2>
+        <input type="button" value="Back" onclick="history.back()">
+        <input type="button" value="Forward" onclick="history.forward()">  
+        <hr>
+        <h2>Location</h2>        
+        <input type="button" value="Show Location" onclick="showLocation()">
+        <input type="button" value="Google" onclick="gotoGoogle()">
+        <input type="button" value="HTML範例" onclick="gotoSample()">
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Object & Array</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <p id="object" style="color: red"></p>
+        <p id="array" style="color: blue"></p>
+        <script type="text/javascript">
+            //物件
+            var person = {
+                number: 1,
+                name: 'john',
+                speak:
+                        function a() {
+                            alert('hello object');
+                        }
+            }
+
+            for (o in person) {//把值指派給innerHTML，沒+=值會被蓋過去
+                document.getElementById("object").innerHTML += o + ':' + person[o] + '&nbsp&nbsp&nbsp,';
+
+                document.writeln(o + ':' + person[o] + ('<br>'));
+            }
+            document.writeln('number' in person);//person物件裡是否有number這個屬性，true
+
+
+        //           陣列
+            var myObj = [{name: "John",
+                    age: "30",
+                    city: "New York"}];
+            for (i in myObj) {
+                document.getElementById("array").innerHTML = myObj[i].name + ',&nbsp&nbsp&nbsp' + myObj[i].age + ',&nbsp&nbsp&nbsp' + myObj[i].city + ('<br>');
+            }
+
+        </script>
+
+
+
+    </body>
+</html>

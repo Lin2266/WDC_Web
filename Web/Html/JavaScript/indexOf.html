@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>indexOf</title>
+</head>
+<body>
+<h2>JavaScript String Methods</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+<p>indexOf（）方法返回指定文本首次出現的位置：</p>
+<p>Both indexOf(), and lastIndexOf() <span style="color: red">return -1</span> if the text is not found:</p>
+<p>indexOf跟search不相等:</p>
+<p style="color: red">The indexOf() method cannot take powerful search values (regular expressions).</p>
+<p style="color: red">The search() method cannot take a second start position argument.</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+document.getElementById("demo").innerHTML = pos;
+
+var pos1 = str.indexOf("not found");
+document.getElementById("demo1").innerHTML = pos1;
+</script>
+</body>
+</html>

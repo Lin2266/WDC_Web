@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>substring</title>
+</head>
+<body>
+<p>substring()與相似slice()。區別在於substring()不能接受負索引。</p>
+<p>The substring() method extract a part of a string and returns the extracted parts in a new string:</p>
+
+<p id="demo"></p>
+
+<p>如果省略第二個參數，substring()則會切出其餘字符串。</p>
+<p id="demo1"></p>
+<script>
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7,13);//7~12
+document.getElementById("demo").innerHTML = res;
+
+var res1 = str.substring(7);
+document.getElementById("demo1").innerHTML = res1;
+</script>
+</body>
+</html>
