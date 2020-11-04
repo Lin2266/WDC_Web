@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<title>scrollHeight</title>
+<script src="element014.js" type="text/javascript"></script>
+<style>
+div.demo {
+    margin: 5px;
+    padding: 5px;
+    border: black solid 2px;
+    height: 30px;
+    width: 200px;
+    overflow: scroll;
+}
+</style>
+<script type="text/javascript">
+function run() {
+    var c = document.getElementById("child");
+    var ch = document.getElementById("h");
+    c.scrollHeight += 20;
+    ch.innerHTML = c.scrollHeight;
+    var cl = document.getElementById("l");
+    c.scrollLeft += 200;
+    cl.innerHTML = c.scrollLeft;
+     var ct = document.getElementById("t");
+    c.scrollTop += 20;
+    ct.innerHTML = c.scrollTop;
+    var cw = document.getElementById("w");
+    c.scrollWidth += 20;
+    cw.innerHTML = c.scrollWidth;
+}
+</script>
+</head>
+<body>
+<input type="button" value="RUN" onclick="run();">
+<div>
+<div class="demo" id="child">Choice. The problem is choice. 
+There is no spoon. 
+Because I choose to.</div>
+</div>
+<div>scrollHeight: <span id="h"></span></div>
+<div>scrollLeft: <span id="l"></span></div>
+<div>scrollTop: <span id="t"></span></div>
+<div>scrollWidth: <span id="w"></span></div>
+</body>
+</html>

@@ -7,6 +7,150 @@
 
 </head>
 <body>
+<table  id='ListView1_XMLtable2' border=0 cellpadding=0 cellspacing=0 align=center width=740>
+<tr>
+
+<td valign=top>
+<div style='width:720px;overflow-x:scroll'>
+<table  id='ListView1_XMLtable3' border=1 cellspacing=0 class=Table>  
+<tr>
+<th width=40 align=center class=Table_th>選取</th>    
+<th width=40 align=center onclick="sortfield('0','@number','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >編號</th>    
+<th width=320 align=center onclick="sortfield('0','@org_nm','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >一級單位</th>    
+<th width=60 align=center onclick="sortfield('0','@rstp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >類別</th>    
+<th width=80 align=center onclick="sortfield('0','@word','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >字</th>    
+<th width=100 align=center onclick="sortfield('0','@sno','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >文號</th>    
+<th width=80 align=center onclick="sortfield('0','@indid','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >來文字</th>    
+<th width=100 align=center onclick="sortfield('0','@insno','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >來文號</th>    
+<th width=50 align=center onclick="sortfield('0','@secur','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >密等</th>    
+<th width=55 align=center onclick="sortfield('0','@year','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >年度</th>    
+<th width=70 align=center onclick="sortfield('0','@cat','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >分類號</th>    
+<th width=70 align=center onclick="sortfield('0','@sid','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >案次號</th>    
+<th width=50 align=center onclick="sortfield('0','@grp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >卷次</th>    
+<th width=50 align=center onclick="sortfield('0','@idxno','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >目次</th>    
+<th width=70 align=center onclick="sortfield('0','@jidxno','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >併目次</th>    
+<th width=300 align=center onclick="sortfield('0','@indp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >來受文單位</th>    
+<th width=70 align=center onclick="sortfield('0','@intp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >文別</th>    
+<th width=80 align=center onclick="sortfield('0','@flmyr','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >保存年限</th>    
+<th width=80 align=center onclick="sortfield('0','@exa_tp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >存毀鑑定</th>    
+<th width=600 align=center onclick="sortfield('0','@enclo','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >附件</th>    
+<th width=800 align=center onclick="sortfield('0','@subj','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >事由</th>    
+<th width=80 align=center onclick="sortfield('0','@date','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >收發日</th>    
+<th width=80 align=center onclick="sortfield('0','@indt','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >來文日</th>    
+<th width=200 align=center onclick="sortfield('0','@memo','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >備註</th>    
+<th width=80 align=center onclick="sortfield('0','@fttp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >案件狀態</th>    
+<th width=70 align=center onclick="sortfield('0','@epi_grp','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >縮影卷</th>    
+<th width=70 align=center onclick="sortfield('0','@epi_no','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >縮影號</th>    
+<th width=300 align=center onclick="sortfield('0','@fgname','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >案名</th>    
+<th width=320 align=center onclick="sortfield('0','@sdept','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >典藏單位</th>    
+<th width=320 align=center onclick="sortfield('0','@bldpid','text','ListViewDataListView1',xmlDoc,xslDoc)" class=Table_th >調卷權責單位</th>
+</tr>  
+<tr>
+<td colspan=32>  
+<div id=DataFrameListView1 style='position:relative;width:100%;overflow:hidden;Height:125'>   
+<div id=DataGroupListView1 style='position:relative'>     
+<span id=ListViewDataListView1 >
+</span>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+
+<td valign=top>
+<div id=ScrollFrameListView1 style=position:relative;background:#000;overflow-y:scroll;Height:168.75 onscroll=DataGroupListView1.style.posTop=-ScrollFrameListView1.scrollTop;>  
+<div id=ScrollGroupListView1 style=position:relative;width:1px;visibility:hidden;Height:607.5 >
+</div>
+</div>
+</td>
+
+</tr>
+</table>
+
+<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">
+<xsl:template match=\"/\"><table BORDER=\"0\" CELLSPACING=\"0\" CELLPADDING=\"0\" id=\"ListView1_XMLtable\">
+<xsl:for-each select='jsp/rs[@rowid]'>
+<xsl:sort select=\"@xxx\" data-type=\"number\" order=\"ascending\"/>
+<tr onmouseover="this.style.backgroundColor='#C3D9FF'" onmouseout="this.style.backgroundColor=''">
+<xsl:attribute name=\"onclick\">RowClick(\"rowid=<xsl:value-of select=\"@rowid\" />;
+number=<xsl:value-of select=\"@number\" />;
+org_nm=<xsl:value-of select=\"@org_nm\" />;
+rstp=<xsl:value-of select=\"@rstp\" />;
+word=<xsl:value-of select=\"@word\" />;
+sno=<xsl:value-of select=\"@sno\" />;
+indid=<xsl:value-of select=\"@indid\" />;
+insno=<xsl:value-of select=\"@insno\" />;
+secur=<xsl:value-of select=\"@secur\" />;
+secret=<xsl:value-of select=\"@secret\" />;
+year=<xsl:value-of select=\"@year\" />;
+cat=<xsl:value-of select=\"@cat\" />;
+sid=<xsl:value-of select=\"@sid\" />;
+grp=<xsl:value-of select=\"@grp\" />;
+idxno=<xsl:value-of select=\"@idxno\" />;
+jidxno=<xsl:value-of select=\"@jidxno\" />;
+indp=<xsl:value-of select=\"@indp\" />;
+intp=<xsl:value-of select=\"@intp\" />;
+flmyr=<xsl:value-of select=\"@flmyr\" />;
+exa_tp=<xsl:value-of select=\"@exa_tp\" />;
+enclo=<xsl:value-of select=\"@enclo\" />;
+subj=<xsl:value-of select=\"@subj\" />;
+date=<xsl:value-of select=\"@date\" />;
+indt=<xsl:value-of select=\"@indt\" />;
+memo=<xsl:value-of select=\"@memo\" />;
+fttp=<xsl:value-of select=\"@fttp\" />;
+epi_grp=<xsl:value-of select=\"@epi_grp\" />;
+epi_no=<xsl:value-of select=\"@epi_no\" />;
+fgname=<xsl:value-of select=\"@fgname\" />;
+sdept=<xsl:value-of select=\"@sdept\" />;
+bldpid=<xsl:value-of select=\"@bldpid\" />;
+class=<xsl:value-of select=\"@class\" />;\",\"ListView1\",\"rowid\");
+wdcs57200_update()</xsl:attribute>    
+<xsl:if test=\"(position() mod 2) = 0\">    
+<xsl:attribute name=\"class\">Table_td</xsl:attribute>    
+</xsl:if>    
+<xsl:if test=\"(position() mod 2) = 1\">    
+<xsl:attribute name=\"class\">Table_td2</xsl:attribute>    
+</xsl:if><xsl:attribute name=\"title\">
+<xsl:value-of select=\"@title\" />
+</xsl:attribute><td width=\"41\" align=\"center\" id=\"radio_ListView1\">
+<input type=\"radio\" name=\"lv_rowid_ListView1\" class=\"Radio\" >
+<xsl:attribute name=\"value\">
+<xsl:value-of select=\"@rowid\"/>
+</xsl:attribute>
+</input></td><td width=\"40\" align=\"center\">
+<xsl:value-of select=\"@number\" /></td>
+<td width=\"320\" align=\"left\"><xsl:value-of select=\"@org_nm\" /></td>
+<td width=\"60\" align=\"left\"><xsl:value-of select=\"@rstp\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@word\" /></td>
+<td width=\"100\" align=\"left\"><xsl:value-of select=\"@sno\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@indid\" /></td>
+<td width=\"100\" align=\"left\"><xsl:value-of select=\"@insno\" /></td>
+<td width=\"50\" align=\"left\"><xsl:value-of select=\"@secur\" /></td>
+<td width=\"55\" align=\"left\"><xsl:value-of select=\"@year\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@cat\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@sid\" /></td>
+<td width=\"50\" align=\"left\"><xsl:value-of select=\"@grp\" /></td>
+<td width=\"50\" align=\"left\"><xsl:value-of select=\"@idxno\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@jidxno\" /></td>
+<td width=\"300\" align=\"left\"><xsl:value-of select=\"@indp\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@intp\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@flmyr\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@exa_tp\" /></td>
+<td width=\"600\" align=\"left\"><xsl:value-of select=\"@enclo\" /></td>
+<td width=\"800\" align=\"left\"><xsl:value-of select=\"@subj\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@date\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@indt\" /></td>
+<td width=\"200\" align=\"left\"><xsl:value-of select=\"@memo\" /></td>
+<td width=\"80\" align=\"left\"><xsl:value-of select=\"@fttp\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@epi_grp\" /></td>
+<td width=\"70\" align=\"left\"><xsl:value-of select=\"@epi_no\" /></td>
+<td width=\"300\" align=\"left\"><xsl:value-of select=\"@fgname\" /></td>
+<td width=\"320\" align=\"left\"><xsl:value-of select=\"@sdept\" /></td>
+<td width=\"320\" align=\"left\"><xsl:value-of select=\"@bldpid\" /></td>
+</tr></xsl:for-each></table></xsl:template></xsl:stylesheet>
+
 	<div id=listView></div>
 	<div id=listView1></div>
 	

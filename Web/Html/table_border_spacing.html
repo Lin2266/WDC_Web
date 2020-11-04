@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>table_border-spacing</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+/*   border-collapse: collapse; */
+}
+table {
+  border-spacing: 15px;
+}
+
+</style>
+</head>
+<body>
+<h2>Border Spacing</h2>
+<p>Border spacing specifies the space between the cells.</p>
+<p>邊框間距指定單元格之間的間隔。要設置表格的邊框間距，請使用CSSborder-spacing屬性：</p>
+<p id='p1'>注意：如果表格的邊框已折疊border-collapse: collapse;，border-spacing則無效。</p>
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Doe</td>
+    <td>80</td>
+  </tr>
+</table>
+
+<p><strong>Tip:</strong> Try to change the border-spacing to 5px.</p>
+</body>
+</html>
