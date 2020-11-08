@@ -8,6 +8,4 @@
     <servlet-name>BeerSelect</servlet-name>
     <url-pattern>/BeerSelect.do</url-pattern>
   </servlet-mapping>
-  
-
 </web-app>
