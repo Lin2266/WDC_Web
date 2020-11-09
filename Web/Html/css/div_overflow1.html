@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>div_overflow</title>
+<style>
+div.ex1 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  overflow: scroll;
+}
+
+div.ex2 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+}
+
+div.ex3 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  overflow: auto;
+}
+
+div.ex4 {
+  background-color: lightblue;
+  width: 110px;
+  height: 110px;
+  overflow: visible;
+}
+</style>
+</head>
+<body>
+<h3>overflow: visible (default):內容不會被修剪，會呈現在元素框外</h3>
+<div class="ex4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+<br><br><br><br><br>
+<h3>overflow: hidden:內容會被修剪，並且其餘內容是不可見的</h3>
+<div class="ex2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<h3>overflow: scroll:內容會被修剪，但是瀏覽器會顯示滾動條以便查看其餘的內容</h3>
+<div class="ex1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+<h3>overflow: auto:如果內容被修剪，則瀏覽器會顯示滾動條以便查看其餘的內容</h3>
+<div class="ex3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+</head>
+<body>
+ <script type="text/javascript">
+        function GetTopPos (elem) {
+            var topStyle = elem.style.top;
+            var topPx = elem.style.pixelTop;
+            var topPos = elem.style.posTop;
+            alert ("The top position of the button: " + topStyle +
+                   "\n without unit type: " + topPos + 
+                   "\n in pixels: " + topPx); 
+        }
+    </script>
+</head>
+<body>
+    <button style="position:absolute; left:10%; top:40%; width:160px; height:30px;" 
+            onclick="GetTopPos (this);">Get top position!</button>
+</body>
+</html>
