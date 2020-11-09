@@ -14,15 +14,17 @@ public class BeerSelect extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
 		
+		//http://localhost:100/WDC_Web/BeerSelect.do?color=red
 		String color = request.getParameter("color");
 		BeerExpert be = new BeerExpert();
 		List result = be.getBrands("color");
 		
 		request.setAttribute("styles",result);
-		RequestDispatcher rd = request.getRequestDispatcher("result.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/result.jsp");
 		rd.forward(request, response);
 		
 //		PrintWriter out = response.getWriter();
