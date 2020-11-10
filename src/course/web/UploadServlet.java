@@ -19,12 +19,12 @@ import javax.servlet.http.Part;
   JAVA EE6使用了新的機制簡化使用multipart表單上傳資料的麻煩, 主要使用3個元件
   1.javax.servlet.http.HttpServletRequest新增getPart(String)可以取得表單上傳的部分內容
   2.javax.servlet.annotation.MultipartConfig提供多種屬性:
-  @MultipartConfig(location="F:/JAVA_C/uploaded",maxFileSize=1024*1024*200)
+  @MultipartConfig(location="F:/JAVA_C/uploaded",maxFileSize=1024*1024*200)為200MB
   
   	location:檔案儲存位置，可搭配Part的write()方法，Part p2 = request.getPart("data");p2.write(getFileName(p2));
   	maxFileSize:檔案大小上限
  */
-@WebServlet("/UploadServlet")
+@WebServlet(name="/UploadServlet",urlPatterns= {"/upload"})
 @MultipartConfig(location="F:/JAVA_C/uploaded",maxFileSize=1024*1024*200)
 public class UploadServlet extends HttpServlet {
 
