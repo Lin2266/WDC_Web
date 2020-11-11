@@ -8,61 +8,48 @@
     <servlet-name>BeerSelect</servlet-name>
     <url-pattern>/BeerSelect.do</url-pattern>
   </servlet-mapping>
-  
-<!--   設定Filter -->
-<filter>
-	<filter-name>perfFilter</filter-name>
-	<filter-class>course.web.PerformanceFilter</filter-class>
-	<!--   設定初始值 -->
-	<init-param>
-		<param-name>Log Entry Prefix</param-name>
-		<param-value>Performance: </param-value>
-	</init-param>
-</filter>
-<filter-mapping>
-	<filter-name>perfFilter</filter-name>
-	<!-- 也可以使用 servlet-name標籤取代，表示該Filter只套用在特定servlet,
-	 url-pattern跟servlet-name可以出現在多個filter-mapping裡，表示有多個Filter套用在同一個瀏覽器請求，
-	 其執行順序:1.url-pattern優先servlet-name，2.其餘依web.xml設定先後順序決定。
-	 使用:FilterOrderTestServlet.java,Filter1.java,Filter2.java,Filter3.java來驗證-->
-<!-- 	 指定Filter套用的特殊URL，也可以使用「/*」表示所有URL -->
-	<url-pattern>/*</url-pattern>
-</filter-mapping>
-
-<!-- 觀察3個Filter的先後順序 -->
-<servlet><!-- 3. -->
-	<servlet-name>FilterOrderTestServlet</servlet-name>
-	<servlet-class>course.web.FilterOrderTestServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>FilterOrderTestServlet</servlet-name>
-	<url-pattern>/filterOrderTest.do</url-pattern>
-</servlet-mapping>
-
-<filter><!-- 1. -->
-	<filter-name>Filter1</filter-name>
-	<filter-class>course.web.Filter1</filter-class>
-</filter>
-<filter-mapping>
-	<filter-name>Filter1</filter-name>
-	<servlet-name>FilterOrderTestServlet</servlet-name>
-</filter-mapping>
-
-<filter><!-- 2. -->
-	<filter-name>Filter2</filter-name>
-	<filter-class>course.web.Filter2</filter-class>
-</filter>
-<filter-mapping>
-	<filter-name>Filter2</filter-name>
-	<url-pattern>*.do</url-pattern>
-</filter-mapping>
-
-<filter>
-	<filter-name>Filter3</filter-name>
-	<filter-class>course.web.Filter3</filter-class>
-</filter>
-<filter-mapping>
-	<filter-name>Filter3</filter-name>
-	<url-pattern>*.do</url-pattern>
-</filter-mapping>
+  <filter>
+    <filter-name>perfFilter</filter-name>
+    <filter-class>course.web.PerformanceFilter</filter-class>
+    <init-param>
+      <param-name>Log Entry Prefix</param-name>
+      <param-value>Performance: </param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>perfFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>FilterOrderTestServlet</servlet-name>
+    <servlet-class>course.web.FilterOrderTestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FilterOrderTestServlet</servlet-name>
+    <url-pattern>/filterOrderTest.do</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>Filter1</filter-name>
+    <filter-class>course.web.Filter1</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filter1</filter-name>
+    <servlet-name>FilterOrderTestServlet</servlet-name>
+  </filter-mapping>
+  <filter>
+    <filter-name>Filter2</filter-name>
+    <filter-class>course.web.Filter2</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filter2</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>Filter3</filter-name>
+    <filter-class>course.web.Filter3</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Filter3</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
 </web-app>
