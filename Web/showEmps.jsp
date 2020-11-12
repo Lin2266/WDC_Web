@@ -3,8 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>顯示員工資料</title>
+
 </head>
 <body>
-員工資料:${requestScope.emps }
+<h3>恭喜員工註冊成功</h3>
+ID:${param.id}<br>
+FirstName:${param.FirsName}<br>
+LastName:${param.LastName}<br>
+BirthDate:${param.BirthDate}<br>
+Salary:${param.Salary}<br>
 </body>
 </html>
