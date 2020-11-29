@@ -7,7 +7,8 @@
 </head>
 <body>
 <h3>恭喜員工註冊成功</h3>
-ID:${param.id}<br>
+NumberID:${param.id}<br>
+StringID:${param.sid}<br>
 FirstName:${param.FirsName}<br>
 LastName:${param.LastName}<br>
 BirthDate:${param.BirthDate}<br>

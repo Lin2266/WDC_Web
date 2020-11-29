@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>表單控制元件分組 fieldset_legend</title>
+<style>
+fieldset {
+  background-color: #eeeeee;
+/*   以下css屬性都可使用 */
+/*   display: block; */
+/*   margin-left: 2px; */
+/*   margin-right: 2px; */
+/*   padding-top: 0.35em; */
+/*   padding-bottom: 0.625em; */
+/*   padding-left: 0.75em; */
+/*   padding-right: 0.75em; */
+/*   border: 2px groove (internal value); */
+}
+
+legend {
+  background-color: gray;
+  color: white;
+  padding: 5px 10px;
+}
+
+input {
+  margin: 5px;
+}
+</style>
+</head>
+<body>
+&lt;fieldset&gt; 標籤 (tag) 用來對表單 (form) 中的控制元件做分組 (group)，<br>
+而 &lt;legend&gt; 標籤通常是 &lt;fieldset&gt; 裡面的第一個元素作為該分組的標題 (caption)。<br>
+
+&lt;fieldset&gt; 標籤的屬性 (attributes)：<br>
+disabled: 將 fieldset 中所有欄位設定為禁用的狀態，是一個布林 (boolean) 屬性。<br>
+name: 聲明 fieldset 名稱。<br>
+<hr>
+
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+</body>
+</html>

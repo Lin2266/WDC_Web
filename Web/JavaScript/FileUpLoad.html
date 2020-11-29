@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>檔案上傳</title>
+<script type="text/javascript">
+	var i = 0;
+
+	//開啟選擇檔案的對話框，讓使用者可以選擇檔案
+	function open_file_option() {
+		document.getElementById("file").click();
+	}
+
+	//檔案選擇好之後，會呼叫這個方法
+	function fileSelected() {
+		if (checkFilePass()) { // 檢查每一個檔案格式、大小...確認沒問題，才可以上傳
+			uploadFile();
+		}
+	}
+
+	//檢查檔案格式、大小
+	function checkFilePass() {
+		var files = document.getElementById('file').files;
+		for (var i = 0; i < files.length; i++) {
+			if (files[i].type === 'image/jpeg'
+			|| files[i].type === 'image/png'
+			|| files[i].type === 'image/bmp'
+			|| files[i].type === 'image/gif'
+			|| files[i].type === 'image/tiff') {
+				if (files[i].size > 10 * 1024 * 1024) {
+					alert("單一圖片不可以超過 10 MB：" + files[i].name);
+					return false;
+					}
+			} else if (files[i].type === 'video/mp4'
+			|| files[i].type === 'video/avi'
+			|| files[i].type === 'video/3gpp'
+			|| files[i].type === 'video/x-matroska' // *.mkv
+			|| files[i].type === 'audio/ogg') {
+				if (files[i].size > 500 * 1024 * 1024) {
+					alert("單一影片不可以超過 100 MB：" + files[i].name);
+					return false;
+					}
+			} else {
+				alert(" 不支持格式：" + files[i].name);
+				return false;
+			}
+		}
+		return true;
+	}
+
+	//上傳檔案的 "前置作業"
+	function uploadFile() {
+		try {
+			var files = document.getElementById('file').files;
+			for (var i = 0; i < files.length; i++) {
+				var progressNumber = "progressNumber" + i;
+				var serverReturnMessage = "serverReturnMessage" + i;
+
+				var fileSize = "0 KB";
+				if (files[i].size > 1024 * 1024 * 1024) {
+					fileSize = Math.round(files[i].size / 1024 / 1024 / 1024) + " GB";
+				} else if (files[i].size > 1024 * 1024) {
+					fileSize = Math.round(files[i].size / 1024 / 1024) + " MB";
+				} else if (files[i].size > 1024) {
+					fileSize = Math.round(files[i].size / 1024) + " KB";
+				} else if (files[i].size <= 1024) {
+					fileSize = files[i].size + " B";
+				}
+
+				//上傳之前，先把表格建立好，包含檔案名稱、大小
+				document.getElementById('show').innerHTML
+				+= "<tr>"
+				+ "<td align=\"center\">" + files[i].name + "</td>"
+				+ "<td align=\"center\">" + fileSize + "</td>"
+				+ "<td align=\"center\" id=\"" + progressNumber + "\">等待中...</td>"
+				+ "<td align=\"center\" id=\"" + serverReturnMessage + "\"></td>"
+				+ "</tr>";
+			}
+			upload(); // 第一次呼叫 upload()
+		} catch (e) {
+			alert('Error : ' + e);
+		}
+	}
+
+	//上傳成功，呼叫這個方法
+	function uploadComplete(evt) {
+		var serverReturnMessage = "serverReturnMessage" + i;
+		document.getElementById(serverReturnMessage).innerHTML = evt.target.responseText;
+
+		var files = document.getElementById('file').files;
+		if ((i++) < files.length) {
+			upload(); // 遞迴呼叫 upload()，會等待上一個檔案下載好之後，才會下載另一個檔案
+		}
+	}
+
+	function uploadFailed(evt) {
+		alert('發生錯誤');
+	}
+
+	function uploadCanceled(evt) {
+		alert('取消上傳');
+	}
+
+	//上傳檔案 (一個時間點只會有一個檔案被上傳)
+	function upload() {
+		var files = document.getElementById('file').files;
+		var progressNumber = 'progressNumber' + i;
+
+		var fd = new FormData();
+		fd.append('file', files[i]);
+		fd.append('id', document.getElementById('id').value);
+		var xhr = new XMLHttpRequest();
+		xhr.upload.addEventListener('progress', function (evt) { // 顯示上傳進度
+			if (evt.lengthComputable) {
+				var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+				document.getElementById(progressNumber).innerHTML = percentComplete.toString() + '%';
+			} else {
+				document.getElementById(progressNumber).innerHTML = 'unable to compute';
+			}
+		}, false);
+		xhr.addEventListener("load", uploadComplete, false);
+		xhr.addEventListener("error", uploadFailed, false);
+		xhr.addEventListener("abort", uploadCanceled, false);
+		xhr.open('POST', 'UploadFile', true); // 上傳 URL + 非同步上傳
+		xhr.send(fd);
+	}
+	
+	</script>
+	
+<body>
+	<label for="id">ID:</label>
+	<input type="text" id="id" name="id" value="1">
+	<input type="file" id="file" name="file" onchange="fileSelected()"  style="display: none;" multiple="multiple" accept="video/mp4,video/avi,video/3gpp,video/x-matroska,video/ogg,image/jpeg,image/png,image/bmp,image/gif,image/tiff">
+	<button onclick="open_file_option()"><b>上傳檔案</b></button>
+	<br><br><br>
+	<table id="show"border="1" width="600">
+		<tr>
+			<td align="center">名稱</td>
+			<td align="center" width="100">大小</td>
+			<td align="center" width="100">狀態</td>
+			<td align="center" width="150">伺服器回傳訊息</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

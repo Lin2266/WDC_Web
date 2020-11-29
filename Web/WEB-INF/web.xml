@@ -52,4 +52,7 @@
     <filter-name>Filter3</filter-name>
     <url-pattern>*.do</url-pattern>
   </filter-mapping>
+  <listener>
+    <listener-class>course.web.WebStartListener</listener-class>
+  </listener>
 </web-app>

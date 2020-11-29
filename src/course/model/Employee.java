@@ -4,7 +4,8 @@ package course.model;
 import java.util.Date;
 
 public class Employee {
-    private int id;
+    private long id;
+    private String sid;
     private String name;
     private String FirstName;
     private String LastName;
@@ -12,14 +13,20 @@ public class Employee {
     private Address address;
     private float Salary;
     
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
-
-    public String getName() {
+    
+    public String getSid() {
+		return sid;
+	}
+	public void setSid(String sid) {
+		this.sid = sid;
+	}
+	public String getName() {
         return name;
     }
     public void setName(String name) {

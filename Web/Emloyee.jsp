@@ -7,8 +7,12 @@
 <body>
 <form method="POST" action="<%=request.getContextPath()%>/EmployeeServlet">
 <p>
-<label for="id">ID:</label>
+<label for="id">數字ID:</label>
 <input type="text" id="id" name="id" value="<%=request.getParameter("id")==null?"":request.getParameter("id")%>">
+</p>
+<p>
+<label for="id">字串ID:</label>
+<input type="text" id="sid" name="sid" value="<%=request.getParameter("sid")==null?"":request.getParameter("sid")%>">
 </p>
 <p>
 <label for="FirsName">FirsName:</label>
