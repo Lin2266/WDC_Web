@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>排序</title>
+<script type="text/javascript">
+	//按照字串長度來排序
+	const arr = [ "hi", "Hello", "Bonjour", "ciao" ];
+	arr.sort(function(a, b) {
+		return a.length - b.length;
+	});
+
+	// ["hi", "ciao", "Hello", "Bonjour"]
+</script>
+</head>
+<body>
+
+</body>
+</html>

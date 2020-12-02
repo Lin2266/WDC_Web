@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>合併排序法</title>
+<script>
+//比較好懂，但是空間耗費比較多的版本： slice 切成兩個陣列，排序好之後合併起來就好。
+const simpleMergeSort = (arr) => {
+
+  // 合併
+  const merge = (leftArray, rightArray) => {
+    let result = [];
+    let nowIndex = 0, left = 0, right = 0;
+    const leftLength = leftArray.length;
+    const rightLength = rightArray.length;
+
+    // 如果左右兩邊都沒抓完，就看誰比較小抓誰
+    while (left < leftLength && right < rightLength) {
+      if (leftArray[left] < rightArray[right]) {
+        result[nowIndex++] = leftArray[left++];
+      } else {
+        result[nowIndex++] = rightArray[right++];
+      }
+    }
+
+    // 跑到這裡代表左右兩邊其中一邊抓完了
+    // 如果是左邊沒抓完，全部抓下來
+    while (left < leftLength) {
+      result[nowIndex++] = leftArray[left++];
+    }
+
+    // 右邊沒抓完，全部抓下來
+    while (right < rightLength) {
+      result[nowIndex++] = rightArray[right++];
+    }
+
+    // 把合併好的陣列直接傳回去
+    return result;
+  }
+  const _mergeSort = (arr) => {
+    const length = arr.length;
+    if (length <= 1) return arr;
+
+    // 切兩半
+    const middle = Math.floor(length / 2);
+
+    // 排左邊
+    const leftArray = _mergeSort(arr.slice(0, middle));
+
+    // 排右邊
+    const rightArray = _mergeSort(arr.slice(middle, length));
+
+    // 合併後丟回去
+    return merge(leftArray, rightArray);
+  }
+  return _mergeSort(arr);
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

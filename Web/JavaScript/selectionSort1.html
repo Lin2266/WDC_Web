@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>選擇排序</title>
+<script>
+	const arr = [ 5, 9, 1, 3, 2, 6 ];
+	const selectionSort = (arr) => {
+ 	 const length = arr.length;
+
+  	// 有幾個元素，就要找幾輪的最小值
+ 	// 這邊的 i 代表 i 以前的元素都排序好了
+ 	 for (let i = 0; i < length; i++) {
+
+    	// 先預設第一個是最小的
+    	let min = arr[i];
+   		let minIndex = i;
+
+    // 從還沒排好的元素開始找最小值
+    for (let j = i; j < length; j++) {
+      if (arr[j] < min) {
+        min = arr[j];
+        minIndex = j;
+      }
+    }
+
+    // ES6 的用法，交換兩個數值
+    [arr[minIndex], arr[i]] = [arr[i], arr[minIndex]];
+  }
+  return arr;
+}
+
+</script>
+</head>
+<body>
+<p>時間複雜度就是大家所熟知的 O(n^2)，最好、最壞、平均都是一樣的，因為無論原本的陣列長怎樣，都要經過這麼多輪比較。</p>
+<img alt="select" src="../IMG/selection.jpg">
+</body>
+</html>

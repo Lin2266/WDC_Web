@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>插入排序</title>
+<script type="text/javascript">
+const insertionSort = (arr) => {
+	  const n = arr.length;
+
+	  // 假設第一個元素已經排好，所以從 1 開始跑
+	  for (let i = 1; i < n; i++) {
+
+	    // position 表示可以插入的位置
+	    let position = i;
+
+	    // 先把要插入的元素存起來
+	    const value = arr[i];
+
+	    // 開始往前找，只要符合這條件就代表這個位置是可以插入的
+	    // 邊找的時候就可以邊把元素往後挪，騰出空間
+	    while (i >= 0 && arr[position - 1] > value) {
+	      [arr[position], arr[position - 1]] = [arr[position - 1], arr[position]];
+	      position--;
+	    }
+
+	    // 找到適合的位置，放入元素
+	    arr[position] = value;
+	  }
+	  return arr;
+	}
+</script>
+</head>
+<body>
+<p>你玩撲克牌的時候會用到的排序法</p>
+<pre>
+就是不斷把撲克牌插入到適合的位置嘛，只是你玩牌的時候可能一次插入好多牌，而插入排序法是一次插入一張牌。
+這邊比較值得注意的是在插入時候的演算法，不斷往前找到適合的位置，並且在邊找的時候就邊挪動元素了，
+所以等找到的時候就可以直接插入。
+插入排序法的最佳情形出現在輸入元素已經是排序好的情況，這時候裡面的while只要跑一次就會結束了，
+所以時間複雜到就是外圈的O(n)而已。
+</pre>
+<img alt="insertion" src="../IMG/insertion.gif">
+</body>
+</html>

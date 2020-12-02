@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>合併排序法</title>
+<script>
+//較省空間的做法
+const mergeSort = (arr) => {
+  const merge = (array, start, middle, end) => {  
+
+    // 宣告一個暫時的陣列來放合併後的結果
+    let temp = [];
+    let nowIndex = 0;
+    let left = start;
+    let right = middle + 1;
+
+    // 這邊都跟上面一樣
+    while (left <= middle && right <= end) {
+      if (array[left] < array[right]) {
+        temp[nowIndex++] = array[left++];
+      } else {
+        temp[nowIndex++] = array[right++];
+      }
+    }
+
+    while (left <= middle) {
+      temp[nowIndex++] = array[left++];
+    }
+
+    while (right <= end) {
+      temp[nowIndex++] = array[right++];
+    }
+
+    // 要把合併後的陣列放回去 array[start ~ end]
+    for (let i = start; i <= end; i++) {
+      array[i] = temp[i - start];
+    }
+  }
+
+  // 代表要從 start 排到 end
+  const _mergeSort = (array, start, end) => {
+    if (end <= start) return;
+    const middle = Math.floor((start + end) / 2);
+
+    // 對左右兩半排序
+    _mergeSort(array, start, middle);
+    _mergeSort(array, middle + 1, end);
+    merge(array, start, middle, end);
+    return array;
+  }
+  return _mergeSort(arr, 0, arr.length - 1);
+}
+</script>
+</head>
+<body>
+	<p>切一半，排好左邊，排好右邊，合併</p>
+	<pre>把兩個各自排序好的陣列合併成一個,兩邊都已經排序好了，所以就是不斷看兩邊的第一個元素，
+誰小就抓誰下來，接著左邊抓完就抓右邊。</pre>
+	<img alt="merge" src="../IMG/merge.png">
+</body>
+</html>
