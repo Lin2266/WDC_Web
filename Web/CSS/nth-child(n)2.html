@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>nth-child(n)選取器</title>
+<style>
+body{
+text-align: center;
+margin: auto;
+}
+table,ul{
+margin-left:auto; 
+margin-right:auto;
+}
+tr:nth-child(odd){
+	background-color:#ccc;
+	}
+tr:nth-child(even){
+	background-color:#ccc;
+	}
+*{
+	margin:0;
+	padding:0;
+	list-style:none;}
+.nav{
+	width:100%;
+	max-width:1120px;
+	background:#000;
+	min-height:40px;
+	text-align:center;
+	letter-spacing:-4px;}
+.nav li{
+	display:inline-block;
+	letter-spacing:0;}
+.nav a{
+	display:inline-block;
+	padding-left:25px;
+	line-height:40px;
+	color:#FFF;
+	margin-right:2em;
+	background-repeat:no-repeat;
+	background-position:left center;
+	}
+.nav li:nth-child(1) a{ background-image: url(icon/icon_about_iw.png);}
+.nav li:nth-child(2) a{ background-image: url(icon/icon_about_ow.png);}
+.nav li:nth-child(3) a{ background-image: url(icon/icon_about.png);}
+.nav li:nth-child(4) a{ background-image: url(icon/icon_contact.png);}
+.nav li:nth-child(5) a{ background-image: url(icon/icon_download-ipad-app.png);}
+.nav li:nth-child(6) a{ background-image: url(icon/icon_download-iphone-app.png);
+}
+tr:nth-child(3n+1){
+	background-color:#69C;
+	}
+tr:nth-child(3n-1){
+	background-color: #FFC;
+	}
+tr:nth-child(3n){
+	background-color: #FCC;
+	}
+.box div:nth-child(1){
+	background-color:#FC3;
+	}
+.box div:nth-child(2){
+	background-color:#FC3;}		
+</style>
+</head>
+<body >
+<pre>
+CSS3 新增的選取器中，大概就屬 :nth-child(n) 功能最猛了，
+:nth-child(n) 不僅可以不靠class或是ID來選取網頁項目外，還解決了網頁中清單資料規律性選取的問題，
+:nth-child(n) 尤其對於表格資料的呈現上，真的是方便太多太多了～
+<h2>使用 :nth-child(odd) 與 :nth-child(even) 設定表格</h2>
+:nth-child 是CSS3中新增的「偽類選取器（pseudo class selector）」，標準的語法是 
+:nth-child(n)，其中括弧內的「n」是最重要的關鍵字元了，
+「n」可以寫成是單數「odd」，或者是寫為偶數「even」，甚至是使出大絕招上上下下左右左右ABAB加加減減都可以喔。
+例如：以下是一個標準的表格原始碼，為了方便測試起見，所以Amos做了6列：
+
+<table border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+ 
+
+你可以利用下面的CSS
+
+tr:nth-child(odd){
+	background-color:#ccc;
+	}
+來將表格單數列背景色設定為灰色，好方便使用者閱讀表格資料，設定完之後就就會呈現像下面這樣的畫面：
+
+<p>
+<img alt="table" src="../IMG/table.png">
+</p>
+
+表格使用了CSS :nth-child(odd) 選取器
+
+若是設定CSS為
+
+tr:nth-child(even){
+	background-color:#ccc;
+	}
+則表格偶數列會呈現灰色背景，就像下面這樣的畫面：
+
+<p>
+<img alt="table" src="../IMG/table_even.png">
+</p>
+
+table使用了 CSS3 :nth-child(even) 選取器
+
+這效果以往都需要使用程式來處理的，現在都可以直接使用CSS3的選取器來快速套用了，真的是大大的方便許多啊！
+各位設計師有沒有一種熱淚盈框的FU呢？
+
+ 
+
+<h2>使用 :nth-child(n) 來選取特定順序項目</h2>
+通常表格的第一列為表頭資料，如果你想要設定表格第一列的色彩有所不同的話，那麼你的CSS可以這樣設定 
+tr:nth-child(1){background-color:#69C;} ，設定完成後畫面就有下圖的效果了。
+
+<p>
+<img alt="table" src="../IMG/table_nth-child1.png">
+</p>
+
+在這邊可以看到 :nth-child(n) 中的「n」可以是特定的數字，「n」若採用數字的話，
+表示要選取特定排序位置的物件(或標籤)，看到這裡，你是否已經發現到 
+:nth-child(n) 的威力是有多麼驚人了？！利用 :nth-child(n) 你就可以不用加一堆的 
+css class 或者是 id 來選取網頁中的物件了，例如我們可以利用 :nth-child(n) 
+來幫我們的選單添加不同的icon，而且原始碼還超級乾淨，如果你還不知道怎麼做的話，
+讓我們一起來看看下面這個例子，首先準備一個乾淨的清單，並且在<ul>標籤中加上一個class叫「nav」
+
+<ul class="nav">
+	<li><a href="#">項目一</a></li>
+	<li><a href="#">項目二</a></li>
+	<li><a href="#">項目三</a></li>
+	<li><a href="#">項目四</a></li>
+	<li><a href="#">項目五</a></li>
+	<li><a href="#">項目六</a></li>
+</ul>
+接著我們來設定一下基礎的CSS，讓選單可以橫向排列，在這邊Amos希望選單可以居中排列，
+所以採用了 display:inline-block 的方式來製作，為了偷懶一下所以暫時採用了萬用選取器來做css reset。
+
+*{
+	margin:0;
+	padding:0;
+	list-style:none;}
+.nav{
+	width:100%;
+	max-width:1120px;
+	background:#000;
+	min-height:40px;
+	text-align:center;
+	letter-spacing:-4px;}
+.nav li{
+	display:inline-block;
+	letter-spacing:0;}
+.nav a{
+	display:inline-block;
+	padding-left:25px;
+	line-height:40px;
+	color:#FFF;
+	margin-right:2em;
+	background-repeat:no-repeat;
+	background-position:left center;}
+接下來我們利用 :nth-child(n) 來選取每個 &lt;a&gt; 標籤並設定不同的icon圖示，就像下面這段原始碼：
+
+.nav li:nth-child(1) a{ background-image: url(icon/icon_about_iw.png);}
+.nav li:nth-child(2) a{ background-image: url(icon/icon_about_ow.png);}
+.nav li:nth-child(3) a{ background-image: url(icon/icon_about.png);}
+.nav li:nth-child(4) a{ background-image: url(icon/icon_contact.png);}
+.nav li:nth-child(5) a{ background-image: url(icon/icon_download-ipad-app.png);}
+.nav li:nth-child(6) a{ background-image: url(icon/icon_download-iphone-app.png);}
+最後結果就長得如下圖：
+
+<p>
+<img alt="table" src="../IMG/menu-600x39.png">
+</p>
+
+是不是很驚人呢！:nth-child(n)不僅讓HTML原始碼變得乾淨無比，還讓我們可以彈性的選取到我們以往需要設定
+class才能選到的標籤物件，真是太便利了！（只有這樣嗎？這不會就是一開始說的 :nth-child(n) 大絕招吧？
+這大絕招會不會太弱了點？）:nth-child(n) 當然不只上面這些功能而已，更方便的功能讓我們繼續看下去。
+
+ 
+
+<h2>在 :nth-child(n) 裡面算數學</h2>
+什麼？！別鬧了吧，算什麼數學啊？事實上 :nth-child(n) 選取器的另外一個用法是 :nth-child(an+b) ，
+使用 :nth-child(an+b) 的話，再正的妹都把的到再難選取的物件都能選到，在 :nth-child(an+b) 中，
+「n」代表的是由0起始的遞增數字，而「a」與「b」則是你可以自訂的一個數值，且兩者數值可以不同，
+以下請仔細看清楚了～下面我們採用一個表格來當做示範，例如我希望這個表格每隔兩列就能有一個背景色的話，
+那我可以設定CSS為
+
+tr:nth-child(3n+1){
+	background-color:#69C;
+	}
+結果畫面
+<p>
+<img alt="table" src="../IMG/table_nth-child3n.png">
+</p>
+table使用:nth-child(3n+1)的結果
+
+若想來個雙色表格列的話，還可以加上下面這一段:nth-child(n) CSS，讓表格列有更多的變化也更加混亂漂亮
+
+tr:nth-child(3n-1){
+	background-color: #FFC;
+	}
+tr:nth-child(3n){
+	background-color: #FCC;
+	}
+完成畫面
+
+<p>
+<img alt="table" src="../IMG/table_set_color.png">
+</p>
+
+在這個例子中，我們其實需要了解到的是 :nth-child(這裡的原理) ，這其實是一套簡單的加減乘的算式罷了，
+在這裡我們先看一下選取器的寫法
+
+:nth-child(an+b){......}
+
+其中a的數值可以由我們自訂，在這裡我們暫時把a訂為3 ; b的數值也可以由我們自訂，目前我們暫定為2，
+而n則是固定的序列，所以簡單的舉例就如同下方所示
+
+<p>
+<img alt="table" src="../IMG/nth-child_demo-600x253.png">
+</p>
+
+由以上表格可以看到整個算式的的結果，:nth-child(an+b)中，an+b的意思也就是a乘以n再加上b，
+而剛才也說過了，n表示為一個數列，這個數列由0開始計算，所以就會得到， 
+3 * 0 + 2 = 2、3 * 1 + 2 = 5、3 * 2 + 2 = 8……這樣的結果，若是用在表格列上，
+意思就是選到第2列、第5列、第8列的意思，倘若我們不指定a的值的話，則a的值則是預設為1，那麼我們在來套用公式來看看
+
+<p>
+<img alt="table" src="../IMG/nth-child_demo2-600x256.png">
+</p>
+
+由公式可以看到結果會是2、3、4、5….，也就是說，若套用在表格列上，則會從第二列開始選到最後一列，接著，
+我們如果把a設定為負值的話會出現什麼事情呢？
+
+<p>
+<img alt="table" src="../IMG/nth-child_demo3-600x257.png">
+</p>
+
+由以上表格所呈現的公式結果可以看到，我把b設定為8，a設定為-1，若套用在表格列上面的結果就是從第8列開始會被選取到，
+並且依次遞減，簡單的說就是我們可以選取到包含第8列及之前的每一列，看到這你是否已經感受到 
+:nth-child 選取器的威力了？！以往我們經常性需要程式輔助的選取方式，現在全部只要利用這個選取器就能解決了，
+是不是超嗨森的阿！不過！在使用之前，Amos還要提醒各位注意一下:nth-child() 
+偽類選取器使用上面的一些小問題及注意事項。
+
+<h2>使用:nth-child(n)需要注意的事項</h2>
+<h3>一、使用:nth-child(n)時，必須為相同連續的子代物件</h3>
+來看一下下列HTML原始碼
+
+<div class="box">
+	<span>A</span>
+	<div>B</div>
+	<div>C</div>
+	<div>D</div>
+	<div>E</div>
+	<div>F</div>
+</div>
+其中.box的第一個子代標籤是<span>標籤，如果我們想要選取第一個<div>標籤的話，
+我們可能會想說使用以下CSS來做選取
+
+.box div:nth-child(1){
+	background-color:#FC3;}
+結果將會是什麼效果都沒有，以上CSS看似邏輯沒有錯，但瀏覽器會選不到第一個div，事實上，
+:nth-child是一個偽類選取器，他看的是順序，縱使你指定了標籤，他依舊會以「順序」作為優先選取的項目，
+所以你選不到第一個div標籤，如果你想要選取第一個DIV標籤的話，你必須把CSS原始碼改成這樣
+
+.box div:nth-child(2){
+	background-color:#FC3;}
+意思就是我要選取第二個項目，並且標籤為DIV的第二個項目，那如果我要選取第一個項目的話怎麼辦？
+事實上你可以有以下兩種寫法：
+
+/*第一種寫法*/
+.box span:nth-child(1){
+	background-color:#FC3;}
+
+/*第二種寫法*/
+.box :nth-child(1){
+	background-color:#FC3;}
+這樣我想大家應該就清楚了。
+
+<h2>二、若要選取class，則必須同樣為連續物件</h2>
+其實這道理跟第一點可以說是一樣，我們來看看下面這段HTML原始碼
+
+<div class="box">
+	<div class="one">A</div>
+	<div class="one">B</div>
+	<div class="two">C</div>
+	<div class="one">D</div>
+	<div class="two">E</div>
+	<div class="one">F</div>
+</div>
+如果我們想要選到第二個class=two的物件的話，我們可能會想要用CSS這樣選取
+
+.box .two:nth-child(2){
+	background-color:#FC3;}
+這樣的結果就是完全沒有效果，剛剛說過:nth-child 偽類選取器主要是選取順序，所以他是看順序而不是屬性或是格式，
+所以以上CSS的選取將無法成立。
+那麼你要如何撰寫HTML才能讓上述條件成立呢？你需要把HTML改成下面這樣
+
+<div class="box">
+	<div class="one two">A</div>
+	<div class="one two">B</div>
+	<div class="two">C</div>
+	<div class="one two">D</div>
+	<div class="two">E</div>
+	<div class="one two">F</div>
+</div>
+然後CSS寫成這樣的話
+
+.box .two:nth-child(2){
+	background-color:#FC3;}
+你就會看到第二個class=”two”被選取到了～但這絕對不會是你要的結果對吧！所以，若你真的需要使用到
+:nth-child()選取器時，請記住這邊所說的注意事項，避免徒勞無功喔！
+</pre>
+<br><br><br><br><br><br><br>
+</body>
+</html>

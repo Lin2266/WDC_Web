@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>nth-child(n)選取器,表格奇數顏色跟偶數顏色</title>
+<style>
+/* 當th也被列入顏色時可以用以下做法:
+tr:nth-child(odd):not(:first-child){}
+ */
+/* Table表格底色奇數偶數相間 */
+tr:nth-child(even) {
+    background: #CCC
+}
+tr:nth-child(odd) {
+    background-color: #FAFAFA;
+}
+/* 表格的border語法，讓他有邊框 */
+table {
+	border: 1px solid #666;
+    border-collapse: collapse;
+}
+/* 儲存格的邊框語法 */
+tr, td {
+    border: 1px solid #666;
+}
+/* 滑鼠移過後，會有不一樣的底色 */
+td:hover {
+    background-color: #E6FBFF;
+}
+/* 如果第1個th不要的話 */
+/* tr:hover:not(:first-child){ */
+/* background:#C3D9FF; */
+/* } */
+</style>
+
+</head>
+<body>
+<h2>Table表格底色奇數偶數相間 </h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+</body>
+</html>
