@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<title>Meta 十大功用 | html教學</title>
+<style type="text/css">
+<!--
+.title {
+	font-family: "新細明體";
+	font-size: 24px;
+	font-style: normal;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.一般 {
+	font-family: "新細明體";
+	font-size: 16px;
+	line-height: 22px;
+	color: #000000;
+	letter-spacing: 0pt;
+}
+.style6 {
+	font-family: "新細明體";
+	font-size: 16px;
+	line-height: 22px;
+	color: #003399;
+	letter-spacing: 0pt;
+	font-weight: bold;
+}
+.style9 {color: #FF0000}
+.style11 {color: #009900}
+.style12 {color: #0000FF}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.style14 {color: #990000}
+.style16 {font-family: Wingdings, "Wingdings 2", "Wingdings 3"}
+-->
+</style>
+</head>
+
+<body>
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td align="center"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="1%"><a href="#" target="_self"><img src="../images/arrowup.gif" width="21" height="21" border="0"></a></td>
+          <td width="99%"> 
+            <table width="200" border="0" cellspacing="0" cellpadding="0" align="center">
+              <tr> 
+                <td align="center" bgcolor="#336699" class="title">項目格式</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td align="center"> 
+      <hr />
+    </td>
+  </tr>
+  <tr> 
+    <td align="left" class="選項"> 
+      <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td valign="top"> 
+            <p class="style6">一、顯示及排列中文<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META http-equiv=&quot;Content-Type&quot; 
+                  content=&quot;text/html; charset=big5&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  Content-Type==&gt;文件內容格式<br>
+                  ;==&gt;CONTENT內要作的每件事&quot; &quot;，分別以分號區隔<br>
+                  text/html==&gt;純文字/超文字<br>
+                  charset==&gt;字元組為中文繁體大五碼，如用iso-2022-jp是指日文</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">二、讓搜索引擎容易找到您<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;KeyWords&quot; 
+                  CONTENT=&quot;電腦教學'網路教學'Linux教學'CSS教學'HTML教學'軟體教學'發信教學'SEO教學'交換連結&quot;&gt;<br>
+                  &lt;META NAME=&quot;KeyWords&quot; CONTENT=&quot;css'HomePage'html'linux'seo&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：網頁內文關鍵字，可使用中、英文均可</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">三、關於網站的內容描述<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;Description&quot; 
+                  CONTENT=&quot;這是一個免費學習網頁製作的好地方，網路研究所&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：Description==&gt;內容的主要描述</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">四、這個網頁的作者是誰<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;Author&quot; 
+                  CONTENT=&quot;PCNET&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：標註本網頁作者姓名等資料</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">五、這是用何編輯器完成的網頁<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;Generator&quot; 
+                  CONTENT=&quot;Mozilla/3.0Gold(Win95)[Netscape]&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  標註本網頁作者姓名等資料<br>
+                  Generator==&gt;編輯器<br>
+                  Mozilla/3.0Gold(Win95)[Netscape]==&gt;編輯器等版本說明</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">六、這個網頁何時完成<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;Creation-Date&quot; 
+                  CONTENT=&quot;01-jan-2003 20:40:01&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  Creation-Date==&gt;創作日期<br>
+                  01-jan-2003 20:40:01==&gt;詳細日期時間</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">七、這個網頁有效時期及不被Cache所限制<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META NAME=&quot;Expired&quot; 
+                  CONTENT=&quot;01-jan-2005 00:00:00&quot;&gt;<br>
+                  &lt;META HTTP-EQUIV=&quot;Pragma&quot; CONTENT=&quot;no_cache&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  Expired==&gt;網頁終止期限<br>
+                  01-jan-2005 00:00:00==&gt;已過去的日期時間，也可以用Mon,12 Jan 2007 00:00:00 
+                  GMT<br>
+                  no_cache==&gt;不被Cache所限制，也就是網頁沒有記憶功能。 </td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">八、網頁作者的網址與信箱<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;link rev=&quot;made&quot; 
+                  href=&quot;mailto:pcnettw@yahoo.com.tw&quot;&gt;<br>
+                  &lt;link rev=&quot;made&quot; href=&quot;http://www.pcnet.idv.tw/&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：網頁作者信箱或網址陳述<br>
+                  rev==&gt;正向關聯<br>
+                  made=&gt;網頁製造者<br>
+                  href==&gt;您的信箱或網址 </td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">九、使網頁能自動換頁<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META HTTP-EQUIV=&quot;refresh&quot; 
+                  CONTENT=&quot;15; url=http://www.pcnet.idv.tw/&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  refresh==&gt;更新或重整<br>
+                  15==&gt;15秒後執行下一動作<br>
+                  ;==&gt;CONTENT內要作的每件事&quot; &quot;，分別以分號區隔<br>
+                  url=http://www.pcnet.idv.tw/==&gt;指定轉換到此網頁 </td>
+              </tr>
+              </tbody> 
+            </table>
+            <p class="style6">十、進入或離開的特效(限IE使用)<br>
+            </p>
+            <table width="560" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#000000">
+              <tbody> 
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#CCCCCC" class="一般">&lt;META http-equiv=&quot;指定要換頁特效發生的狀況&quot; 
+                  content=&quot;特效模式(Duration=特效持續時間,Transition=代替的特效)&quot;&gt;</td>
+              </tr>
+              <tr bgcolor="#c0c0c0"> 
+                <td bgcolor="#FFFFFF" class="一般">說明：<br>
+                  http-equiv=&quot;Page-Enter是進入本頁、Page-Exit是離開本頁、Site-Enter是進入本站、Site-Exit是離開本站&quot;。 
+                  <br>
+                  content=&quot;revealTrans(指定換頁特效)、blendTrans(設定換頁特效為&quot;混合&quot;)。<br>
+                  Duration=設定特效持續的時間(秒)，建議在3-5秒之間。 <br>
+                  Transition=以0-23代替特效(略)。</td>
+              </tr>
+              </tbody> 
+            </table>
+            <p>註：</p>
+            <ol>
+              <li> 它必須放於&lt;HEAD&gt;與&lt;/HEAD&gt;之間，主要用於本網頁的內容說明，以利自己或別人(搜索引擎)使用，另外也可以製造出一些自動翻頁等特殊效果。<br>
+              </li>
+              <li>http-equiv或NAME屬性，必須配合content屬性使用，兩者也可互替使用。</li>
+              <li> 後設語法標籤(META description tag)的用法隨各搜索引擎設定有所不同。</li>
+              <li>有無Meta標籤，並不影響網頁正常顯示，其最大目的在於提供網頁各種資訊及產生特殊效果。</li>
+              <li>網頁運用，建議以本頁所述1.2.3.4.8項這些標籤為主，其餘視況自行增減。</li>
+              <li>您可使用檢視原始碼，來看本例實際安排。<br>
+              </li>
+              <li>更多的報導資料，歡迎蒞臨講師(作者)網站查看。 </li>
+            </ol>
+      </td>
+        </tr>
+      </table>
+      <a href="09.asp" target="_self"><br />
+      </a></td>
+  </tr>
+  <tr> 
+    <td align="center"> 
+      <p><img src="../images/direction.gif" width="218" height="22" border="0" usemap="#Map" /></p>
+    </td>
+  </tr>
+</table>
+
+<hr size="1">
+<div align="center">Established since: March 28, 2003<br>
+  All the design R 2003 by <a href="mailto:pcnettw@yahoo.com.tw">Admin</a> </div>
+<map name="Map" id="Map"> 
+  <area shape="rect" coords="132,2,158,22" href="16.htm" target="_self" />
+  <area shape="rect" coords="74,1,108,20" href="http://www.pcnet.idv.tw/" target="_top" />
+  <area shape="rect" coords="12,1,38,23" href="16.htm" target="_self" />
+</map></body>
+</html>

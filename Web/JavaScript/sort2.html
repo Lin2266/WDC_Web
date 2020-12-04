@@ -6,17 +6,24 @@
 <script
 	src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <title>排序</title>
+</head>
+<body>
+<p id="demo1"></p>
+<p id="demo2"></p>
 <script type="text/javascript">
 	//按照字串長度來排序
 	const arr = [ "hi", "Hello", "Bonjour", "ciao" ];
+	display();
+	i=1;
 	arr.sort(function(a, b) {
-		return a.length - b.length;
+		return a - b;
 	});
-
+	display();
 	// ["hi", "ciao", "Hello", "Bonjour"]
+	function display() {
+  		document.getElementById("demo1").innerHTML = arr;
+  		if(i===1)document.getElementById("demo2").innerHTML = arr;
+}
 </script>
-</head>
-<body>
-
 </body>
 </html>

@@ -119,7 +119,7 @@ tr:nth-child(odd){
 來將表格單數列背景色設定為灰色，好方便使用者閱讀表格資料，設定完之後就就會呈現像下面這樣的畫面：
 
 <p>
-<img alt="table" src="../IMG/table.png">
+<img alt="table" src="../images/table.png">
 </p>
 
 表格使用了CSS :nth-child(odd) 選取器
@@ -132,7 +132,7 @@ tr:nth-child(even){
 則表格偶數列會呈現灰色背景，就像下面這樣的畫面：
 
 <p>
-<img alt="table" src="../IMG/table_even.png">
+<img alt="table" src="../images/table_even.png">
 </p>
 
 table使用了 CSS3 :nth-child(even) 選取器
@@ -147,7 +147,7 @@ table使用了 CSS3 :nth-child(even) 選取器
 tr:nth-child(1){background-color:#69C;} ，設定完成後畫面就有下圖的效果了。
 
 <p>
-<img alt="table" src="../IMG/table_nth-child1.png">
+<img alt="table" src="../images/table_nth-child1.png">
 </p>
 
 在這邊可以看到 :nth-child(n) 中的「n」可以是特定的數字，「n」若採用數字的話，
@@ -201,7 +201,7 @@ css class 或者是 id 來選取網頁中的物件了，例如我們可以利用
 最後結果就長得如下圖：
 
 <p>
-<img alt="table" src="../IMG/menu-600x39.png">
+<img alt="table" src="../images/menu-600x39.png">
 </p>
 
 是不是很驚人呢！:nth-child(n)不僅讓HTML原始碼變得乾淨無比，還讓我們可以彈性的選取到我們以往需要設定
@@ -222,7 +222,7 @@ tr:nth-child(3n+1){
 	}
 結果畫面
 <p>
-<img alt="table" src="../IMG/table_nth-child3n.png">
+<img alt="table" src="../images/table_nth-child3n.png">
 </p>
 table使用:nth-child(3n+1)的結果
 
@@ -237,7 +237,7 @@ tr:nth-child(3n){
 完成畫面
 
 <p>
-<img alt="table" src="../IMG/table_set_color.png">
+<img alt="table" src="../images/table_set_color.png">
 </p>
 
 在這個例子中，我們其實需要了解到的是 :nth-child(這裡的原理) ，這其實是一套簡單的加減乘的算式罷了，
@@ -249,7 +249,7 @@ tr:nth-child(3n){
 而n則是固定的序列，所以簡單的舉例就如同下方所示
 
 <p>
-<img alt="table" src="../IMG/nth-child_demo-600x253.png">
+<img alt="table" src="../images/nth-child_demo-600x253.png">
 </p>
 
 由以上表格可以看到整個算式的的結果，:nth-child(an+b)中，an+b的意思也就是a乘以n再加上b，
@@ -258,14 +258,14 @@ tr:nth-child(3n){
 意思就是選到第2列、第5列、第8列的意思，倘若我們不指定a的值的話，則a的值則是預設為1，那麼我們在來套用公式來看看
 
 <p>
-<img alt="table" src="../IMG/nth-child_demo2-600x256.png">
+<img alt="table" src="../images/nth-child_demo2-600x256.png">
 </p>
 
 由公式可以看到結果會是2、3、4、5….，也就是說，若套用在表格列上，則會從第二列開始選到最後一列，接著，
 我們如果把a設定為負值的話會出現什麼事情呢？
 
 <p>
-<img alt="table" src="../IMG/nth-child_demo3-600x257.png">
+<img alt="table" src="../images/nth-child_demo3-600x257.png">
 </p>
 
 由以上表格所呈現的公式結果可以看到，我把b設定為8，a設定為-1，若套用在表格列上面的結果就是從第8列開始會被選取到，
