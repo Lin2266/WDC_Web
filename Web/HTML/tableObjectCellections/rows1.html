@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>rows</title>
+<style type="text/css">
+table,td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<p>返回rows列的元素數</p>
+<table id="myTable">
+  <tr>
+    <td>cell 1</td>
+    <td>cell 2</td>
+    <td>cell 3</td>
+  </tr>
+  <tr>
+    <td>cell 4</td>
+    <td>cell 5</td>
+    <td>cell 6</td>
+  </tr>
+</table>
+<br> 
+
+<button onclick="myFunction()">Try it</button><br>
+<button onclick="myFunction1()">刪除列</button><br>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+function myFunction() {
+	var x = document.getElementById("myTable").rows.length;
+	document.getElementById("demo").innerHTML = "Found " + x +" tr elements in the table.";
+}
+
+function myFunction1() {
+	document.getElementById("myTable")
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>cells</title>
+<style type="text/css">
+table, td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	
+	<table id="myTable">
+		<tr>
+    <td id="myTd">Row1 cell1</td>
+    <td>Row1 cell2</td>
+  </tr>
+  <tr>
+    <td>Row2 cell1</td>
+    <td>Row2 cell2</td>
+  </tr>
+  <tr>
+    <td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+  </tr>
+	</table>
+	<br>
+	
+	<p>返回table中第一rows列中的cells欄各數</p>
+	<button onclick="myindex()">index</button><br>
+	<p>table的第1列中第一個欄，索引為0的td元素</p>
+	<button onclick="myitem()">item</button><br>
+	<p>table的第1列中id="myTd"的欄</p>
+	<button onclick="mynamedItem()">item</button><br>
+	<p>改變第一列第一欄的值</p>
+	<button onclick="cheang()">cheang</button><br>
+	<p id="demo"></p>
+	
+	<script type="text/javascript">
+		//index:rows[0]
+		function myindex() {
+			var x = document.getElementById("table").rows[0].cells.length;
+			document.getElementById("demo").innerHTML = "Found " + x
+					+ " cells in the first tr element.";
+		}
+		//item:cells.item(0)取索引值
+		function myitem() {
+			alert(document.getElementById("myTable").rows[0].cells.item(0).innerHTML);
+		}
+		//namedItem:cells.namedItem("myTd")取id
+		function mynamedItem() {
+			alert(document.getElementById("myTable").rows[0].cells.namedItem("myTd").innerHTML);
+		}
+		//改變row的值
+		function cheang() {
+			var x = document.getElementById("myTable").rows[0].cells;
+			x[0].innerHTML = "cheang value"; 
+		}
+	</script>
+</body>
+</html>

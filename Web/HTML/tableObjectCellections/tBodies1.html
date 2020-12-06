@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>tBodies</title>
+<style type="text/css">
+	table,td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table id="myTable">
+  <tbody id="myTbody">
+    <tr>
+      <td>cell 1</td>
+      <td>cell 2</td>
+    </tr>
+    <tr>
+      <td>cell 3</td>
+      <td>cell 4</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>cell 5</td>
+      <td>cell 6</td>
+    </tr>
+    <tr>
+      <td>cell 7</td>
+      <td>cell 8</td>
+    </tr>
+  </tbody>
+</table>
+<br> 
+
+<button onclick="myFunction1()">取得tbody的長度</button><br><br>
+<button onclick="myFunction2()">取得tbody的index</button><br><br>
+<button onclick="myFunction3()">取得tbody的item</button><br><br>
+<button onclick="myFunction4()">取得tbody的namedItem</button><br><br>
+<p id="len"></p>
+<script type="text/javascript">
+	//length
+	function myFunction1() {
+		var len = document.getElementById("myTable").tBodies.length;
+		document.getElementById("len").innerHTML = "tbody有 " + len + " 個";
+	}
+	//index:tBodies[0]，以下3個都相同結果
+	function myFunction2() {
+		alert(document.getElementById("myTable").tBodies[0].innerHTML);	
+	}
+	//item:tBodies.item(0)
+	function myFunction3() {
+		alert(document.getElementById("myTable").tBodies.item(0).innerHTML);			
+	}
+	//namedItem:tBodies.namedItem("myTbody")，取id
+	function myFunction4() {
+		alert(document.getElementById("myTable").tBodies.namedItem("myTbody").innerHTML);
+	}
+</script>
+</body>
+</html>
