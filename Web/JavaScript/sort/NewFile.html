@@ -1,0 +1,117 @@
+<%@ page language="java"  errorPage="/src/ErrPage.jsp"%>
+<%@ page contentType="text/html; charset=MS950" %>
+<%@ taglib uri = "commons.tatung.com" prefix="ta" %><%@ page isELIgnored="false" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="dcstools.cherry.*" %>
+<% String datetime; %>
+
+<%
+	String message_id= (String) request.getAttribute("message_id");
+	String message= (String) request.getAttribute("message");
+	if(message_id==null){
+ 	  message_id="";
+ 	  message="";
+	}
+	
+   long now = System.currentTimeMillis();
+   java.sql.Date date = new java.sql.Date(now);
+   java.sql.Time time = new java.sql.Time(now);
+   datetime= date.toString() + " " + time.toString();  
+   
+   ArrayList<wdcs11400.wdcs11400Bean> list= (ArrayList)request.getAttribute("list");
+%>
+
+<HTML>
+<HEAD>
+<TITLE>wdcs11410frame 函件查詢符合顯示</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=Big5">
+<!--  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">-->
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="<%= datetime %>">
+<LINK type="text/css" href="${pageContext.request.contextPath}/css/prg.css" rel="stylesheet">
+<LINK type="text/css" href="${pageContext.request.contextPath}/css/jquery/jquery-ui.css" rel="stylesheet">
+<LINK type="text/css" href="${pageContext.request.contextPath}/css/jquery/jquery-ui-tabs.css" rel="stylesheet">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/jquery-1.3.2.min.js"></script>
+<SCRIPT type="text/javascript" SRC="${pageContext.request.contextPath}/js/jquery/jquery.js"></script>
+<SCRIPT type="text/javascript" SRC="${pageContext.request.contextPath}/js/jquery/jquery-ui.js"></script>
+<SCRIPT type="text/javascript" SRC="${pageContext.request.contextPath}/src/MakeVisible.js"></SCRIPT>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/jquery.tablesorter.js"></script>
+
+<style>
+ tbody tr:nth-child(odd){ 
+	color:#333333;background-color:#F7F6F3; cursor:pointer; font: 15px 新細明體; 
+	height: 35px;
+	} 
+ tbody tr:nth-child(even){ 
+	color:#284775;background-color:#E8EEFA; cursor:pointer; font: 15px 新細明體; 
+ 	height: 35px; 
+ 	} 
+ tbody tr:hover{ 
+ background:#C3D9FF;
+ } 
+
+</style>
+<SCRIPT>
+function ResearchThis() {
+    frm11410_f.action="${pageContext.request.contextPath}/src/wdcs11410/wdcs11410.jsp";
+    frm11410_f.submit();
+ }
+//  function sort(col, sortby, type) {    // 呼叫iframe裡面的sortfield這支javascript
+//     var flist=window.frames.lst.document.all.cnt;
+//     if(flist==null) {
+//       alert("查無相關資料，請重新查詢！謝謝！");
+//       return;
+//     }
+//     frame.sortfield(col, sortby, type);
+//  }
+function rowclick(sno){
+  document.all.frm11410_f.action="${pageContext.request.contextPath}/servlet/wdcs11410.wdcs11410_02T?sno="+sno;
+  document.all.frm11410_f.submit();
+}
+
+
+</SCRIPT>
+</HEAD>
+<BODY nowrap leftmargin="5"  background="${pageContext.request.contextPath}/image/bg1.gif" onload="">
+<ta:tabs id="pages" currentPid="wdcs11410">
+<FORM method="post" name="frm11410_f">
+<div class="" style="width: 100%;height: 250px;overflow: scroll;border: black 0px solid;">
+<table id="myTable" border="1" cellspacing="0" width="100%">
+	<thead>
+  		<tr class="Table_th">
+   		<th>流水號</th>
+   		<th>送達單位</th>
+    	<th>來文字</th>
+   		<th>來文號</th>
+   		<th>來文者</th>
+   		<th>郵件掛號</th>
+   		<th>說明</th>
+   		<th>收件日期</th>
+  		</tr>
+ 	</thead>
+ 	<tbody>
+  <% for(wdcs11400.wdcs11400Bean wdcs11400BeanID:list){ %>
+ 		<tr onclick="rowclick(<%=wdcs11400BeanID.getSno()%>)">
+   		<td name="sno"><%=wdcs11400BeanID.getSno()%></td>
+   		<td name="dpsname"><%=wdcs11400BeanID.getDpsname()%></td>
+   		<td name="indid"><%=wdcs11400BeanID.getIndid()%></td>
+   		<td name="insno"><%=wdcs11400BeanID.getInsno()%></td>
+  		<td name="indp"><%=wdcs11400BeanID.getIndp()%></td>
+  		<td name="regno"><%=wdcs11400BeanID.getRegno()%></td>
+  		<td name="memo"><%=wdcs11400BeanID.getMemo()%></td>
+   		<td name="date"><%=wdcs11400BeanID.getDate()%></td>
+ 		</tr>
+  <%} %>
+  	</tbody>
+</TABLE>
+</div>
+<div align="center" style="width: 100%;margin-top: 50px">
+<button  onclick="ResearchThis();" name="btn_back">回上一頁</button>
+</div>
+<input type="hidden" value="cnt" name="cnt">
+</FORM>
+</ta:tabs>
+
+</BODY>
+</HTML>

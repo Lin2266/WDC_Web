@@ -21,10 +21,10 @@
 <table id="tableSort">
 <thead>
 <tr>
-<th data-type="num">工号</th>
-<th data-type="string">姓名</th>
-<th data-type="string">性别</th>
-<th data-type="date">时间</th>
+<th id="num">工号</th>
+<th id="string">姓名</th>
+<th id="string">性别</th>
+<th id="date">时间</th>
 </tr>
 </thead>
 <tbody>
@@ -73,15 +73,19 @@
 </tbody>
 </table>
 <script>
-//此排序中文是數字、中文、英文的順序排序，要數字、英文、中文排序要用tablesorter.js的api來排
+//tableSort1.html改寫，因不同環境或版本問題不適用
 ;(function(){
 var tbody = document.querySelector('#tableSort').tBodies[0];
 var th = document.querySelector('#tableSort').tHead.rows[0].cells;
 var td = tbody.rows;
+
 for(var i = 0;i < th.length;i++){
     th[i].flag = 1;
     th[i].onclick = function(){
-        sort(this.getAttribute('data-type'),this.flag,this.cellIndex);
+    	if(this.getAttribute('id') ==="num") str="num";
+    	else if (this.getAttribute('id') ==="string") str="string";
+    	else str="date";
+        sort(str,this.flag,this.cellIndex);
         this.flag = -this.flag;
     };
 };
@@ -94,7 +98,7 @@ function sort(str,flag,n){
         return method(str,a.cells[n].innerHTML,b.cells[n].innerHTML) * flag;
     });
     for(var i = 0;i < arr.length;i++){
-        tbody.appendChild(arr[i]);
+        document.getElementById("tbody").appendChild(arr[i]);
     };
 };
 function method(str,a,b){
@@ -111,5 +115,4 @@ function method(str,a,b){
 };
 })();
 </script>
-</body>
 </html>

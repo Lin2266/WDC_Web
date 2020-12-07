@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>排除第一列不要奇數跟偶數條件</title>
+<style>
+有些環境需要加:not(:first-child)，第1行才會排除，如果td第1行效果不見就拿掉，或者tbody tr:nth-child(odd)
+ tr:nth-child(odd):not(:first-child){ 
+	color:#333333;background-color:#F7F6F3; cursor:pointer; font: 15px 新細明體; 
+	height: 35px;
+	} 
+ tr:nth-child(even):not(:first-child){ 
+	color:#284775;background-color:#E8EEFA; cursor:pointer; font: 15px 新細明體; 
+ 	height: 35px; 
+ 	} 
+ tr:hover:not(:first-child){ 
+ background:#C3D9FF;
+ } 
+ th{
+ 	font: bold 15px 新細明體;
+    border: #eeeeee 1px solid;
+    border-top: #e7e7e7 1px solid;
+    text-align: center;
+    padding-top: 2px;
+    cursor: pointer; 
+    color:White;
+    background-color:#5D7B9D;
+    font-weight:bold;
+ }
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<table id="myTable" class="tablesorter">
+<thead>
+<tr>
+    <th>姓名</th>
+    <th>生日</th>
+    <th>身高</th>
+    <th>體重</th>
+    <th>三圍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>林志玲</td>
+    <td>1974-11-29</td>
+    <td>174cm</td>
+    <td>52kg</td>
+    <td>34C、24、36</td>
+</tr>
+<tr>
+    <td>隋棠</td>
+    <td>1981-10-22</td>
+    <td>a172cm</td>
+    <td>48kg</td>
+    <td>33B、23、34</td>
+</tr>
+<tr>
+    <td>白歆惠</td>
+    <td>1982-10-23</td>
+    <td>中175cm</td>
+    <td>50kg</td>
+    <td>33B、23、35</td>
+</tr>
+<tr>
+    <td>林嘉綺</td>
+    <td>1977-09-10</td>
+    <td>180cm</td>
+    <td>56kg</td>
+    <td>34D、25、35</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

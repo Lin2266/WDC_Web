@@ -1,0 +1,72 @@
+/* 
+    Created on : 2015/9/3, 上午 10:05:31
+    Author     : Administrator
+*/
+
+body{
+    /*margin: 1%;*/
+    background-color:#eee;
+    font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", 
+        "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei",
+        "標楷體", "DFKai-SB", sans-serif;
+}
+input, textarea, select{width: 200px; font-size: medium; padding: 2px} 
+input[type='radio'], input[type='checkbox'], input[type='submit']{width: inherit}
+
+body{
+    background-color:#eee;
+}
+#header{
+    /*                margin: 1%;*/
+    background-color: #999999;
+    background-image: url(../images/totalbuy.png);
+    background-repeat: no-repeat;
+    background-position: 35% center;
+    color: #eee;
+    text-align: center;
+    padding: 2ex;
+}
+#nav>a:hover{
+    background-color: #999999;color: #eee;
+}
+#nav>a:active{
+    color: red;
+}
+#section{
+    background-color:#eee;
+    float: left;width:10%;
+    height: 77vh;
+}
+#article{
+    background-color:white;
+    float: left;width:80%;
+    height: 77vh;
+    /*margin: 1%;
+    padding: 1%;*/
+}
+#aside{
+    background-color:#eee;
+    float: right;width:10%;
+    height: 77vh;
+}
+#footer{
+    background-color: #999999;color: #eee;text-align: center;
+}
+
+label{padding-left: 10px}
+
+#pro-list>li{
+    margin: 5px;
+    display: inline-block;
+    width:210px; height: 180px; overflow: auto;
+    padding: 2px;
+    border: solid thin lightgrey;
+    box-shadow: 2px 2px 2px #888888;                
+}
+.logo img{
+    width:100px;
+}
+hr{
+    border: 0; height: 1px; 
+    background-image: linear-gradient(to right, rgba(55,0,55, 0), rgba(55,0,55, 0.75), rgba(55,0,55, 0));
+}
