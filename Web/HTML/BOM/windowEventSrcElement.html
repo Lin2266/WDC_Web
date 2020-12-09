@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>window.event.srcElement</title>
+<script>
+
+</script>
+</head>
+<body>
+<p>一個好處就是 我想讓body(或其他元素內)的某些物件響應事件 就不用挨個兒去寫
+只要在外層上寫一個 然後檢查event.srcElement.tagName或其他屬性是不是你想要的來決定是否響應事件就可以了.不過好像event.srcElement在ff裡不起作用 </p>
+<p>比如</p>
+<p>
+<input value="input">
+<br>
+<span>span</span></p>
+<div>div</div>
+ 
+<p>event物件指當前觸發的事件物件,  window.event.srcElement是指觸發事件的物件。比如你設定document.onclick 
+=  myfunc;這時所有頁面點選的事件都交給myfunc處理，在myfunc函式裡可以寫vSrc  =  window.event.srcElement，
+知道使用者是點選了什麼地方，做相應處理。 
+你找個HTML檔案，在其中加上這麼一段：</p>
+<p>
+<textarea rows="10" cols="90">
+  <script  languange  =  "javascript"> 
+document.onclick  =  myfunc; 
+  
+</script>
+</textarea> 
+<script  languange  =  "javascript"> 
+document.onclick  =  myfunc; 
+function myfunc()
+{
+var evt=getEvent();
+var element=evt.srcElement || evt.target;
+alert(element.tagName)
+}
+//在 ie中處理事件直接使用window.event物件即可,但在firefox中,是沒有 window.event物件的,函式需要使用事件的時候,
+//需要在事件發生時把事件作為引數傳遞給函式,不象在ie中,事件物件是全域性的,隨處都可以訪 問.下面這個getEvent()函式可以相容firefox和ie,
+//只需要在訪問事件物件的函式的開始呼叫getEvent()即可,不用再把事件作為 引數傳遞.以下程式碼已經實驗通過!
+function getEvent()
+{
+if(document.all)
+{
+return window.event;//如果是ie
+}
+func=getEvent.caller;
+while(func!=null)
+{
+var arg0=func.arguments[0];
+if(arg0)
+{
+if((arg0.constructor==Event || arg0.constructor ==MouseEvent)
+||(typeof(arg0)=="object" && arg0.preventDefault && arg0.stopPropagation))
+{
+return arg0;
+}
+}
+func=func.caller;
+}
+return null;
+} 
+</script>
+</p>
+<p>試試就知道了。 <a href=#>void(0)是一個不做任何事的函式。</a>
+</p>
+</body>
+</html>

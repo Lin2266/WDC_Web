@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+div span{
+	color: red;
+}
+div{
+background-color:rgb(232,232,232);
+border: 1px solid gray;
+}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<pre>
+介紹
+
+IE下,event物件有srcElement屬性,但是沒有target屬性;
+
+Firefox下,event物件有target屬性,但是沒有srcElement屬性.但他們的作用是相當的，即：
+
+firefox 下的 event.target = IE 下的 event.srcElement
+
+解決方法
+
+使用obj = event.srcElement ? event.srcElement : event.target;
+
+或：var evtTarget = event.target || event.srcElement;
+
+<div style="width: 850px;height: 250px;font-size: 15px">
+	event<span>.srcElement.id</span>
+	event<span>.srcElement.tagname</span>
+	event<span>.srcElement.type</span>
+	event<span>.srcElement.value</span>
+	event<span>.srcElement.name</span>
+	event<span>.srcElement.classname</span>
+	event<span>.srcElement.parentelement</span>
+	event<span>.srcElement.getattribute</span>
+	event<span>.srcElement.children</span>
+	event<span>.srcElement.lastChild</span>
+	event<span>.srcElement.ChildNode</span>
+	event<span>.srcElement.selectedIndex</span>
+</div>
+
+js將html的所有控制元件都看成是一個個物件，通過js的各個屬性，就能對其進行操作處理，js裡物件的整體結構是樹形的結構。一層一層的追溯，即可獲取需要的結果。
+
+event.srcElement：表示的當前的這個事件源。
+
+event.srcElement.parentNode：表示當前事件源的父節點。
+
+parentNode：父節點，也就是上一層的節點。可以是任何一個標籤。
+
+event.srcElement.firstChild：當前事件的第一個節點，如果節點是input，通過event.srcElement.firstChild.value就可以獲取此input的值。
+
+event.srcElement.parentElement：是指在滑鼠所在物件的上一個物件。
+
+event.srcElement.children：當前節點下物件的個數，有多個的話就是個陣列，如當前節點下有2個input的物件，要獲取這兩個可以用event.srcElement.children[0] 與 event.srcElement.children[1]分別獲取。
+
+常用如下：
+
+1、event.srcElement.parentNode.tagName;
+
+<div style="width: 850px;height: 100px">
+	&ltdiv&gt
+	&ltinput type=<span>"button"</span> value=<span>"父元素標籤"</span> onclick=<span>"alert(event.srcElement.parentNode.tagName)"</span>
+	&lt/div&gt
+</div>
+
+結果：DIV
+
+第一個子標籤為 event.srcElement.firstChild
+
+最後個一個是   event.srcElement.lastChild
+
+當然也可以用   event.srcElement.children[i] , event.srcElement.ChildNode[i]
+
+2、event.srcElement.parentElement是指在滑鼠所在物件的上一個物件
+
+<div style=" width: 850px;height: 100px">
+	&lttable border=<span>1</span> width=<span>"200"</span>&gt
+	&lttr title=<span>"tr測試"</span>&gt&lttd onclick=<span>"alert(event.srcElement.parentElement.title)"</span>&lt/td&gt
+	&lt/tr&gt
+</div>
+
+3、event.srcElement.tagName 得到點選位置的標籤名稱
+
+4、event.srcElement.title 得到當前標籤title屬性值
+
+5、event.srcElement.options[event.srcElement.selectedIndex].value
+
+例1：
+
+<div style=" width: 850px;height: 100px">
+	&ltselect name=<span>"selectname"</span> onchange=<span>"alert(event.srcElement.options[event.srcElement.selectedIndex].value)"</span>&gt
+	&ltoption value=<span>"1-"</span>&gt1&lt/option&gt
+	&lt/tr&gt
+</div>
+
+例2：
+<div style=" width: 850px;height: 300px">
+	&ltscript&gt
+	function <span>a</span>(){ 
+		alert(<span>"您點選的標記是："</span>   event.srcElement.tagName)
+	}
+	&lt/script&gt
+	&ltbody onclick=<span>"a()"</span>&gt
+	點滑鼠測試&ltbr&gt    //BODY
+	&ltinput value=<span>'test input'</span>/&gt //INPUT
+	&lta href=<span>#</span>>test&lt/a&gt    //A
+	&ltdiv>測試div&lt/div&gt    //DIV
+	&ltp>測試p&lt/p&gt     //P
+	&ltspan>測試span&lt/span&gt&ltbr /&gt //SPAN
+	&ltdiv&gt
+	&lta href="/" rel=<span>"external nofollow"</span> onmouseover=<span>"alert(event.srcElement.parentElement.tagName);"</span>&gt放在我上面&lt/a&gt
+	//DIV 
+	&lt/body&gt
+</div>
+
+例3：
+<div style=" width: 850px;height: 400px">
+	&ltdiv id=<span>"div_001"</span>&gt
+	&ltform id=<span>"form_001"</span>&gt
+	&ltinput type=<span>"button"</span> id=<span>"button_001_id"</span> name=<span>"button_001_Name"</span> value=<span>"單擊檢視"</span>
+	class=<span>"button_001_Class"</span> onclick=<span>"Get_srcElement(this)"</span>&gt
+	&lt/form&gt
+	&lt/div&gt
+	&ltscript&gt
+	function Get_srcElement()
+	{
+	var srcElement=<span>""</span>
+	srcElement  = <span>"\n"   "event.srcElement.id : "</span>   event.srcElement.id;
+	srcElement  = <span>"\n"   "event.srcElement.tagName : "</span>   event.srcElement.tagName;
+	srcElement  = <span>"\n"   "event.srcElement.type : "</span>   event.srcElement.type;
+	srcElement  = <span>"\n"   "event.srcElement.value : "</span>   event.srcElement.value;
+	srcElement  = <span>"\n"   "event.srcElement.name : "</span>   event.srcElement.name;
+	srcElement  = <span>"\n"   "event.srcElement.className : "</span>   event.srcElement.className;
+	srcElement  = <span>"\n"   "event.srcElement.parentElement.id : "</span>   event.srcElement.parentElement.id;
+	srcElement  = <span>"\n"   "event.srcElement.parentNode.id : "</span>   event.srcElement.parentNode.id;
+	srcElement  = <span>"\n"   "event.srcElement.getattribute : "</span>   event.srcElement.getAttribute;
+	alert(srcElement)
+	}
+	&lt/script&gt
+</div>
+</pre>
+</body>
+</html>

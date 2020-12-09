@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+<script>
+function a(){ 
+alert("您點選的標記是：" + event.srcElement.tagName)
+}
+</script>
+<body onclick="a()">
+點滑鼠測試<br>     //BODY
+<input value='test input'/> //INPUT
+<a href=#>test</a>    //A
+<div>測試div</div>    //DIV
+<p>測試p</p>     //P
+<span>測試span</span><br /> //SPAN
+<div>
+<a href="/" rel="external nofollow" onmouseover="alert(event.srcElement.parentElement.tagName);">放在我上面</a>
+//DIV 
+
+</body>
+</html>
