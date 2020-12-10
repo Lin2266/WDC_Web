@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<title>容器(container)類別與留白</title>
+<style type="text/css">
+div{
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<p>container容器類別:寬度夠則和瀏覽器間有留白</p>
+<p>container-fluid容器類別:寬度夠容器依舊撐滿瀏覽器視窗，兩側沒有留白</p>
+<p>有時設計網頁版面時，容器內需要有一些空白，不一定12個column都會使用，利用「.col-*offset-*」類別讓column偏移後留白</p>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4">區塊1</div>
+		<div class="col-sm-4 col-sm-offset-4">區塊2</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-1">區塊3</div>
+		<div class="col=sm-4">區塊4</div>
+	</div>
+</div>
+</body>
+</html>

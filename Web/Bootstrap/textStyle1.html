@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<title>支援HTML元素</title>
+<style type="text/css">
+.row div{
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div class="container">
+	<p>超小螢幕裝置使用&ltcode&gt.col-xs-1 ~ .col~xs-12&lt/code&gt類別</p>
+	<p>按&ltkbd&gtF5&lt/kbd&gt可以重新載入瀏覽器</p>
+	<p>&ltvar&gtf(x)&lt/var&gt = a &ltvar&gtx&lt/var&gt + b</p>
+	<p>&ltsamp&gtSystem.out.println(new java.util.Date())&lt/samp&gt</p>
+	<p>System.out.println(new java.util.Date())</p>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">HTML 元素</div>
+		<div class="col-md-3">說明</div>	
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">&ltcode&gt</div>
+		<div class="col-md-3">以特定的樣式呈現程式碼</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">&ltkdb&gt</div>
+		<div class="col-md-3">以特定的樣式呈現鍵盤按鍵</div>		
+	</div>	
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">&ltvar&gt</div>
+		<div class="col-md-3">以特定的樣式呈現變數</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">&ltsamp&gt</div>
+		<div class="col-md-3">以特定的樣式呈現範例輸出碼</div>		
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">&ltpre&gt</div>
+		<div class="col-md-3">以特定的樣式呈現整段程式碼</div>		
+	</div>
+	<code>
+		code範例:
+		private static void testCastClass(Manager m){
+			//向上轉型
+			Employee e = (Employee) m;
+			//平行轉型
+			Manager m2 = (Manager) m;
+			//向下轉型
+			//compiler認為可能是Director，因此有可能會是 平行轉型
+			Director d (Director) m;
+		}
+		private static void testCastInterface(Manager m){
+			Quit q = (Quit) m;
+		}
+	
+	</code><br>
+	<kbd>
+		kdb範例:
+		private static void testCastClass(Manager m){
+			//向上轉型
+			Employee e = (Employee) m;
+			//平行轉型
+			Manager m2 = (Manager) m;
+			//向下轉型
+			//compiler認為可能是Director，因此有可能會是 平行轉型
+			Director d (Director) m;
+		}
+		private static void testCastInterface(Manager m){
+			Quit q = (Quit) m;
+		}
+	</kbd><br>
+	<var>
+		var範例:
+		private static void testCastClass(Manager m){
+			//向上轉型
+			Employee e = (Employee) m;
+			//平行轉型
+			Manager m2 = (Manager) m;
+			//向下轉型
+			//compiler認為可能是Director，因此有可能會是 平行轉型
+			Director d (Director) m;
+		}
+		private static void testCastInterface(Manager m){
+			Quit q = (Quit) m;
+		}
+	</var><br>
+	<samp>
+		samp範例:
+		private static void testCastClass(Manager m){
+			//向上轉型
+			Employee e = (Employee) m;
+			//平行轉型
+			Manager m2 = (Manager) m;
+			//向下轉型
+			//compiler認為可能是Director，因此有可能會是 平行轉型
+			Director d (Director) m;
+		}
+		private static void testCastInterface(Manager m){
+			Quit q = (Quit) m;
+		}
+	</samp><br>
+	<pre>
+		per範例:
+		private static void testCastClass(Manager m){
+			//向上轉型
+			Employee e = (Employee) m;
+			//平行轉型
+			Manager m2 = (Manager) m;
+			//向下轉型
+			//compiler認為可能是Director，因此有可能會是 平行轉型
+			Director d (Director) m;
+		}
+		private static void testCastInterface(Manager m){
+			Quit q = (Quit) m;
+		}
+		
+	</pre>
+	
+</div>
+</body>
+</html>
