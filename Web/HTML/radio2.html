@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+
+
+
+</head>
+<body>
+<form id="form1" method="post" action="radio1.html">
+<input type="radio" name="userid" value="1">1
+<input type="radio" name="userid" value="2">2
+<input type="radio" name="userid" value="3">3
+<input type="button" name="button" onclick="Foo()">
+</form>
+<script>
+function Foo()
+{
+var selectedIndex = -1;
+var form1 = document.getElementById("form1");
+var i = 0;
+for (i=0; i<form1.r.length; i  )
+{
+if (form1.r[i].checked)
+{
+selectedIndex = i;
+alert("您選擇項的 value 是："  + form1.r[i].value);
+break;
+}
+}
+if (selectedIndex < 0)
+{
+alert("您沒有選擇任何項");
+}
+}
+</script>
+</body>
+</html>

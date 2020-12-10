@@ -11,10 +11,10 @@
 
 </head>
 <body>
-<div> 
-<input type="button" value="父元素標籤" onclick="alert(event.srcElement.parentNode.tagName)"> 
+<div id="divId" name="divName"> 
+<input type="button" value="父元素標籤" onclick="alert(event.srcElement.firstchild)"> 
 </div> 
-<p id="show">event.srcElement.parentNode.tagName取到的是input的父元素:DIV
+<p>event.srcElement.firstChild取到的是input的物件:
 </p>
 
 </body>

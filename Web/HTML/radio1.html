@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>读取 Radio 的值</title>
+</head>
+
+<body>
+
+<form id="form1" action="" method="">
+    <div><input type="radio" name="r" id="r1" value="一"><label for="r1">选项一</label></div>
+    <div><input type="radio" name="r" id="r2" value="二"><label for="r2">选项二</label></div>
+    <div><input type="radio" name="r" id="r3" value="三"><label for="r3">选项三</label></div>
+    <div><input type="button" value="检查选择项" onclick="javascript:Foo();"></div>
+</form>
+
+<script type="text/javascript" language="javascript">
+
+function Foo()
+{
+    var selectedIndex = -1;
+    var form1 = document.getElementById("form1");
+    var i = 0;
+    
+    for (i=0; i<form1.r.length; i++)
+    {
+        if (form1.r[i].checked)
+        {
+            selectedIndex = i;
+            alert("您选择项的 value 是：" + form1.r[i].value);
+            break;
+        }
+    }
+    
+    if (selectedIndex < 0)
+    {
+        alert("您没有选择任何项");
+    }
+}
+
+</script>
+
+</body>
+</html>

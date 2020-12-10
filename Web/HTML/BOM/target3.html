@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+<style> 
+        span, 
+        strong, 
+        p { 
+            padding: 8px; 
+            display: block; 
+            border: 2px solid green; 
+            width: 50%; 
+            margin: 10px; 
+        } 
+          
+        #output { 
+            margin: 10px; 
+            padding: 10px; 
+            width: 100px; 
+            border: 2px solid green; 
+            display: block; 
+        } 
+    </style> 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"> 
+    </script> 
+</head> 
+  
+<body> 
+    <div> 
+        <p> 
+            <strong><span>click Here !</span></strong> 
+        </p> 
+    </div> 
+    <form id="form1" action="" method="">
+    <div><input type="radio" name="r" id="r1" value="一"><label for="r1">选项一</label></div>
+    <div><input type="radio" name="r" id="r2" value="二"><label for="r2">选项二</label></div>
+    <div><input type="radio" name="r" id="r3" value="三"><label for="r3">选项三</label></div>
+    <div><input type="button" value="检查选择项" ></div>
+</form>
+    <!-- output will show inside this block -->
+    <div id="output"></div> 
+    <!-- jQuery code to show working of this property -->
+    <script> 
+        $("input").click(function(event) { 
+            $("#output").html("clicked: " + event.target.nodeName); 
+        }); 
+    </script> 
+
+</body>
+</html>
