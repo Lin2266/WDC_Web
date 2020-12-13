@@ -6,7 +6,26 @@
         <element id="directory" name="classes">
           <element id="module-output" name="WDC_Web" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/jsp-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/jstl-1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/standard.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/xercesImpl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/servlet-api.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/xalan-2.4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/json-20140107.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/xercesSamples.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/xml-apis-2.0.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/xml-apis-1.4.01.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/jcl-over-slf4j-1.7.19.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/taglibs-standard-compat-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/taglibs-standard-jstlel-1.2.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/Web/WEB-INF/lib/mysql-connector-java-5.1.22-bin.jar" />
+        </element>
       </element>
+      <element id="javaee-facet-resources" facet="WDC_Web/web/Web" />
     </root>
   </artifact>
 </component>
