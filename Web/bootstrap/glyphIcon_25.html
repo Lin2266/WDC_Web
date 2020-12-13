@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>字體圖示</title>
+</head>
+<body>
+<div class="container">
+    <pre>
+        字體圖示(glyphicon)元件用來加上圖示(icon)，這些圖示由Glyphicon Halflings所提供，
+        可用圖示詳https://getbootstrap.com/docs/3.3/components/。
+        1.字體圖示需要2個類別(class),第一個固定是「glyphicon」，第二個選擇需要的圖示，
+        如信封樣式類別為「glyphicon-envelope」，購物車樣式類別為「glyphicon-shopping-cat」。
+        2.圖示類別放在「span」元素中，可視需要於文字之間以「&nbsp;」保留些許空間。
+        3.若需要將圖示如「glyphicon-search」放入輸入欄位右側，則必須在指定位置使用以下2類別:
+        has-feedback
+        form-control-feedback
+    </pre>
+    <button type="button" class="btn btn-default" onclick="location.href='mailto:xyz@abc.com';">
+        <span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;提案合作
+    </button>
+    <hr>
+    <a href="#">
+        <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;購物車
+    </a>
+    <hr>
+    <div class="form-group has-feedback">
+        <input type="search" class="form-control" id="xxx" placeholder="搜尋">
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+    </div>
+</div>
+</body>
+</html>

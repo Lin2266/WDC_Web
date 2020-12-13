@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>圖片區域點擊連結</title>
+</head>
+<body>
+<pre>
+定义和用法
+<area> 标签定义图像映射中的区域（注：图像映射指得是带有可点击区域的图像）。
+area 元素总是嵌套在 <map> 标签中。
+注释：<img> 标签中的 usemap 属性与 map 元素 name 属性相关联，创建图像与映射之间的联系。
+
+    提示和注释：
+注释：<img> 中的 usemap 属性可引用 <map> 中的 id 或 name 属性（由浏览器决定），所以我们需要同时向 <map> 添加 id 和 name 两个属性。
+圖片和熱點區域元素關聯是使用圖片的usemap屬性，其值對應<map>的id或者name值（Chrome瀏覽器只支持name屬性值關聯）。
+
+shape
+shape表示點擊熱點區域的形狀，支持矩形rect，圓形circle以及多邊形poly。
+coords
+coords表示點擊熱點區域形狀的坐標。坐標點0,0表示圖片的左上角。其中矩形rect支持4個數值，2個坐標，分別是矩形左上角坐標和矩形右下角坐標。例如，coords="20,20,80,80"生成的就是一個左上角坐標20,20寬高都是60px的矩形區域。圓形circle支持3個數值，前2個值為圓心坐標，第3個值為圓的半徑大小。多邊形poly就更簡單了，每兩個數值組合表示一個坐標點，依次連線形成的區域就是最終的熱點區域。
+href
+href和<a>元素的href是一樣的東西，直接跳轉地址，或者錨點等。也同樣支持target屬性和rel屬性。也就是說<area>可以看成是半個<a>元素。
+alt
+alt同<img>元素的alt，表示熱點區域圖片的描述信息。
+如果<area>要想和圖片熱點關聯，祖先元素<map>是不可缺少的，但是不一定非得直接父子關系。<map>和<area>之間再嵌套個<div>什麽的功能也是正常的。
+</pre>
+<h4>使用Tab鍵索引高亮就可以窺見其輪廓範圍</h4>
+<img src="../images/direction.gif" alt="Workplace" usemap="#workmap" width="400" height="100">
+
+<map name="workmap">
+    <area shape="rect" coords="25,25,65,65" alt="Computer" href="computer.htm">
+    <area shape="rect" coords="140,10,190,90" alt="Phone" href="phone.htm">
+    <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+</body>
+</html>

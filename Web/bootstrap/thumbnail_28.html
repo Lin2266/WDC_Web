@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>縮圖</title>
+</head>
+<body>
+<div class="container">
+    <pre>
+        縮圖元件是網路系統的直接應用，以網路區隔圖片、影片、文字或其他內容，常見如網路相簿、商品型錄等，
+        網頁版面會隨著瀏覽器的寬度自動調整。
+        以類別「col-md-4」建立3個&ltdiv&gt區塊，類別為「row」的&ltdiv&gt區塊內，滿足網路系統的1列
+        有12欄位的要求，每個區塊內再放入類別為「thumbnail」的&ltdiv&gt區塊，即可建立縮圖。
+    </pre>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="../images/chrome.png">
+                <div class="caption">
+                    <h3>Chrome</h3>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="../images/firefix.png">
+                <div class="caption">
+                    <h3>Chrome</h3>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="../images/ie.png">
+                <div class="caption">
+                    <h3>Chrome</h3>
+                    <p>...</p>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

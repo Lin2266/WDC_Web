@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>基礎表單</title>
+</head>
+<body>
+<div class="container">
+    <pre>
+        在Bootstrap建立「基礎表單」時，&ltform&gt標籤不加任何東西，如範例行，且遵守以下原則，
+        1.在表單輸入框如&ltinput&gt、&lttextarea&gt、&ltselect&gt等加上「form-control」類別，
+          預設寬度為100%。
+        2.使用&ltlabel&gt元素為表單輸入框設定「標籤文字」，同時將&ltlabel&gt」元素與表單輸入框放在有
+        「form-group」類別的&ltdiv&gt元素裡。
+    </pre>
+    <form>
+        <div class="form-group">
+            <label for="mail">電子郵件</label>
+            <input type="email" class="form-control" id="mail">
+        </div>
+        <div class="form-group">
+            <label for="password">密碼</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+        <div class="form-group">
+            <label for="textarea">Review of W3Schools:</label>
+            <textarea class="form-control" id="textarea" name="textarea">
+                圈圈叉叉
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="cars">Choose a car:</label>
+            <select class="form-control" name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+</div>
+</body>
+</html>

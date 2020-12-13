@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+            crossorigin="anonymous"></script>
+    <title>警示元件</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-12">&nbsp;</div>
+    <pre>
+        alert元件若再加上「alert-dismissible」類別和「關閉按鍵」即可在點擊按鍵後「移除」該alert元件。
+        關閉符號可用「X」或「& times;」(&times;)表示，後者為「x」圖形的編碼。
+        要在元件裡使用超連結，可加上使用「alert-link」類別的&lta&gt元素。
+    </pre>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" date-dismiss="alert">
+            <span>X</span>
+        </button>
+        <strong>刪除失敗!</strong>
+        請洽管理員!
+    </div>
+    <div class="alert alert-info" role="alert">
+        <strong>新增成功!</strong>
+        <a href="#" class="alert-link">前往確認</a>
+    </div>
+</div>
+</body>
+</html>
