@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEMO</title>
+<link rel="stylesheet" type="text/css" href="http://139.223.24.195:8080/demo2/css/jquery-ui.css?v=1" />
+<link rel="stylesheet" type="text/css" href="http://139.223.24.195:8080/demo2/css/ui.jqgrid.css?v=1.1" />
+
+<link rel="stylesheet" type="text/css" href="http://139.223.24.195:8080/demo2/css/main.css?v=1" />
+<script src="http://139.223.24.195:8080/demo2/js/min/jquery.js?v=1"></script>
+<script src="http://139.223.24.195:8080/demo2/js/min/jquery.cookie.js"></script>
+<script src="http://139.223.24.195:8080/demo2/js/min/jquery-ui.js?v=1"></script>
+<script src="http://139.223.24.195:8080/demo2/js/min/jquery.form.js"></script>
+<script src="http://139.223.24.195:8080/demo2/js/min/jquery.jqGrid.js?v=1"></script>
+
+
+<script src="http://139.223.24.195:8080/demo2/js/main.js?v=2"></script>
+<script src="http://139.223.24.195:8080/demo2/js/utils.js"></script>
+<script src="http://139.223.24.195:8080/demo2/js/menus.js"></script>
+
+
+
+<script type="text/javascript">ta.internal.initContextPath("/demo2").initRequestURI("/demo2/index.jsp");</script>
+
+
+
+
+
+
+
+
+<style type="text/css">
+#container_ { display: none; } 
+#loading_ { display: block; } 
+</style>
+<script type="text/javascript">
+$(function() {
+
+		$("#container_").css("display", "block");
+		$("#loading_").css("display", "none");
+
+});
+</script>
+
+
+
+
+</head>
+<body>
+
+<div id="container_">
+	<table cellspacing="0" cellpadding="0" class="main-container">
+		<tr><!-- start of 上方欄 -->
+			<td colspan="2">
+				<div class="main-header">
+					[ <a href="/demo2">首頁</a> ]
+					[ <a href="/demo2/logout.jsp">登出</a> ]
+					&nbsp; &nbsp;
+				</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<!-- 左選單區 -->
+			<td class="column-left">
+				
+
+
+
+
+<div class="main-menu" id="mainMenu">
+
+	<a href="#">開發示例</a>
+	<ul class="menu-items">
+		
+		<li id="demo001000"><a href="demo001000.jsp">單頁單表CRUD</a></li>
+		<li id="demo001002"><a href="/demo2/demo001002.jsp">單頁多對一資料表</a></li>
+		<li id="demo001010"><a href="/demo2/demo001010.jsp">多畫面的導頁</a></li>
+		<li id="demo001011"><a href="/demo2/demo001011.jsp">直接跳至他頁</a></li>
+		<li id="demo001003"><a href="/demo2/demo001003.jsp">動態引入其他網頁</a></li>
+		<li id="demo002010"><a href="/demo2/demo002010.jsp">檔案上傳</a></li>
+		<li id="demo002013"><a href="/demo2/demo002013.jsp">檔案下載</a></li>
+		<li id="demo002012"><a href="/demo2/demo002012.jsp">發送 email</a></li>
+		<li id="demo002011"><a href="/demo2/demo002011.jsp">多國語言</a></li>
+		<li><a href="#">寫作原則</a>
+			<ul style="display:none">
+				<li id="demo000003"><a href="/demo2/demo000003.jsp">命名原則</a></li>
+				<li id="demo000001"><a href="/demo2/demo000001.jsp">編程說明</a></li>
+				<li id="demo000002"><a href="/demo2/demo000002.jsp"><i>程式碼撰寫準則</i></a></li>
+				<li id="demo003011"><a href="/demo2/demo003011.jsp"><i>JavaScript 簡介</i></a></li>
+				<li id="demo003030"><a href="/demo2/demo003030.jsp">Eclipse 常用快捷鍵</a></li>
+			</ul>
+		</li>
+		<li><a href="#">畫面組件: JSP tag-lib</a>
+			<ul style="display:none">
+				<li><a href="#">HTML Form</a>
+					<ul style="display:none">
+						<li id="demo002027"><a href="/demo2/demo002027.jsp">文字欄位</a></li>
+						<li id="demo002024"><a href="/demo2/demo002024.jsp">Radio 欄位</a></li>
+						<li id="demo002025"><a href="/demo2/demo002025.jsp">Checkbox 欄位</a></li>
+						<li id="demo002026"><a href="/demo2/demo002026.jsp">日期欄位</a></li>
+						<li id="demo002021"><a href="/demo2/demo002021.jsp">Select 選單</a></li>
+						<li id="demo002019"><a href="/demo2/demo002019.jsp">Button 按鈕</a></li>
+					</ul>
+				</li>
+				<li id="demo002020"><a href="/demo2/demo002020.jsp">Grid 資料表</a></li>
+				<li id="demo002022"><a href="/demo2/demo002022.jsp">Tab 頁籤</a></li>
+	            <li id="demo002023"><a href="/demo2/demo002023.jsp">Dialog 對話窗</a></li>
+	            <li id="demo002028"><a href="/demo2/demo002028.jsp">多區塊切換</a></li>
+	            <li id="demo002030"><a href="/demo2/demo002030.jsp">Portlet 視窗</a></li>
+			</ul>
+		</li>
+		<li><a href="#">畫面組件: 純JavaScript</a>
+			<ul style="display:none">
+				<li id="demo002029"><a href="/demo2/demo002029.jsp">可滑動條列</a></li>
+				<li id="demo002031"><a href="/demo2/demo002031.jsp">手風琴式容器</a></li>
+			</ul>
+		</li>
+		<li><a href="#">特殊主題</a>
+			<ul style="display:none">
+				<li id="demo003031"><a href="/demo2/demo003031.jsp">Cache 機制</a></li>
+				<li id="demo003033"><a href="/demo2/demo003033.jsp">REST 支援</a></li>
+				<li id="demo003032"><a href="/demo2/demo003032.jsp"><i>可由畫面編排的排程</i></a></li>
+				<li id="demo003034"><a href="/demo2/demo003034.jsp">Xprint 報表格式製作</a></li>
+			</ul>
+		</li>
+		<li><a href="#">API</a>
+			<ul style="display:none">
+				<li id="demo003010"><a href="/demo2/demo003010.jsp">共用 JavaScript API</a></li>
+				<li id="demo003012"><a href="/demo2/demo003012.jsp">共用 CSS (SEMS 案專用)</a></li>
+				<li id="demo003020"><a href="/demo2/demo003020.jsp">共用 Java 工具 API</a></li>
+			</ul>
+		</li>
+	</ul>
+
+</div>
+<script>ta.menu.initMainMenu("mainMenu");</script>
+
+			</td>
+	
+			<!-- 主畫面區 -->			
+			<td class="column-middle">
+				<div class="title-frame1">
+					DEMO 
+				</div>
+				<div class="main-content">
+					
+ 
+				</div>
+				
+			</td>
+		</tr>
+	</table>
+</div>
+<br/>
+
+
+<input id="metaOnload_" type="hidden" value=""/>
+<script>$(function() { var ol = $("#metaOnload_"); if(ol && ol.val() != "") { eval(ol.val()); }});</script>
+
+
+
+
+</body>
+<link rel="stylesheet" type="text/css" href="http://139.223.24.195:8080/demo2/css/calendar.css"/>
+<script src="http://139.223.24.195:8080/demo2/js/calendar.js"></script>
+
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemesh>
+	<mapping>
+		<decorator>/layout/layout.jsp</decorator>
+		<!--
+		<decorator>/layout/layout-menu.jsp</decorator>
+		-->
+	</mapping>
+	
+	<mapping exclude="true">
+		<path>/js/*</path>
+		<path>/css/*</path>
+		<path>/tmp</path>
+		<path>/ajax/*</path>
+		<path>/remoting/*</path>
+		<path>/downloader/*</path>
+		<path>/ws/*</path>
+		<path>/wsdl/*</path>
+		<path>/socket/*</path>
+		<path>/login.jsp*</path>
+		<path>/logout.jsp*</path>
+		<path>/error.jsp*</path>
+		<path>/console.jsp*</path>
+		<path>/test2.jsp*</path>
+		<path>/test-websocket.jsp*</path>
+		<path>/dcs200101.jsp*</path><!-- 收文匣 Web -->
+		<path>/dcs200201.jsp*</path><!-- 發文匣 Web -->
+		<path>/dcs200301.jsp*</path><!-- 統合交換中心主機之連線狀態 Web -->
+		<path>/dcs210101.jsp*</path><!-- 收文清單 Web -->
+		<path>/dcs210201.jsp*</path><!-- 發文清單 Web -->
+	</mapping>
+</sitemesh>

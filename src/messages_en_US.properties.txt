@@ -1,0 +1,30 @@
+# for 一般畫面
+新增=New
+修改=Update
+修改2=Udt
+刪除=Delete
+刪除2=Del
+查詢=Query
+查詢2=Qry
+清除=Clear
+清除2=Clr
+date\ string\ format\ error=date string format error
+
+# for jqGrid
+第\ {0}\ 頁/共\ {1}\ 頁=page \\{0\\}/\\{1\\}
+第\ {0}\ -\ {1}\ 筆,\ 共\ {2}\ 筆=view \\{0\\} - \\{1\\} of \\{2\\}
+共\ {2}\ 筆=total \\{2\\}
+無資料=no record
+
+這是測試=This is a test
+測試帶空格\ 的\ key = Test message key which contains whitespace characters
+測試帶'\='字元的key = Test message key containing '=' character
+顯示參數一參數二參數三=show parameter: value "{0}", value "{1}", value "{1}"
+顯示參數{一}參數{二}參數{三}= show parameter: value {0}, value {1}, value {2}, reserve \\{0\\}, {n}
+欄位一=Column1
+欄位二=Column2
+欄位三=Column3
+欄位四=Column4
+欄位五=Column5
+欄位六=Column6
+欄位七=Column7

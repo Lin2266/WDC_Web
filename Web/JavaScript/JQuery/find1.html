@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+<script>
+$(function() {
+	$("#XMLtable tr").click(function(){
+		$(this).find("input:radio").prop("checked",true);	
+		var rowid = $(this).find("input:radio").val();
+		var dupi = $(this).find("td:eq(1)").text();
+		var deptno = $(this).find("td:eq(3)").text();
+		window.parent.document.wdcs11110frame.rowid.value=rowid;
+		window.parent.document.wdcs11110frame.dupi.value=dupi;
+		window.parent.document.wdcs11110frame.deptno.value=deptno;
+	})
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

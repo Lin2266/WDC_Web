@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:jms="http://www.springframework.org/schema/jms"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd"
+		default-autowire="no"
+		default-lazy-init="true">
+	
+	<!-- jAgent MQ ========================================================== -->
+	
+	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL" value="${jagent.mq.url}"/>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="jmsTXManager" class="org.springframework.jms.connection.JmsTransactionManager">
+		<description>未使用 JTA 機制, JDBC 和 JMS 操作無法同在單一 tx 內, 需依賴 @Transactional 的 JMS 和 JDBC 操作不宜放在同一 method 內</description>
+		<property name="connectionFactory" ref="jmsFactory"/>
+		<qualifier value="jms"/><!-- 令 @Transactional("jms") 套用到本 tx manager -->
+	</bean>
+	
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsMessagingTemplate">
+		<property name="connectionFactory" ref="jmsFactory"/>
+	</bean>
+	
+	<bean id="jmsTXTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+		<constructor-arg><ref bean="jmsTXManager"/></constructor-arg>
+	</bean>
+	
+	<jms:listener-container connection-factory="jmsFactory" transaction-manager="jmsTXManager">
+		<jms:listener destination="${jagent.mq.queue.download}" ref="jaGetDownloadListener"/>
+		<jms:listener destination="${jagent.mq.queue.result}" ref="jaGetResultListener"/>
+	</jms:listener-container>
+	
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:websocket="http://www.springframework.org/schema/websocket"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd"
+		default-lazy-init="true">
+	
+	<!-- 使用 Spring 對 WebSocket 輕度包裝的 API (低階 API) -->
+	<websocket:handlers>
+		<websocket:mapping handler="testSocketHandler" path="/testSocketHandler"/><!-- NOTE: 如果 dispatcher servlet path 為 "/socket/*", 此處的 URL 即轉為 "/socket/testSocketHandler" -->
+		
+		<!-- 建立 WebSocket connection 階段 -->
+		<websocket:handshake-interceptors>
+			<bean class="demo.model.service.WebSocketHandshakeInterceptor"/>
+		</websocket:handshake-interceptors>
+	</websocket:handlers>
+	
+	<!-- fallback for old browsers, 搭配 sockjs.js 工具(但 IE 相容性檢視下, 遇 sockjs.js 中的 console 物件會出問題, 放棄) -->
+	<!--
+	<websocket:handlers>
+		<websocket:mapping handler="testSocketHandler" path="/js/testSocketHandler"/>
+		
+		<websocket:handshake-interceptors>
+			<bean class="demo.model.service.WebSocketHandshakeInterceptor"/>
+		</websocket:handshake-interceptors>
+		<websocket:sockjs />
+	</websocket:handlers>
+	-->
+	
+	<bean id="testSocketHandler" class="demo.model.service.TestSocketHandler"/>
+	
+	<!-- 使用 Spring STOMP API (較高階的協定) -->
+	<websocket:message-broker application-destination-prefix="/app">
+		<websocket:stomp-endpoint path="/portfolio" allowed-origins="*"><!-- 供建立 WebSocket handshake 用. 相對於 Spring MVC dispatcher servlet path -->
+			<!-- <websocket:sockjs/> --><!-- 反正 IE 相容性檢視模式下, 遇 sockjs.js 中的 console 物件也是有問題 -->
+		</websocket:stomp-endpoint>
+		
+		<!-- websocket:simple-broker prefix="/topic, /queue"/ --><!-- 簡單的 in-memory broker. "/topic" for publish/subscribe, "/queue" for point-to-point -->
+		<websocket:simple-broker prefix="/topic"/>
+	</websocket:message-broker>
+	
+</beans>
