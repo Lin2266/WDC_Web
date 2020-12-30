@@ -18,14 +18,6 @@ $(function() {
 	$("#XMLtable tr").click(function(){
 // 		$(this).find("input:radio").attr("checked",true);
 		$(this).find("input:radio").prop("checked",true);
-		//取值td:eq(1)第2個欄位
-		var rowid = $(this).find("input:radio").val();
-		var dupi = $(this).find("td:eq(1)").text();
-		var deptno = $(this).find("td:eq(3)").text();
-		//把值給iframe頁面
-		window.parent.document.wdcs11110frame.rowid.value=rowid;
-		window.parent.document.wdcs11110frame.dupi.value=dupi;
-		window.parent.document.wdcs11110frame.deptno.value=deptno;
 	})
 });
 </script>

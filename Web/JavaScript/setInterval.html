@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>間隔</title>
+<script>
+var timeoutID = window.setInterval(( () => console.log("Hello!") ), 1000);
+
+//取消時
+	window.clearInterval(timeoutID);
+</script>
+</head>
+<body>
+<pre>
+setInterval() 則是固定延遲了某段時間之後，才去執行對應的程式碼，然後「不斷循環」。 當然也會回傳一個獨立的 timer ID：
+
+<span style="background-color: yellow;">
+var intervalID = scope.setInterval(func, delay[, param1, param2, ...]);
+var intervalID = scope.setInterval(code, delay);
+</span>
+setTimeout() 只會執行一次就結束，而 setInterval() 則是會在間隔固定的時間不斷重複。
+
+</pre>
+</body>
+</html>

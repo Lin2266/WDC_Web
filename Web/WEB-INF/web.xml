@@ -8,6 +8,17 @@
     <servlet-name>BeerSelect</servlet-name>
     <url-pattern>/BeerSelect.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+<description>This is the description of my J2EE component</description>
+<display-name>This is the display name of my J2EE component</display-name>
+<servlet-name>ValueGetController</servlet-name>
+<servlet-class>servlet.ValueGetController</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ValueGetController</servlet-name>
+<url-pattern>/ValueGetController</url-pattern>
+</servlet-mapping>
+
   <filter>
     <filter-name>perfFilter</filter-name>
     <filter-class>course.web.PerformanceFilter</filter-class>

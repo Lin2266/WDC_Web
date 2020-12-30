@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>超時</title>
+<script>
+var timeoutID = window.setTimeout(( () => console.log("Hello!") ), 1000);
+
+//取消時
+window.clearTimeout(timeoutID);
+</script>
+</head>
+<body>
+<pre>
+setTimeout() 的作用 是在延遲了某段時間 (單位為毫秒) 之後，才去執行「一次」指定的程式碼，並且會回傳一個獨立的 timer ID：
+<span style="background-color: yellow;">
+var timeoutID = scope.setTimeout(function[, delay, param1, param2, ...]);
+var timeoutID = scope.setTimeout(function[, delay]);
+var timeoutID = scope.setTimeout(code[, delay]);
+</span>
+setTimeout() 只會執行一次就結束，而 setInterval() 則是會在間隔固定的時間不斷重複。
+
+
+雖然 setTimeout() 這些 timer 方法不在 ECMAScript 的規格內，而是屬於 wndow 物件的一部份，
+不過多數瀏覽器與 Node.js 也都有實作這些 timer 方法，根據環境不同實作也多少有些差異，
+像是瀏覽器的 setTimeout / setInterval 回傳的是 Number，而 Node.js 回傳的是 Object。
+
+因為 setTimeout() 只會執行一次，所以 clearTimeout() 只會在 setTimeout() 指定的時間未到時才會有效果，
+若 setTimeout() 的 callback function 已經被執行，那就等同是多餘的了。
+</pre>
+</body>
+</html>

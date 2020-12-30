@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>pass_value</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        setInterval(function() {
+            Autofresh();
+        }, 2000);
+
+        function Autofresh() {
+            $.ajax({
+                url: 'get_value.jsp',
+                type: 'POST',
+                data: {
+                    "HelloWorld": 'HelloWorld123'
+                },
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(XMLHttpRequest, status, error) {
+                    console.log(error)
+                }
+            })
+        }
+        Autofresh();
+    </script>
+</body>
+</html>

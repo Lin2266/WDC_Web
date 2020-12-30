@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>陣列傳值</title>
+<script>
+// 這個範例說明了，我們要傳遞一個 arr 的陣列至 Server 端，但我們會發現 Server 端的參數一直會是 null，
+// 而這個問題的解決方法可以將 traditional 設成 true，改以傳統的方法來序列化資料就能正常傳遞陣列至 Server 端了
+var arr = [1, 2, 3, 4, 5];
+$.ajax({
+    url: '/Home/Post',
+    type: 'post',//請求的方法也須設成 post 否則也會無法成功接收陣列資料。
+    data: { data: arr },
+    tradition:true, //傳遞陣列需設定
+    success: function (response) {
+        result = true;
+    }
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

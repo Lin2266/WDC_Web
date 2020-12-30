@@ -11,8 +11,7 @@ import javax.servlet.annotation.WebFilter;
 
 
 public class Filter2 implements Filter {
-
-
+//看xml設定
 	public void init(FilterConfig fConfig) throws ServletException {
 		
 	}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>json格式傳到li</title>
+<style type="text/css">
+li{
+	list-style: none;
+	}
+.isloading{
+	display: block;
+	background-color: #4CAF50;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$('.btn').on('click',function(){
+		//1.簡單測試抓到資料功能
+		// $.ajax({
+		// url:'https://ruienyuski.github.io/git_test/data222.json',
+		// 	success:function(response){
+		// 		$('.info').html('抓到資料囉!');
+		// 	},
+		// 	error:function(xhr){
+		// 		  alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+		// 	}
+		// });
+
+		//2.顯示json 在網頁上
+		$.ajax({ 
+			type: 'GET', 
+			url: 'https://ruienyuski.github.io/git_test/data.json', 
+			dataType: 'json',
+			success: function (response) { 
+				$.each(response, function(index, element) {
+    			$('.info').append(
+    			$('<li>',{text: [index+1]+'.'+'名稱：'+element.place}),
+    			$('<li>',{text: [index+1]+'.'+'地址：'+element.address}),
+    			$('<p>')
+    			);
+			});
+			},
+			error:function(xhr){
+				alert("發生錯誤: " + xhr.status + " " + xhr.statusText);
+			}
+		});
+
+	});
+});
+</script>
+</head>
+<body>
+<p>1.顯示是否有抓到資料</p>
+<p>2.顯示json資料在網頁上</p>
+<pre>
+1.顯示是否有抓到資料(success、error)
+設定成功就在按鈕下方顯示「抓到資料囉!」
+若失敗則跳出警告視窗「請再確認程式!!」
+
+2.顯示json資料在網頁上
+當成功載入資料時，就寫把遠端資料用append()插入在ul標籤內，變成 ul li清單列，
+下方用$.each來遍歷(循環訪問)，達到串接成 「li」+「標題」+「陣列文字」的一組li資料
+</pre>
+<!--按下按鈕顯示下方內容 -->
+ 	<button class="btn">遊樂園資訊</button>
+	<ul class="info">
+<!--json資訊轉成li顯示於此-->
+	</ul>
+</body>
+</html>
