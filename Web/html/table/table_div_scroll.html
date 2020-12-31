@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>表格裡用div做滾條</title>
+<script>
+
+</script>
+</head>
+<body>
+<table align="center">
+	<tr>
+		<td align="center">
+		<table border="1" cellspacing="0" width="505" class="Table">
+			<tr>
+				<td width="40" align=center class="Table_th">選取</td>
+				<td width="300" align=center class="Table_th">文別</td>
+				<td width="150" align=center  class="Table_th">決行文字</td>
+				<td width="15" class="Table_th"></td>
+				</tr>
+				<tr>
+				<td COLSPAN=5>
+					<div style='border:1;width:505px;height:320px;overflow-y:scroll;overflow-x:scroll'>
+						<table border=0 cellpadding=0 cellspacing=0 width='100%'class=Table>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>令</td>
+								<td id='td_sd_dec' width='150'>不發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>令</td>
+								<td id='td_sd_dec' width='150'>緩發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>令</td>
+								<td id='td_sd_dec' width='150'>先發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>呈</td>
+								<td id='td_sd_dec' width='150'>不發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>呈</td>
+								<td id='td_sd_dec' width='150'>緩發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>呈</td>
+								<td id='td_sd_dec' width='150'>先發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>派免令</td>
+								<td id='td_sd_dec' width='150'>不發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>派免令</td>
+								<td id='td_sd_dec' width='150'>緩發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>派免令</td>
+								<td id='td_sd_dec' width='150'>先發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>函</td>
+								<td id='td_sd_dec' width='150'>不發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>函</td>
+								<td id='td_sd_dec' width='150'>緩發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>函</td>
+								<td id='td_sd_dec' width='150'>先發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>書函</td>
+								<td id='td_sd_dec' width='150'>不發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>書函</td>
+								<td id='td_sd_dec' width='150'>緩發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+							<tr>
+								<td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio' onclick=''></td>
+								<td id='td_sd_name' width='300'>書函</td>
+								<td id='td_sd_dec' width='150'>先發</td>
+								<td id='td_sd_type' style='display:none'>&nbsp;</td>								
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><br>
+			<button type="button" onclick="wdcs6p300_add()" name="btn_insert">新增</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_up()" name="btn_update">修改</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_del()" name="btn_delete">刪除</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_reset()" name="btn_clear">清除</button>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<LABEL class="Lable_visible">處理訊息：</LABEL>
+			<input readOnly type="text" name="msg" size="27" class="Text_Read" value="<%=tmpMSG%>">
+		</td>
+	</tr>
+</table>
+</body>
+</html>
