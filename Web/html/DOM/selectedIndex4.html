@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>selectedIndex</title>
+</head>
+<body>
+<p>Do not select a fruit, just click the button. 
+The selectedIndex property will return "-1" if no options are selected.</p>
+<pre>
+selectedIndex屬性在下拉列表中設置或返回所選選項的索引。
+
+索引從0開始。
+
+注意：如果下拉列表允許多個選擇，它將僅返回選擇的第一個選項的索引。
+
+注意：值“ -1”將取消選擇所有選項（如果有）。
+
+注意：如果未選擇任何選項，則selectedIndex屬性將返回-1。
+</pre>
+<select id="mySelect" size="4">
+  <option>Apple</option>
+  <option>Orange</option>
+  <option>Pineapple</option>
+  <option>Banana</option>
+</select>
+
+<button type="button" onclick="myFunction()">Display index</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").selectedIndex;
+  alert(x);
+}
+</script>
+</body>
+</html>

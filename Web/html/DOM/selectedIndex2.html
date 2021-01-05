@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>selectedIndex</title>
+</head>
+<body>
+Select a fruit and click the button:
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Orange</option>
+  <option>Pineapple</option>
+  <option>Banana</option>
+</select>
+
+<button type="button" onclick="myFunction()">Display index</button>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelect").selectedIndex;
+  var y = document.getElementById("mySelect").options;
+  // var x = document.getElementById("mySelect").options[0].text;
+  alert("Index: " + y[x].index + " is " + y[x].text);
+}
+</script>
+</body>
+</html>

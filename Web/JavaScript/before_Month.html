@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Month跨年的年份及月份問題</title>
+<script>
+$(function(){
+	var now = new Date();
+	document.form1.y1.value = document.form1.y2.value = (now.getFullYear() - 1911);
+	if((now.getMonth() + 1) - 1 === 0){
+		document.form1.y1.value -= 1;
+		document.form1.m1.value = 12;
+	}else{
+		document.form1.m1.value = now.getMonth();
+	}	
+	document.form1.m2.value = (now.getMonth() + 1);
+	document.form1.d1.value = document.form1.d2.value = now.getDate();
+})
+
+</script>
+</head>
+<body>
+<p>getDate()取得的是索引值0~11</p>
+<form name="form1">
+<input type="text" name="y1" size="2">年<input type="text" name="m1" size="2">月<input type="text" name="d1" size="2">日
+&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;
+<input type="text" name="y2" size="2">年<input type="text" name="m2" size="2">月<input type="text" name="d2" size="2">日
+</form>
+</body>
+</html>
