@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>options createElement add</title>
+</head>
+<body>
+<form>
+	<select id="myselect" size="8">
+		<option>Apple</option>
+		<option>Pear</option>
+		<option>Banana</option>
+		<option>Orange</option>
+	</select>
+</form>
+<p>Click the button to add a "Kiwi" option at the index position "1" in the drop-down list.</p>
+
+<button type="button" onclick="myFunction()">Insert option</button>
+
+<script type="text/javascript">
+function myFunction(){
+	var select = document.getElementById("myselect");
+	var insertOption = document.createElement("option");
+	insertOption.text = "Kiwi";
+	select.options.add(insertOption,1);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title> options[selectedIndex]</title>
+</head>
+<body>
+<p>Choose an option in the drop-down list and display that option.</p>
+
+<form action="">
+	<select id="mySelect" onchange="myFunction()">
+		<option>Apple</option>
+    <option>Orange</option>
+    <option>Pineapple</option>
+    <option>Banana</option>
+	</select>
+</form>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	function myFunction(){
+		var select = document.getElementById("mySelect");
+		var i = select.selectedIndex;
+		document.getElementById("demo").innerHTML = select.options[i].text;
+	}
+</script>
+</body>
+</html>

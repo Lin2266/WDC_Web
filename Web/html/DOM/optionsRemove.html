@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>options Remove()</title>
+</head>
+<body>
+<form>
+  <select id="mySelect" size="4">
+    <option>Apple</option>
+    <option>Pear</option>
+    <option>Banana</option>
+    <option>Orange</option>
+  </select>
+</form>
+<br>
+
+<button onclick="myFunction()">Remove option with index "1"</button>
+
+<script type="text/javascript">
+	function myFunction() {
+		var select = document.getElementById("mySelect").options.remove(1);		
+	}
+</script>
+</body>
+</html>
