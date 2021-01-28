@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Insert title here</title>
+<script type="text/javascript">
+//點選列表，把值帶到選單跟輸入框
+$(function() {
+	$("#XMLtable tr").click(function(){	
+		var type = $(this).find("td:eq(1)").text();
+		var dec = $(this).find("td:eq(2)").text();
+		var select = document.getElementById("sd_type");
+
+		for(var i=0;i<select.length;i++){
+			if(select.options[i].text === type){
+				select.options[i].selected="selected";
+				break;
+			}
+		}
+		
+		document.all.sd_dec.value = dec;
+		document.all.sd_type_old.value = type;
+		document.all.sd_dec_old.value = dec;				
+	})
+});
+</script>
+</head>
+<body>
+<FORM method="post" name="wdcs6p300" action="" >
+<table border="0" cellpadding="1" cellspacing="0" align="center">
+	<tr>
+		<td align="right">
+			<LABEL class="Lable_visible">文　　別：</LABEL>
+		</td>
+		<td>
+			<select style="width:240px" size="1" id="sd_type" name="sd_type" onchange="" class="ComboBox_DropDown">
+				<option value="">&nbsp;</option><option value="5">公告</option>
+<option value="1">令</option>
+<option value="A">交辦案件通知單</option>
+<option value="B">交議案件通知單</option>
+<option value="2">呈</option>
+<option value="4">函</option>
+<option value="Z4">便簽</option>
+<option value="1A">派免令</option>
+<option value="4A">派免建議函</option>
+<option value="ZL">重要工作提報單</option>
+<option value="6">書函</option>
+<option value="M">通報</option>
+<option value="N">發佈令</option>
+<option value="8">開會通知單</option>
+<option value="D">催辦案件通知單</option>
+<option value="8A">會勘通知單</option>
+<option value="E">機密文書機密等級變更或註銷建議</option>
+<option value="F">機密文書機密等級變更或註銷通知</option>
+<option value="G">簽呈</option>
+
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td align="right"><LABEL class="Lable_visible">決行文字：</LABEL></td>
+		<td>
+			<input type="text" id="sd_dec" name="sd_dec" size="15" maxlength="2" class="Text_RW" value="">
+			<font color=red>(限制中文2個字)</font>
+		</td>
+	</tr>
+</table>
+
+<table align="center">
+	<tr>
+		<td align="center">
+		<table border="1" cellspacing="0" width="505" class="Table">
+			<tr>
+				<td width="40" align=center class="Table_th">選取</td>
+				<td width="300" align=center class="Table_th">文別</td>
+				<td width="150" align=center  class="Table_th">決行文字</td>
+				<td width="15" class="Table_th"></td>
+				</tr>
+				<tr>
+				<td COLSPAN=5>
+					<div style='border:1;width:505px;height:320px;overflow-y:scroll;overflow-x:scroll'>
+					<table border=0 cellpadding=0 cellspacing=0 id=XMLtable width=100% class=Table>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>令</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>1</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>令</td><td id='td_sd_dec' width='150'>發發</td><td id='td_sd_type' style='display:none'>1</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>令</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>1</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>令</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>1</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免令</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>1A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免令</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>1A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免令</td><td id='td_sd_dec' width='150'>派發</td><td id='td_sd_type' style='display:none'>1A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>呈</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>2</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>呈</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>2</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>呈</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>2</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>呈</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>2</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>函</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>4</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>函</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>4</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>函</td><td id='td_sd_dec' width='150'>函發</td><td id='td_sd_type' style='display:none'>4</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>函</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>4</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>函</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>4</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免建議函</td><td id='td_sd_dec' width='150'>兔兔</td><td id='td_sd_type' style='display:none'>4A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免建議函</td><td id='td_sd_dec' width='150'>免發</td><td id='td_sd_type' style='display:none'>4A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免建議函</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>4A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>派免建議函</td><td id='td_sd_dec' width='150'>發9</td><td id='td_sd_type' style='display:none'>4A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>公告</td><td id='td_sd_dec' width='150'>公告</td><td id='td_sd_type' style='display:none'>5</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>書函</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>6</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>書函</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>6</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>書函</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>6</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>開會通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>8</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>開會通知單</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>8</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>開會通知單</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>8</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>開會通知單</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>8</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>會勘通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>8A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>會勘通知單</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>8A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>會勘通知單</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>8A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>會勘通知單</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>8A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交辦案件通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交辦案件通知單</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交辦案件通知單</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交辦案件通知單</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>A</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交辦案件通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>A</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交議案件通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>B</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交議案件通知單</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>B</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交議案件通知單</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>B</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>交議案件通知單</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>B</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>催辦案件通知單</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>D</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>催辦案件通知單</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>D</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>催辦案件通知單</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>D</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>催辦案件通知單</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>D</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷建議</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>E</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷建議</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>E</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷建議</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>E</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷建議</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>E</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷通知</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>F</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷通知</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>F</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷通知</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>F</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>機密文書機密等級變更或註銷通知</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>F</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>如擬</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>可</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>可可</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>簽閱</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>閱</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>簽呈</td><td id='td_sd_dec' width='150'>悉</td><td id='td_sd_type' style='display:none'>G</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>可</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>不可</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>可</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>文</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>OK</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>通報</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>M</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>發佈令</td><td id='td_sd_dec' width='150'>發</td><td id='td_sd_type' style='display:none'>N</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>發佈令</td><td id='td_sd_dec' width='150'>不發</td><td id='td_sd_type' style='display:none'>N</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>發佈令</td><td id='td_sd_dec' width='150'>緩發</td><td id='td_sd_type' style='display:none'>N</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>發佈令</td><td id='td_sd_dec' width='150'>先發</td><td id='td_sd_type' style='display:none'>N</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>便簽</td><td id='td_sd_dec' width='150'>便發</td><td id='td_sd_type' style='display:none'>Z4</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>便簽</td><td id='td_sd_dec' width='150'>悉3</td><td id='td_sd_type' style='display:none'>Z4</td></tr>
+<tr  class=Table_td ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>便簽</td><td id='td_sd_dec' width='150'>閱5</td><td id='td_sd_type' style='display:none'>Z4</td></tr>
+<tr  class=Table_td2 ><td width='40' align='center'><input name='l_sel' type='radio' value='' class='Radio'></td><td id='td_sd_name' width='300'>便簽</td><td id='td_sd_dec' width='150'>如擬</td><td id='td_sd_type' style='display:none'>Z4</td></tr>
+</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr>
+		<td align="center"><br>
+			<button type="button" onclick="wdcs6p300_add()" name="btn_insert">新增</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_up()" name="btn_update">修改</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_del()" name="btn_delete">刪除</button>&nbsp;
+			<button type="button" onclick="wdcs6p300_reset()" name="btn_clear">清除</button>&nbsp;
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<LABEL class="Lable_visible">處理訊息：</LABEL>
+			<input readOnly type="text" name="msg" size="27" class="Text_Read" value="資料筆數共(74)筆">
+		</td>
+	</tr>
+</table>
+
+<input type="hidden" name="sd_ln" value="1">
+<input type="hidden" name="sd_type_old" value="">
+<input type="hidden" name="sd_dec_old" value="">
+</FORM>
+</body>
+</html>
