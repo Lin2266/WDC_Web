@@ -10,24 +10,54 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 //點選列表，把值帶到選單跟輸入框
+// $(function() {
+// 	$("#XMLtable tr").click(function(){	
+// 		var type = $(this).find("td:eq(1)").text();
+// 		var dec = $(this).find("td:eq(2)").text();
+// 		var select = document.getElementById("sd_type");
+
+// 		for(var i=0;i<select.length;i++){
+// 			if(select.options[i].text === type){
+// 				select.options[i].selected="selected";
+// 				break;
+// 			}
+// 		}
+		
+// 		document.getElementById("sd_dec").value = dec;
+// 		document.getElementById("sd_type_old").value = type;
+// 		document.getElementById("sd_dec_old").value = dec;				
+// 	})
+// });
+
+//點選列表
 $(function() {
 	$("#XMLtable tr").click(function(){	
-		var type = $(this).find("td:eq(1)").text();
-		var dec = $(this).find("td:eq(2)").text();
-		var select = document.getElementById("sd_type");
+		var sd_dec = $(this).find("td:eq(2)").text();
+		var sd_type = $(this).find("td:eq(3)").text();
 
-		for(var i=0;i<select.length;i++){
-			if(select.options[i].text === type){
-				select.options[i].selected="selected";
-				break;
-			}
-		}
-		
-		document.all.sd_dec.value = dec;
-		document.all.sd_type_old.value = type;
-		document.all.sd_dec_old.value = dec;				
+		document.getElementById("sd_type").value = sd_type; 
+		document.getElementById("sd_dec").value = sd_dec;
+		document.getElementById("sd_type_old").value = sd_type;
+		document.getElementById("sd_dec_old").value = sd_dec;				
 	})
 });
+
+function wdcs6p300_reset() {
+	wdcs6p300.sd_type.value="";
+	wdcs6p300.sd_dec.value="";
+
+	wdcs6p300.sd_type_old.value="";
+	wdcs6p300.sd_dec_old.value="";
+	
+	wdcs6p300.msg.value="";
+
+	var chks=wdcs6p300.l_sel;
+	try{
+		for(j=0; j<chks.length; j++){
+			chks[j].checked = false;
+		}
+	}catch(e){}
+}
 </script>
 </head>
 <body>
@@ -183,8 +213,8 @@ $(function() {
 </table>
 
 <input type="hidden" name="sd_ln" value="1">
-<input type="hidden" name="sd_type_old" value="">
-<input type="hidden" name="sd_dec_old" value="">
+<input type="hidden" id="sd_type_old" name="sd_type_old" value="">
+<input type="hidden" id="sd_dec_old" name="sd_dec_old" value="">
 </FORM>
 </body>
 </html>

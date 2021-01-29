@@ -1,0 +1,64 @@
+客製上傳檔案input html 部份
+html的部份，因為 input type="file" 會被隱藏起來，按鈕樣式實際是寫在label上，就要用input id、label for的這個特性，讓label被點擊時可以去trigger input被點擊。
+
+另外案例的部份加上限制選擇的檔案只能是圖片檔，整理後如下：
+
+<input id="customFileInput" type="file" accept="image/*">
+<label for="customFileInput" class="button-primary">客製選擇檔案按鈕</label>
+可以看到input的id，跟label的for，兩個值要是相同的，這樣就可以把label跟input綁起來。
+
+實際上，很多那種寫不用js就可以trigger一些功能的demo都是這樣寫的。像是不用js寫開啟modal，或是客製radio、checkbox，都是隱藏input，樣式刻在label上，再用id、for去綁，這樣當label被點擊時，input也會被click，就可以寫input:checked + label的樣式。
+
+這部份例子可以看這個：客製checkbox、radio、pure css modal box
+
+在限制選擇檔案的部份，html就用accept="xxxx"就行。type的值參考w3schools：
+
+audio/*
+video/*
+image/*
+只接指定副檔名，如：*.gif, *.jpg, *.png, *.doc
+想要多個值就用半形逗號分開就行：
+
+<input accept="audio/*,video/*,image/*" />
+客製上傳檔案input js 部份
+js是用File API，使用起來比想像中簡單，變數抓input，當input change時，抓event.target.files就可以了。
+
+本篇示範的是一次只傳一個檔案，多個檔案以後有時間再來寫。
+
+js範例code如下：
+
+這是廣告，點擊一下可以幫本站多個一點點的廣告收入，謝謝
+
+var inputFile = document.getElementById('customFileInput');
+inputFile.addEventListener('change', function(event) {
+  var fileData = event.target.files[0]; // 檔案資訊
+});
+console.log(fileData)的話，可以看到以下資訊：
+
+lastModifiedDate：檔案最後修改的時間
+name：檔案名稱
+size：檔案大小
+type：檔案類型
+另外還有2個：lastModified、webkitRelativePath，一個是修改時間的毫秒數，一個非標準值，就不用了。
+
+以下js是抓值的部份：
+
+var fileData = e.target.files[0]; // 檔案資訊
+var fileName = fileData.name; // 檔案名稱
+var fileType = fileData.type; // 檔案類型
+var fileSize = Math.floor(fileData.size * 0.001); // 檔案大小轉成kb
+var fileTime = fileData.lastModifiedDate;
+要補充的是，如果檔案是圖片檔，是可以產生縮圖的，這要用另一個API：
+
+URL.createObjectURL()
+
+URL.createObjectURL(fileData)
+就會產生一個blob的路徑，放進img的src裡就行。
+
+示範頁面
+製作了一個示範頁面，選完檔案後可以看到被選檔案的資訊：
+
+https://letswritetw.github.io/letswrite-file-api-custom-input/
+
+原始碼的部份也放上Github了：
+https://github.com/letswritetw/letswrite-file-api-custom-input
