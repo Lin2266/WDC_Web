@@ -14,7 +14,7 @@ import net.sf.json.JSONArray;
 /**
  * Servlet implementation class ValueGetController
  */
-@WebServlet("/ValueGetController")
+@WebServlet(urlPatterns= {"/ValueGetController.do"})
 public class ValueGetController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

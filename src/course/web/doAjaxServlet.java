@@ -27,40 +27,27 @@ public class doAjaxServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-		 
-        //對Post中文參數進行解碼
- 
+		//回應時的編碼
+		response.setContentType("text/html;charset=UTF-8");		 
+        //對Post中文參數進行解碼 
         request.setCharacterEncoding("UTF-8");
  
-        //取得Ajax傳入的參數
- 
+        //取得Ajax傳入的參數 
         String userName = request.getParameter("userName");
- 
         String[] arrayUserInterest = request.getParameterValues("userInterest");
  
-        //建構要回傳JSON物件
- 
+        //建構要回傳JSON物件 
         HashMap userInfoMap = new HashMap();
- 
         userInfoMap.put("userName", userName);
- 
-        
- 
-        ArrayList userInterestList = new ArrayList();
- 
+         
+        ArrayList userInterestList = new ArrayList(); 
         userInterestList.addAll(Arrays.asList(arrayUserInterest));
  
         userInfoMap.put("userInterest", userInterestList);
- 
-        
- 
+          
         JSONObject responseJSONObject = new JSONObject(userInfoMap);
- 
-        
- 
+          
         PrintWriter out = response.getWriter();
- 
         out.println(responseJSONObject);
 	}
 	

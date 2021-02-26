@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>ajax介接api</title>
+<style>
+    body {
+      background: #f0d0d0;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 48px;
+    }
+
+    .charge-list {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .charge-list li {
+      box-sizing: border-box;
+      flex: 0 1 24%;
+      padding: 10px;
+      margin: 0 1% 2% 0;
+      border-radius: 10px;
+      transition: all .4s;
+    }
+
+    .charge-list li:hover {
+      margin-top: -1%;
+    }
+
+    .charge-list li:nth-child(n) {
+      background: #aaaadd;
+    }
+
+    .charge-list li:nth-child(2n) {
+      background: #ddddaa;
+    }
+
+    .charge-list li:nth-child(3n) {
+      background: #dad;
+    }
+
+    .charge-list li:nth-child(3n+1) {
+      background: #aaf;
+    }
+</style>
+<script type="text/javascript">
+//   實作：透過 $.ajax() 介接高雄市政府資料開放平台的Open Data
+//   這個例子會透過 $.ajax() 的 GET 方法取得高雄市政府資料開放平台的Open Data
+	const endpoint = 'https://data.kcg.gov.tw/dataset/a98754a3-3446-4c9a-abfc-58dc49f2158c/resource/48d4dfc4-a4b2-44a5-bdec-70f9558cd25d/download/yopendata1070622opendatajson-1070622.json';
+  	$.ajax({
+    	type: "GET",
+    	url: endpoint,
+    	dataType: "json",
+   		success: function (response) {
+      	const charge = [];
+     	charge.push(...response);
+      	createDomElement(charge);
+    	},
+    	error: function (thrownError) {
+      		console.log(thrownError);
+    	}
+  	});
+
+  function createDomElement(charge) {
+    const domElements = charge.map( place => {
+      return `
+      <li>
+      	<p class="location">位置： ${ place.Location }</p>
+      	<p class="address">地址：${ place.Address }</p>
+   	  </li>
+   	   `;
+    }).join("");
+
+    const chargeList = document.querySelector('.charge-list');
+    chargeList.innerHTML = domElements;
+  }
+</script>
+</head>
+<body>
+	<h1>高雄市電動機車充電站名稱及充電站地址一覽表</h1>
+  	<ul class="charge-list"></ul>
+</body>
+</html>

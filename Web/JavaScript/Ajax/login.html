@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>使用者登入</title>
+<script type="text/javascript">
+function login() {
+	//接收前端的input資料:帳號、密碼
+	var data = {
+			id:$("#account").val(),
+			pwd:$("#password").val()};
+		$.ajax({
+			url:"../../login.do",
+			type: "POST",
+			dataType:"json",
+			cache:false,
+			data: data,
+			success: function(response){
+				console.log(response);
+				
+				if(response.auth ===1){//不知道什麼意思
+					window.location.href="camera.html";
+				}else{
+					$("#invalid").show();
+					 	document.getElementById("invalid").innerHTML = "有資料"; 
+					
+// 					$(window).resize(function(){
+// 						document.getElementById("invalid").innerHTML = "無資料";
+// 					});
+					
+					setTimeout(function() {
+						$("#invalid").hide();
+						window.location.href="camera.html";
+					},3000);
+				}
+			}
+		});
+	
+}
+	
+</script>
+</head>
+<body>
+	<form id="formId">
+		<p><label for="account">帳號:</label><input type="text" id="account" name="account"></p>
+		<p><label for="password">密碼:</label><input type="text" id="password" name="password"></p>
+		<p><input type="button" onclick="login()" value="送出"></p>
+	</form>
+	<div id="invalid"></div>
+</body>
+</html>
