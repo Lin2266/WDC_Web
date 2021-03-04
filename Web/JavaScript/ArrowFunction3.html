@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>箭頭函數</title>
+<script type="text/javascript">
+//傳統標準的函數宣告語法
+var multiply = function(a, b) {
+    return a * b;
+};
+
+// 使用 Arrow Functions 的語法
+var multiply1 = (a, b) => a * b;
+
+// 20
+document.write("傳統函式宣告:"+multiply(2, 10)+"<br>");
+document.write("箭頭語法函式宣告:"+multiply1(2, 10));
+</script>
+</head>
+<body>
+
+</body>
+</html>

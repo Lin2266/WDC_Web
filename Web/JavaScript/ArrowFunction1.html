@@ -8,20 +8,40 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <title>箭頭函數</title>
-<script type="text/javascript">
-//傳統標準的函數宣告語法
-// var multiply = function(a, b) {
-//     return a * b;
-// };
-
-// 使用 Arrow Functions 的語法
-var multiply = (a, b) => a * b;
-
-// 20
-document.write(multiply(2, 10));
-</script>
 </head>
 <body>
+<p>箭頭函式的語法如下:</p>
+<pre>
+	([param] [, param]) => {
+   		statements
+	}
 
+	param => expression
+	
+</pre>
+<script type="text/javascript">
+	//所有的函式會變成匿名的函式。
+	const func1 = (x) => x + 1;
+	//相當於
+	const func2 = function (x) { return x + 1 };
+	
+	const func = (x) => x + 1;
+	const funcA = x => x + 1;
+	const funcB = x => { x + 1 };
+	const funcC = x => { return x + 1 };
+	
+	document.write("最容易搞混的是下面這個例子，有花括號{}與沒有是兩碼子事:"+"<br><br>");
+	document.write("func = (x) => x + 1 = "+func(1)+"<br><br>");//2
+	document.write("只有單一個傳入參數時，括號()可以不用,會自動加return，但只能在一行的語句時候用。"+"<br>");
+	document.write("funcA = x => x + 1 = "+funcA(1)+"<br><br>");//2
+	
+	document.write("有花括號時{}，可以加入多行語句，但不會自動加return,沒加return會undefined"+"<br>");
+	document.write("const funcB = x => { x + 1 } = "+funcB(1)+"<br><br>");//undefined
+	
+	document.write("有花括號時{}，必須要自已加return"+"<br>");
+	document.write("const funcC = x => { return x + 1 } = "+funcC(1));
+</script>
+<p>當沒用花括號{}時，代表會自動加return，也只能在一行的語句的時候使用。</p>
+<p>使用花括號{}則是可以加入多行的語句，不過return不會自動加，有需要你要自己加上，沒加這個函式最後等於return undefined。</p>
 </body>
 </html>

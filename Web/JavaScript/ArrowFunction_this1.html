@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>傳統函式this寫法</title>
+<script type="text/javascript">
+	function Person() {
+		this.age =0;
+		setInterval(function growUp(){
+			//這邊的this會指向window，造成程式錯誤
+			//this.age++;
+			//測試結果沒出錯
+			$("p").html("this:"+this.age++);
+		},1000);
+	}
+	//var p = new Person();
+	
+	function Person1() {
+		// 先將正確的 this reference 存到一個變數中
+		var slef = this;
+		self.age=0;
+		setInterval(function growUp1(){
+			 // self 變數會正確的指向 Person 物件
+			$("p1").html("this:"+self.age++);
+		},1000);		
+	}
+	//var p1 = new Person1();
+</script>
+</head>
+<body>
+<p id="p"></p>
+<input type="button" onclick="Person()" value="啟動">
+<p id="p1"></p>
+<input type="button" onclick="Person1()" value="啟動">
+</body>
+</html>

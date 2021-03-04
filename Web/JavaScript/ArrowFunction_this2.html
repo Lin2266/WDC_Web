@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Arrow Functions自動綁定 this 到函數定義時的環境</title>
+<script type="text/javascript">
+	function Person() {
+		this.age =0;
+		// 定義該 Arrow Functions 時的環境，是在 Person 物件中
+		setInterval(() => {
+			// 所以 this 會正確指向 Person 物件
+			document.write(this.age++ +",");
+		}, 1000);
+	}
+	//以下兩種方式都可以執行函式
+	//var p = new Person();
+	Person();
+</script>
+</head>
+<body>
+
+</body>
+</html>
