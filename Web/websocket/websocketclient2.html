@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<title>Web Socket Client</title>
+<script type="text/javascript">
+	var socket;
+	if(!window.WebSocket){
+		window.WebSocket = window.MozWebSocket;
+	}
+	//javascript websocket Client
+	if(window.WebSocket){
+		socket = new WebSocket("ws://localhost:900/WDC_Web/websocket2");
+		socket.onmessage = function (Event){
+			var ta = document.getElementById("responseText");
+			ta.value = ta.value + '\n' + event.data;
+		}
+		socket.onopen = function(event){
+			var ta = document.getElementById("responseText");
+			ta.value = "Web Sockert opened!";
+		}
+		socket.onclose = function(event){
+			var ta = document.getElementById("responseText");
+			ta.value = ta.value + "Web Socket closed";
+		}
+	}else{
+		alert("Your browser does not support Web Socket.");
+	}
+	//Send Websocker data
+	function sned(massage){
+		if(!window.WebSocket)return;
+		if(socket.readyState === WebSocket.OPEN){
+			socket.send(message);
+		}else{
+			alert("The socket is not open.");
+		}			
+	}
+	
+</script>
+</head>
+<body>
+<h3>send:</h3>
+<!-- 阻止form表單提交 -->
+<form onsubmit="return false;">
+<input type="text" name="message" value="Hello World!">
+<input type="button" value="Send Web Socket Data" onclick="sned(this.form.message.value)">
+<h3>Receive:</h3>
+<textarea id="responseText" rows="30" cols="50"></textarea>
+</form>
+</body>
+</html>
