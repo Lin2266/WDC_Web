@@ -22,6 +22,7 @@ Welcomer<br>
 var websocket = null;
 //判斷當前瀏覽器是否支援webSocket
 if('WebSocket' in window){
+	//對應java的@ServerEndpoint("/websocket1")
 	websocket = new WebSocket("ws://localhost:900/WDC_Web/websocket1");
 }else{
 	alert('當前瀏覽器 Not support websocket');

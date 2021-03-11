@@ -1,8 +1,8 @@
 package course.web;
 
 import course.model.Employee;
+import course.model.EmployeeService;
 import org.apache.tomcat.jdbc.pool.DataSource;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 
 @WebServlet("/TestDataSourceFromScAtion")
@@ -22,11 +23,11 @@ public class TestDataSourceFromScAtion extends HttpServlet {
 		Object o = request.getServletContext().getAttribute("WeStartListener.DB");
 		DataSource ds = (DataSource)o;
 		//pass connection pool to DAO, through service
-		EmployeeServlet service = new EmployeeServlet(ds);
+		EmployeeService service = new EmployeeService(ds);
 		//call service
-		//List<Employee> emps = service.addThenFindAll(createEmp());
+		List<Employee> emps = service.addThenFindAll(createEmp());
 		//dispatch request
-		//request.setAttribute("emps",emps);
+		request.setAttribute("emps",emps);
 		request.setAttribute("subject","from Service Context");
 		RequestDispatcher rd = request.getRequestDispatcher("showEmps.jsp");
 		rd.forward(request, response);
