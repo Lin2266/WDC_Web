@@ -17,6 +17,10 @@ public class SoldierMain {
 		//MySoldierDI實作Soldier的destroyTarget方法
 		System.out.println(soldier);
 		soldier.destroyTarget();
+		
+		WeaponDI w = new GunDI();
+		Alert a = new Alert();
+		new MySoldierNG(w, a).destroyTarget();
 
 	}
 

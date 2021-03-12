@@ -1,10 +1,8 @@
 package course.spring;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
-import com.alibaba.druid.mock.MockArray;
 
 class MySoldierTest {
 
