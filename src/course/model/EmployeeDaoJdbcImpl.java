@@ -18,10 +18,11 @@ import com.mysql.jdbc.Statement;
 public class EmployeeDaoJdbcImpl implements EmployeeDao{
 	private DataSource dataSource;
 	//called by TestDataSourceFromScAction
-	public EmployeeDaoJdbcImpl(DataSource dataSource) {
-		this.dataSource = dataSource;
+	public EmployeeDaoJdbcImpl(DataSource dataSource2) {
+		this.dataSource = dataSource2;
 	}
-	
+
+
 	private DataSource getDataSource() {
 		DataSource ds = null;
 		try {

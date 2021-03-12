@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spring檔案內的標籤宣告 -->  
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+           
+       <!-- spring所提供的關聯注入di可分2種:
+       		1.XML-based:使用XML檔案設定類別間的關聯性
+       		2.JAVA-based:使用JAVA類別搭配annotation設定類別間的關聯性。
+       		無論何種都必須建立一個實作ApplicationContext介面的Spring框架物件
+        -->  
+           
+       <!-- spring自動建立GunDI物件 -->    
+       <bean id="weapon" class="course.spring.GunDI"/>
+       <!-- 因建構子要實作WeaponDI介面的物件 -->
+       <bean id="mySoldier" class="course.spring.MySoldierDI">
+       <!-- spring將其控管的bean元件中找合適的自動關聯注入，即id為weapon的bean元件 -->
+       		<constructor-arg ref="weapon"/>
+       </bean>
+           
+
+</beans>

@@ -1,11 +1,10 @@
 package course.model;
 
 import java.util.List;
-
-import javax.activation.DataSource;
+import javax.sql.DataSource;
 
 public class EmployeeService {
-	private EmployeeDao dao;
+	private EmployeeDaoJdbcImpl dao;
 	
 	//called by TestDataSourceFromScAtion
 	public EmployeeService(DataSource dataSource) {
@@ -14,7 +13,7 @@ public class EmployeeService {
 	
 	public List<Employee> addThenFindAll(Employee e){
 		dao.add(e);
-		List<Employee> emps = dao.getAllEmployess();
+		List<Employee> emps = dao.getAllEmployees();
 		return emps;
 	}
 
