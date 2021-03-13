@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>insert_delete_row_cell</title>
+<style type="text/css">
+	table,td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<p>新增、刪除，列、欄</p>
+<table id="myTable">
+  <tr>
+    <td>cell 1</td>
+    <td>cell 2</td>
+    <td>cell 3</td>
+  </tr>
+  <tr>
+    <td>cell 4</td>
+    <td>cell 5</td>
+    <td>cell 6</td>
+  </tr>
+</table>
+<br> 
+<button onclick="insertRowCell()">insert</button>&nbsp;&nbsp;&nbsp;
+<button onclick="deleteRowCell()">delete</button><br>
+
+<script type="text/javascript">
+function insertRowCell() {
+	var table = document.getElementById("myTable");
+	var row = table.insertRow(1+1);
+	var cell1 = row.insertCell(0).innerHTML="NEW CELL1";
+	var cell2 = row.insertCell(1).innerHTML="NEW CELL2";
+	var cell3 = row.insertCell(2).innerHTML="NEW CELL3";
+}
+
+function deleteRowCell() {
+	document.getElementById("myTable").deleteRow(0);
+}
+	
+</script>
+</body>
+</html>
